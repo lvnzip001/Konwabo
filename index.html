@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Konwaba High School | Nxuba (Cradock) — Excellence in Education</title>
+
+  <!-- Primary SEO -->
+  <meta name="description" content="Konwaba High School is a modern, values-driven school in Nxuba (Cradock), combining academic excellence with practical skills and a rich student life." />
+  <meta name="keywords" content="Konwaba High School, Nxuba, Cradock, independent school, private school, South Africa, admissions, academics, sport, student life" />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#7B1E3A" />
+
+  <!-- Canonical (replace with your live domain later) -->
+  <link rel="canonical" href="https://www.example.co.za/" />
+
+  <!-- Favicons (add files later; keep links so you don't redo metadata) -->
+  <link rel="icon" href="assets/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+  <link rel="manifest" href="assets/site.webmanifest" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Konwaba High School | Excellence in Education" />
+  <meta property="og:description" content="A modern, values-driven school in Nxuba (Cradock), combining academic excellence with practical skills and a rich student life." />
+  <meta property="og:image" content="assets/img/school_front.jpeg" />
+  <meta property="og:url" content="https://www.example.co.za/" />
+  <meta property="og:site_name" content="Konwaba High School" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Konwaba High School | Excellence in Education" />
+  <meta name="twitter:description" content="Academic excellence, practical skills, and a rich student life in Nxuba (Cradock)." />
+  <meta name="twitter:image" content="assets/img/school_front.jpeg" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Premium companion CSS (brand tokens + elite components) -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- Schema.org (edit address/phone/domain when final) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"School",
+    "name":"Konwaba High School",
+    "url":"https://www.example.co.za/",
+    "logo":"assets/img/khs_neutral.jpeg",
+    "image":"assets/img/school_front.jpeg",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"16 Cawood Street",
+      "addressLocality":"Cradock (Nxuba)",
+      "addressRegion":"Eastern Cape",
+      "addressCountry":"ZA"
+    },
+    "telephone":"+27 48 109 9068",
+    "email":"konwabass@gmail.com"
+  }
+  </script>
+</head>
+
+<body class="font-body bg-paper text-[var(--ink-800)]">
+
+  <!-- NAV -->
+  <header class="nav-shell">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html" aria-label="Konwaba High School Home">
+        <img src="assets/img/khs_neutral.jpeg" alt="Konwaba High School (Neutral Logo)">
+      </a>
+
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="high-school.html">High School</a>
+        <a class="nav-link" href="programmes.html">Programmes</a>
+        <a class="nav-link" href="student-life.html">Student Life</a>
+        <a class="nav-link" href="admissions.html">Admissions</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </nav>
+
+      <div class="hidden lg:flex items-center gap-3">
+        <a class="btn btn-ghost" href="contact.html">Enquire</a>
+        <a class="btn btn-maroon" href="admissions.html">Apply</a>
+      </div>
+
+      <!-- simple mobile action (nav menu can be added later) -->
+      <div class="lg:hidden">
+        <a class="btn btn-maroon" href="admissions.html">Apply</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO (Somerset-style: cinematic + strong CTA + watch video placeholder) -->
+  <section class="hero min-h-[92vh]">
+    <div class="hero-media">
+      <img src="assets/img/school_front.jpg" alt="Konwaba campus front view">
+    </div>
+    <div class="hero-overlay"></div>
+
+    <div class="container-max px-5 pt-28 pb-14">
+      <div class="grid lg:grid-cols-12 gap-10 items-end">
+        <!-- Left: Story -->
+        <div class="lg:col-span-7 reveal">
+          <div class="hero-card p-7 md:p-10">
+            <div class="flex flex-wrap items-center gap-2 mb-5">
+              <span class="badge badge-beige">Nxuba (Cradock), Eastern Cape</span>
+              
+            </div>
+
+            <h1 class="font-heading text-white text-4xl md:text-6xl leading-[1.06]">
+              A school where tradition meets a modern learning culture.
+            </h1>
+
+            <p class="mt-5 text-white/85 text-base md:text-lg max-w-2xl leading-relaxed">
+              Konwaba High School develops confident, capable learners through academic rigour,
+              practical skills, and a supportive environment that inspires leadership and character.
+            </p>
+
+            <div class="mt-8 flex flex-col sm:flex-row gap-3">
+              <a class="btn btn-primary" href="admissions.html">Book a Tour <span aria-hidden="true">→</span></a>
+              <a class="btn btn-outline" href="high-school.html">Explore the School</a>
+            </div>
+
+            <div class="mt-7 grid sm:grid-cols-3 gap-3">
+              <div class="stat p-4">
+                <div class="stat-label">Academic</div>
+                <div class="stat-value">Excellence</div>
+              </div>
+              <div class="stat p-4">
+                <div class="stat-label">Practical Skills</div>
+                <div class="stat-value">Readiness</div>
+              </div>
+              <div class="stat p-4">
+                <div class="stat-label">Student Life</div>
+                <div class="stat-value">Belonging</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Video placeholder + quick highlights -->
+        <div class="lg:col-span-5 reveal">
+          <div class="card-soft rounded-[var(--radius-lg)] p-6 md:p-7">
+            <div class="flex items-center justify-between gap-3">
+              <div>
+                <div class="kicker">Watch Video</div>
+                <div class="font-heading text-2xl text-[var(--maroon-600)]">A Day at Konwaba</div>
+              </div>
+              <span class="badge badge-maroon">Our Students</span>
+            </div>
+
+            <!-- Video placeholder -->
+            <div class="mt-5 rounded-[var(--radius-md)] overflow-hidden border border-black/5 bg-black/10">
+              <div class="relative aspect-[16/6]">
+                <img src="assets/img/video_thumb.png" alt="Campus top view preview" class="w-full h-full object-cover">
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="w-16 h-16 rounded-full bg-white/85 flex items-center justify-center shadow-md">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M8 5v14l11-7L8 5z" fill="#7B1E3A"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 grid grid-cols-2 gap-3">
+              <div class="stat p-4">
+                <div class="stat-label">Fees (Gr 8–10)</div>
+                <div class="stat-value">R1500 pm</div>
+              </div>
+              <div class="stat p-4">
+                <div class="stat-label">Application</div>
+                <div class="stat-value">R200</div>
+              </div>
+            </div>
+
+            <div class="mt-6 flex flex-col sm:flex-row gap-3">
+              <a class="btn btn-maroon w-full justify-center" href="admissions.html">Admissions</a>
+              <a class="btn btn-ghost w-full justify-center" href="contact.html">Contact</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- TRUST / WHY CHOOSE US — EDTECH GRADE -->
+<section class="py-16 md:py-24">
+  <div class="container-max px-5">
+    <div class="grid lg:grid-cols-12 gap-10 items-center">
+
+      <!-- Left: Copy + EdTech value props -->
+      <div class="lg:col-span-6 reveal">
+
+        <div class="kicker">Why Konwaba</div>
+
+        <h2 class="section-title text-3xl md:text-5xl mt-3">
+          Traditional excellence, delivered with a modern learning edge.
+        </h2>
+
+        <p class="mt-5 lead">
+          A high-end school experience built on academic rigour, character, and a technology-enabled culture
+          that supports strong teaching, consistent progress, and confident learners.
+        </p>
+
+        <!-- Proof / trust chips (tight, premium) -->
+        <div class="mt-6 flex flex-wrap gap-2">
+          <span class="badge badge-maroon">Academic rigour</span>
+          <span class="badge badge-beige">Learner support</span>
+          <span class="badge">Digital-ready learning</span>
+          <span class="badge">Sport & activities</span>
+          <span class="badge">Values & character</span>
+        </div>
+
+        <!-- EdTech Feature Tiles (premium cards) -->
+        <div class="mt-8 grid sm:grid-cols-2 gap-4">
+
+          <div class="card p-5 md:p-6">
+            <div class="flex items-start gap-3">
+              <div class="w-11 h-11 rounded-xl bg-[var(--beige-100)] border border-black/5 flex items-center justify-center">
+                <!-- icon -->
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M4 19V6a2 2 0 0 1 2-2h11a3 3 0 0 1 3 3v12" stroke="#7B1E3A" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M6 17h14" stroke="#7B1E3A" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div>
+                <div class="font-heading text-lg text-[var(--maroon-600)]">Structured learning</div>
+                <p class="mt-1 text-[var(--ink-600)] text-sm leading-relaxed">
+                  Clear term planning, consistent routines, and learning that builds strong foundations.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card p-5 md:p-6">
+            <div class="flex items-start gap-3">
+              <div class="w-11 h-11 rounded-xl bg-[var(--beige-100)] border border-black/5 flex items-center justify-center">
+                <!-- icon -->
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 3v8l6 3" stroke="#7B1E3A" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M21 12a9 9 0 1 1-9-9" stroke="#7B1E3A" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div>
+                <div class="font-heading text-lg text-[var(--maroon-600)]">Progress & support</div>
+                <p class="mt-1 text-[var(--ink-600)] text-sm leading-relaxed">
+                  Early identification of gaps with targeted support to keep learners on track.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card p-5 md:p-6">
+            <div class="flex items-start gap-3">
+              <div class="w-11 h-11 rounded-xl bg-[var(--beige-100)] border border-black/5 flex items-center justify-center">
+                <!-- icon -->
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M4 7h16M7 4v6M17 4v6" stroke="#7B1E3A" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M6 11h12a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2Z" stroke="#7B1E3A" stroke-width="1.8"/>
+                </svg>
+              </div>
+              <div>
+                <div class="font-heading text-lg text-[var(--maroon-600)]">Modern communication</div>
+                <p class="mt-1 text-[var(--ink-600)] text-sm leading-relaxed">
+                  Clear updates, term events, and school communication designed for busy families.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card p-5 md:p-6">
+            <div class="flex items-start gap-3">
+              <div class="w-11 h-11 rounded-xl bg-[var(--beige-100)] border border-black/5 flex items-center justify-center">
+                <!-- icon -->
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 22s8-4 8-10V6l-8-3-8 3v6c0 6 8 10 8 10Z" stroke="#7B1E3A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M9 12l2 2 4-4" stroke="#7B1E3A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <div class="font-heading text-lg text-[var(--maroon-600)]">Safe school culture</div>
+                <p class="mt-1 text-[var(--ink-600)] text-sm leading-relaxed">
+                  A disciplined, supportive environment that protects learning time and wellbeing.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- CTA row -->
+        <div class="mt-8 flex flex-col sm:flex-row gap-3">
+          <a class="btn btn-primary" href="admissions.html">Book a Tour <span aria-hidden="true">→</span></a>
+          <a class="btn btn-ghost" href="about.html">Our Story</a>
+          <a class="btn btn-ghost" href="student-life.html">Student Life</a>
+        </div>
+
+        <!-- Small trust line (Somerset-style understated) -->
+        <p class="mt-5 text-sm text-[var(--ink-500)]">
+          Placeholders here can later link to your prospectus, admissions pack, and academic overview.
+        </p>
+      </div>
+
+      <!-- Right: Visual collage (more premium layering) -->
+      <div class="lg:col-span-6 reveal">
+        <div class="grid grid-cols-12 gap-4">
+
+          <!-- Large -->
+          <div class="col-span-12 md:col-span-7 hov-lift">
+            <div class="img-frame">
+              <img class="w-full h-[280px] md:h-[460px] object-cover"
+          
+                  
+                     src="assets/img/learners.png"
+                     alt="Learners and school community">
+                   
+            </div>
+          </div>
+
+          <!-- Stacked -->
+          <div class="col-span-12 md:col-span-5 grid grid-rows-2 gap-4">
+            <div class="hov-lift">
+              <div class="img-frame">
+                <img class="w-[500px] h-[220px] object-cover"
+                     src="assets/img/stuff3.png"
+                     alt="Teacher mentoring learners">
+              </div>
+            </div>
+            <div class="hov-lift">
+              <div class="img-frame">
+                <img class="w-full h-[220px] object-cover"
+                     src="assets/img/stuff2.png"
+                     alt="Learners and school community">
+              </div>
+            </div>
+          </div>
+
+          <!-- Wide strip -->
+          <div class="col-span-12 hov-lift">
+            <div class="rounded-[var(--radius-lg)] overflow-hidden border border-black/5 bg-black/10 relative">
+              <img class="w-full h-[210px] object-cover"
+                   src="assets/img/learners3.png"
+                   alt="Campus top view">
+              <!-- subtle overlay label -->
+              <div class="absolute left-4 bottom-4">
+                <span class="badge badge-beige">Campus • Facilities • Community</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- SIGNATURE EXPERIENCES (premium cards) -->
+  <section class="py-16 md:py-24 bg-[var(--beige-50)] border-y border-black/5">
+    <div class="container-max px-5">
+      <div class="max-w-3xl reveal">
+        <div class="kicker">Signature Experiences</div>
+        <h2 class="section-title text-3xl md:text-5xl mt-3">A well-rounded school journey.</h2>
+        <p class="section-subtitle mt-4 text-base md:text-lg leading-relaxed">
+          Designed to develop strong thinkers, disciplined performers, and grounded young leaders.
+        </p>
+      </div>
+
+      <div class="mt-10 md:mt-14 grid md:grid-cols-3 gap-6">
+        <article class="card p-6 md:p-7 reveal">
+          <div class="badge badge-maroon mb-4">Academics</div>
+          <h3 class="font-heading text-xl md:text-2xl text-[var(--maroon-600)]">Academic depth</h3>
+          <p class="mt-3 text-[var(--ink-600)] leading-relaxed">
+            Structured learning, strong foundations, and support that drives consistent improvement.
+          </p>
+          <div class="mt-5">
+            <a class="btn btn-ghost" href="high-school.html">Explore academics →</a>
+          </div>
+        </article>
+
+        <article class="card p-6 md:p-7 reveal">
+          <div class="badge badge-beige mb-4">Sport</div>
+          <h3 class="font-heading text-xl md:text-2xl text-[var(--maroon-600)]">Sport & teamwork</h3>
+          <p class="mt-3 text-[var(--ink-600)] leading-relaxed">
+            Character-building sport and activities that develop discipline and confidence.
+          </p>
+          <div class="mt-5">
+            <a class="btn btn-ghost" href="student-life.html">View activities →</a>
+          </div>
+        </article>
+
+        <article class="card p-6 md:p-7 reveal">
+          <div class="badge mb-4">Outdoor</div>
+          <h3 class="font-heading text-xl md:text-2xl text-[var(--maroon-600)]">Outdoor events</h3>
+          <p class="mt-3 text-[var(--ink-600)] leading-relaxed">
+            Experiences that build resilience, leadership and a sense of belonging.
+          </p>
+          <div class="mt-5">
+            <a class="btn btn-ghost" href="student-life.html">See events →</a>
+          </div>
+        </article>
+      </div>
+
+      <!-- Visual strip -->
+      <div class="mt-10 grid lg:grid-cols-12 gap-6 items-stretch">
+        <div class="lg:col-span-7 reveal">
+          <div class="card-soft p-0 overflow-hidden rounded-[var(--radius-lg)]">
+            <img src="assets/img/rudgy_day.jpg" alt="School sport" class="w-full h-[320px] object-cover">
+          </div>
+        </div>
+        <div class="lg:col-span-5 reveal">
+          <div class="card-soft p-0 overflow-hidden rounded-[var(--radius-lg)] h-full">
+            <img src="assets/img/hiking_event.jpg" alt="Hiking and outdoor event" class="w-full h-[320px] object-cover">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWS / EVENTS (placeholders like “Live Look / News” patterns) -->
+  <section class="py-16 md:py-24">
+    <div class="container-max px-5">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-5">
+        <div class="max-w-2xl reveal">
+          <div class="kicker">News & Media</div>
+          <h2 class="section-title text-3xl md:text-5xl mt-3">Latest highlights from campus life.</h2>
+          <p class="mt-4 text-[var(--ink-600)] leading-relaxed">
+            Use this section for announcements, achievements, newsletters, and event updates.
+          </p>
+        </div>
+        <div class="reveal">
+          <a class="btn btn-primary" href="news.html">View All News</a>
+        </div>
+      </div>
+
+      <div class="mt-10 md:mt-14 grid md:grid-cols-3 gap-6">
+        <article class="card p-6 reveal">
+          <div class="badge mb-4">Announcement</div>
+          <h3 class="font-heading text-xl text-[var(--maroon-600)]">Admissions Open</h3>
+          <p class="mt-3 text-[var(--ink-600)]">
+            Placeholder for key admissions messaging, dates, and requirements.
+          </p>
+          <div class="mt-5">
+            <a class="btn btn-ghost" href="admissions.html">Learn more →</a>
+          </div>
+        </article>
+
+        <article class="card p-6 reveal">
+          <div class="badge badge-beige mb-4">Achievement</div>
+          <h3 class="font-heading text-xl text-[var(--maroon-600)]">Academic Excellence</h3>
+          <p class="mt-3 text-[var(--ink-600)]">
+            Placeholder for academic milestones, awards, or learner success stories.
+          </p>
+          <div class="mt-5">
+            <a class="btn btn-ghost" href="high-school.html">Explore →</a>
+          </div>
+        </article>
+
+        <article class="card p-6 reveal">
+          <div class="badge badge-maroon mb-4">Event</div>
+          <h3 class="font-heading text-xl text-[var(--maroon-600)]">Sports & Culture Calendar</h3>
+          <p class="mt-3 text-[var(--ink-600)]">
+            Placeholder for upcoming events, fixtures, and highlights.
+          </p>
+          <div class="mt-5">
+            <a class="btn btn-ghost" href="student-life.html">See calendar →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA STRIP (Somerset-style action: tour/apply) -->
+  <section class="py-14 md:py-16 bg-[var(--maroon-600)]">
+    <div class="container-max px-5">
+      <div class="card-soft rounded-[var(--radius-lg)] p-7 md:p-10 reveal">
+        <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+          <div>
+            <div class="kicker">Admissions</div>
+            <h2 class="font-heading text-2xl md:text-3xl text-[var(--maroon-600)] mt-2">
+              Book a tour. Meet the team. Join the school.
+            </h2>
+            <p class="mt-3 text-[var(--ink-600)] max-w-2xl leading-relaxed">
+              Replace these placeholders with tour dates, prospectus download, and online application steps.
+            </p>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
+            <a class="btn btn-maroon w-full sm:w-auto justify-center" href="admissions.html">Book a Tour</a>
+            <a class="btn btn-primary w-full sm:w-auto justify-center" href="contact.html">Enquire Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer py-14">
+    <div class="container-max px-5">
+      <div class="flex flex-col items-center text-center gap-5">
+        <img src="assets/img/khs_logo.png" alt="Konwaba High School Logo" class="h-14 w-auto rounded-xl opacity-95">
+
+        <div class="text-white/85">
+          <div class="font-heading text-xl">Konwaba High School</div>
+          <div class="text-white/70 mt-1">16 Cawood Street, Cradock (Nxuba)</div>
+          <div class="text-white/70">048 109 9068 • konwabass@gmail.com</div>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-4 text-white/70 text-sm">
+          <a href="about.html" class="hover:text-[var(--beige-200)]">About</a>
+          <a href="high-school.html" class="hover:text-[var(--beige-200)]">High School</a>
+          <a href="programmes.html" class="hover:text-[var(--beige-200)]">Programmes</a>
+          <a href="admissions.html" class="hover:text-[var(--beige-200)]">Admissions</a>
+          <a href="contact.html" class="hover:text-[var(--beige-200)]">Contact</a>
+        </div>
+
+        <div class="text-white/55 text-xs">
+          © 2026 Konwaba High School. All Rights Reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS (inline as requested): reveal on scroll -->
+  <script>
+    (function(){
+      const els = document.querySelectorAll('.reveal');
+      const reveal = () => {
+        const trigger = window.innerHeight * 0.88;
+        els.forEach(el => {
+          const r = el.getBoundingClientRect();
+          if (r.top < trigger) el.classList.add('is-visible');
+        });
+      };
+      window.addEventListener('scroll', reveal, { passive:true });
+      window.addEventListener('load', reveal);
+      reveal();
+    })();
+  </script>
+
+</body>
+</html>

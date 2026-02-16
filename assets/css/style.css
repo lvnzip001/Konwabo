@@ -1,0 +1,417 @@
+/* ============================================================
+   Konwaba High School — Premium Tailwind Companion CSS
+   - Tailwind remains the utility framework (CDN)
+   - This file adds brand tokens + reusable premium components
+   - No @apply (CDN Tailwind doesn't compile it)
+   ============================================================ */
+
+/* -----------------------------
+   1) Brand Tokens + Defaults
+------------------------------ */
+:root{
+  /* Brand */
+  --maroon-950:#3B0A1A;
+  --maroon-900:#4A0E22;
+  --maroon-800:#5E142C;
+  --maroon-700:#6E1934;
+  --maroon-600:#7B1E3A; /* primary */
+  --maroon-500:#8F2A4A;
+
+  --beige-50:#FBF8F4;
+  --beige-100:#F2E9E2; /* soft */
+  --beige-200:#E6D5C3; /* accent */
+  --beige-300:#D8C6B2;
+
+  /* Neutrals (premium warm greys) */
+  --ink-950:#0b0f14;
+  --ink-900:#111827;
+  --ink-800:#1F2937;
+  --ink-700:#374151;
+  --ink-600:#4B5563;
+  --ink-500:#6B7280;
+
+  --bg:#FAF8F6;
+  --card:#FFFFFF;
+
+  /* Effects */
+  --shadow-sm: 0 8px 22px rgba(16,24,40,.06);
+  --shadow-md: 0 16px 40px rgba(16,24,40,.10);
+  --shadow-lg: 0 24px 70px rgba(16,24,40,.14);
+  --ring: 0 0 0 4px rgba(123,30,58,.14);
+
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+
+  --max: 100%;
+
+  --ease: cubic-bezier(.2,.8,.2,1);
+}
+
+/* -----------------------------
+   2) Base (Global Polish)
+------------------------------ */
+html{ scroll-behavior:smooth; }
+body{
+  background: var(--bg);
+  color: var(--ink-800);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+::selection{ background: rgba(123,30,58,.18); }
+
+a{ text-decoration:none; }
+img{ display:block; max-width:100%; }
+.container-max{ max-width: var(--max); margin: 0 auto; }
+
+/* Accessible focus */
+:focus{ outline:none; }
+:focus-visible{
+  box-shadow: var(--ring);
+  border-radius: 10px;
+}
+
+/* Subtle background texture (very light, premium) */
+.bg-paper{
+  background:
+    radial-gradient(1200px 600px at 20% -10%, rgba(230,213,195,.30), transparent 60%),
+    radial-gradient(900px 500px at 85% 0%, rgba(123,30,58,.10), transparent 55%),
+    radial-gradient(800px 500px at 50% 110%, rgba(230,213,195,.22), transparent 60%),
+    var(--bg);
+}
+
+/* -----------------------------
+   3) Typography Helpers
+------------------------------ */
+.font-heading{
+  font-family: "Playfair Display", ui-serif, Georgia, serif;
+  letter-spacing: .2px;
+}
+.font-body{
+  font-family: "Poppins", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans";
+}
+.lead{
+  color: var(--ink-600);
+  font-size: 1.05rem;
+  line-height: 1.9;
+}
+.kicker{
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  font-size: .78rem;
+  color: rgba(17,24,39,.62);
+}
+
+/* Section headings */
+.section-title{
+  font-family: "Playfair Display", ui-serif, Georgia, serif;
+  color: var(--maroon-600);
+  font-weight: 700;
+  letter-spacing: .2px;
+}
+.section-subtitle{
+  color: var(--ink-600);
+  max-width: 58rem;
+}
+
+/* -----------------------------
+   4) Buttons (Premium)
+------------------------------ */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.55rem;
+  padding:.9rem 1.15rem;
+  border-radius: 14px;
+  font-weight: 600;
+  transition: transform .18s var(--ease), box-shadow .28s var(--ease), background .28s var(--ease), color .28s var(--ease), border-color .28s var(--ease);
+  user-select:none;
+  white-space:nowrap;
+}
+.btn:active{ transform: translateY(1px); }
+
+.btn-primary{
+  background: linear-gradient(135deg, var(--beige-200), var(--beige-100));
+  color: var(--maroon-800);
+  border: 1px solid rgba(94,20,44,.10);
+  box-shadow: 0 14px 34px rgba(16,24,40,.10);
+}
+.btn-primary:hover{
+  box-shadow: 0 18px 50px rgba(16,24,40,.14);
+  transform: translateY(-1px);
+}
+
+.btn-maroon{
+  background: linear-gradient(135deg, var(--maroon-600), var(--maroon-800));
+  color:#fff;
+  border: 1px solid rgba(255,255,255,.16);
+  box-shadow: 0 18px 46px rgba(123,30,58,.22);
+}
+.btn-maroon:hover{
+  box-shadow: 0 26px 64px rgba(123,30,58,.28);
+  transform: translateY(-1px);
+}
+
+.btn-outline{
+  background: rgba(255,255,255,.10);
+  color:#fff;
+  border: 1px solid rgba(255,255,255,.30);
+  backdrop-filter: blur(10px);
+}
+.btn-outline:hover{
+  background: rgba(255,255,255,.18);
+  border-color: rgba(255,255,255,.45);
+  transform: translateY(-1px);
+}
+
+.btn-ghost{
+  background: transparent;
+  border: 1px solid rgba(17,24,39,.10);
+  color: var(--ink-800);
+}
+.btn-ghost:hover{
+  border-color: rgba(123,30,58,.20);
+  color: var(--maroon-600);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
+}
+
+/* -----------------------------
+   5) Navigation (Elite)
+------------------------------ */
+.nav-shell{
+  position: sticky;
+  top:0;
+  z-index: 50;
+  background: rgba(255,255,255,.78);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(17,24,39,.06);
+}
+.nav-inner{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: .9rem 1.25rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 1rem;
+}
+.nav-logo{
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+}
+.nav-logo img{
+  height: 52px;
+  width:auto;
+  border-radius: 10px;
+}
+.nav-links{
+  display:flex;
+  gap: 1.8rem;
+  align-items:center;
+}
+.nav-link{
+  font-weight: 600;
+  color: rgba(17,24,39,.78);
+  position: relative;
+  padding: .45rem .15rem;
+}
+.nav-link:hover{ color: var(--maroon-600); }
+.nav-link::after{
+  content:"";
+  position:absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--maroon-600), var(--beige-200));
+  transition: width .28s var(--ease);
+}
+.nav-link:hover::after{ width: 100%; }
+
+/* -----------------------------
+   6) Hero (Cinematic)
+------------------------------ */
+.hero{
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(17,24,39,.06);
+}
+.hero-media{
+  position:absolute;
+  inset:0;
+  z-index:-2;
+}
+.hero-media img,
+.hero-media video{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+}
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  z-index:-1;
+
+}
+.hero-card{
+   background:
+    linear-gradient(90deg, rgba(94, 20, 43, 0.597), rgba(123, 30, 58, 0.548) 52%, rgba(123, 30, 58, 0.235)),
+    radial-gradient(1000px 650px at 20% 40%, rgba(230,213,195,.18), transparent 60%),
+    radial-gradient(900px 600px at 70% 0%, rgba(230,213,195,.12), transparent 60%);
+  border: 1px solid rgba(255,255,255,.18);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 80px rgba(0,0,0,.18);
+}
+
+/* -----------------------------
+   7) Cards (Premium System)
+------------------------------ */
+.card{
+  background: var(--card);
+  border: 1px solid rgba(17,24,39,.06);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: transform .22s var(--ease), box-shadow .28s var(--ease), border-color .28s var(--ease);
+}
+.card:hover{
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(123,30,58,.14);
+}
+.card-soft{
+  background: linear-gradient(180deg, rgba(255,255,255,.90), rgba(255,255,255,.96));
+  border: 1px solid rgba(17,24,39,.06);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+.card-maroon{
+  background: linear-gradient(135deg, rgba(123,30,58,.94), rgba(94,20,44,.96));
+  color:#fff;
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 18px 60px rgba(123,30,58,.22);
+}
+
+/* “Private school” stat tiles */
+.stat{
+  background: linear-gradient(135deg, rgba(242,233,226,.85), rgba(255,255,255,.92));
+  border: 1px solid rgba(17,24,39,.06);
+  border-radius: 18px;
+  box-shadow: var(--shadow-sm);
+}
+.stat .stat-label{
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-size: .74rem;
+  color: rgba(17,24,39,.58);
+}
+.stat .stat-value{
+  font-family: "Playfair Display", ui-serif, Georgia, serif;
+  font-weight: 700;
+  color: var(--maroon-600);
+  font-size: 1.2rem;
+}
+
+/* -----------------------------
+   8) Image Treatment
+------------------------------ */
+.img-rounded{ border-radius: var(--radius-md); }
+.img-shadow{ box-shadow: var(--shadow-md); }
+.img-frame{
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255,255,255,.18);
+  overflow:hidden;
+  box-shadow: 0 20px 70px rgba(0,0,0,.14);
+}
+
+/* -----------------------------
+   9) Badges / Chips
+------------------------------ */
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:.4rem;
+  padding:.35rem .65rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: .78rem;
+  border: 1px solid rgba(17,24,39,.08);
+  background: rgba(255,255,255,.72);
+  color: rgba(17,24,39,.72);
+  z-index: 10;
+}
+.badge-maroon{
+  border-color: rgba(123,30,58,.18);
+  background: rgba(123,30,58,.08);
+  color: var(--maroon-700);
+}
+.badge-beige{
+  border-color: rgba(230,213,195,.40);
+  background: rgba(230, 213, 195, 0.755);
+  color: var(--maroon-800);
+}
+
+/* -----------------------------
+   10) Forms (Admissions / Contact)
+------------------------------ */
+.input{
+  width:100%;
+  border-radius: 14px;
+  border: 1px solid rgba(17,24,39,.10);
+  background: rgba(255,255,255,.92);
+  padding: .85rem .95rem;
+  transition: box-shadow .25s var(--ease), border-color .25s var(--ease), transform .18s var(--ease);
+}
+.input:focus{
+  border-color: rgba(123,30,58,.28);
+  box-shadow: var(--ring);
+}
+.label{
+  font-weight: 600;
+  color: rgba(17,24,39,.80);
+  margin-bottom: .4rem;
+  display:block;
+}
+
+/* -----------------------------
+   11) Footer
+------------------------------ */
+.footer{
+  background: linear-gradient(135deg, var(--maroon-900), var(--maroon-950));
+  color: rgba(255,255,255,.90);
+  border-top: 1px solid rgba(255,255,255,.10);
+}
+.footer a:hover{ color: var(--beige-200); }
+
+/* -----------------------------
+   12) Motion / Reveal (optional)
+------------------------------ */
+.reveal{
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .7s var(--ease), transform .7s var(--ease);
+  will-change: opacity, transform;
+}
+.reveal.is-visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Subtle hover lift utility (use sparingly) */
+.hov-lift{
+  transition: transform .22s var(--ease), box-shadow .28s var(--ease);
+}
+.hov-lift:hover{
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+/* -----------------------------
+   13) Responsive tweaks
+------------------------------ */
+@media (max-width: 1024px){
+  .nav-links{ display:none; }
+}
