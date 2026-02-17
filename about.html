@@ -521,6 +521,29 @@
     </div>
   </footer>
 
+  <div id="drawerBackdrop" class="drawer-backdrop fixed inset-0 bg-black/40 backdrop-blur-sm z-[150]"></div>
+<div id="mobileDrawer" class="drawer-panel fixed top-0 right-0 w-[280px] h-full bg-white z-[160] shadow-2xl p-8 flex flex-col">
+  <div class="flex items-center justify-between mb-10">
+    <img src="assets/img/khs_logo.png" alt="Konwaba High School" class="h-10">
+    <button id="menuCloseBtn" class="text-[var(--ink-500)] hover:text-[var(--maroon-600)] transition-colors">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+  </div>
+  
+  <nav class="flex flex-col gap-6">
+    <a class="text-sm uppercase tracking-widest font-bold text-[var(--ink-900)]" href="index.html">Home</a>
+    <a class="text-sm uppercase tracking-widest font-bold text-[var(--ink-700)]" href="about.html">About</a>
+    <a class="text-sm uppercase tracking-widest font-bold text-[var(--ink-700)]" href="academics.html">Academics</a>
+    <a class="text-sm uppercase tracking-widest font-bold text-[var(--ink-700)]" href="student-life.html">Student Life</a>
+    <a class="text-sm uppercase tracking-widest font-bold text-[var(--ink-700)]" href="admissions.html">Admissions</a>
+    <a class="text-sm uppercase tracking-widest font-bold text-[var(--ink-700)]" href="contact.html">Contact</a>
+  </nav>
+
+  <div class="mt-auto pt-8 border-t border-black/5">
+    <a class="btn btn-maroon w-full py-4 text-xs font-bold uppercase tracking-widest" href="admissions.html">Apply Now</a>
+  </div>
+</div>
+
   <!-- JS: reveal -->
   <script>
     (function(){
