@@ -12,489 +12,785 @@
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#7B1E3A" />
 
-  <!-- Canonical (replace with your live domain later) -->
-  <link rel="canonical" href="https://www.example.co.za/" />
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.konwaba.co.za/" />
 
-  <!-- Favicons (add files later; keep links so you don't redo metadata) -->
+  <!-- Favicons -->
   <link rel="icon" href="assets/img/favicon.ico" />
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
-  <link rel="manifest" href="assets/site.webmanifest" />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Konwaba High School | Excellence in Education" />
-  <meta property="og:description" content="A modern, values-driven school in Nxuba (Cradock), combining academic excellence with practical skills and a rich student life." />
-  <meta property="og:image" content="assets/img/school_front.jpeg" />
-  <meta property="og:url" content="https://www.example.co.za/" />
-  <meta property="og:site_name" content="Konwaba High School" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Konwaba High School | Excellence in Education" />
-  <meta name="twitter:description" content="Academic excellence, practical skills, and a rich student life in Nxuba (Cradock)." />
-  <meta name="twitter:image" content="assets/img/school_front.jpeg" />
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <!-- Tailwind (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Premium companion CSS (brand tokens + elite components) -->
+  <!-- Premium companion CSS -->
   <link rel="stylesheet" href="assets/css/style.css" />
 
-  <!-- Schema.org (edit address/phone/domain when final) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"School",
-    "name":"Konwaba High School",
-    "url":"https://www.example.co.za/",
-    "logo":"assets/img/khs_neutral.jpeg",
-    "image":"assets/img/school_front.jpeg",
-    "address":{
-      "@type":"PostalAddress",
-      "streetAddress":"16 Cawood Street",
-      "addressLocality":"Cradock (Nxuba)",
-      "addressRegion":"Eastern Cape",
-      "addressCountry":"ZA"
-    },
-    "telephone":"+27 48 109 9068",
-    "email":"konwabass@gmail.com"
-  }
-  </script>
+  <style>
+    /* ============================================================
+      BRAND TOKENS (Konwaba): Light Maroon + Beige + Clean Neutrals
+      (Defines everything your HTML references so nothing breaks)
+    ============================================================ */
+    :root{
+      /* Primary */
+      --maroon-900:#3A0C1B;
+      --maroon-800:#531327;
+      --maroon-700:#6A1931;
+      --maroon-600:#7B1E3A; /* main */
+      --maroon-500:#92284A; /* “light maroon” accent */
+      --maroon-200: rgba(123, 30, 58, 0.22);
+      --maroon-120: rgba(123, 30, 58, 0.12);
+      --maroon-70:  rgba(123, 30, 58, 0.07);
+
+      /* Secondary */
+      --beige-50:#FBF8F4;
+      --beige-100:#F2E9E2; /* main beige */
+      --beige-200:#E6D5C3;
+      --beige-300:#D8BFA7;
+
+      /* Neutrals */
+      --ink-900:#101828;
+      --ink-800:#1D2939;
+      --ink-700:#344054;
+      --ink-600:#475467;
+      --ink-500:#667085;
+
+      --paper:#FFFFFF;
+      --paper-2: var(--beige-50);
+
+      /* Radius / shadow */
+      --radius-md: 16px;
+      --radius-lg: 22px;
+      --shadow-soft: 0 14px 34px rgba(16,24,40,.10);
+      --shadow-hero: 0 32px 70px -20px rgba(0,0,0,.35);
+
+      /* Motion */
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-prestige: all .75s var(--ease);
+
+      /* Fluid type */
+      --fluid-h1: clamp(2.8rem, 7vw, 4.8rem);
+      --fluid-h2: clamp(2.1rem, 5vw, 3.4rem);
+    }
+
+    /* ============================================================
+      NAV: Premium shrink + blur (keeps your layout)
+    ============================================================ */
+    .nav-shell{
+      transition: var(--transition-prestige);
+      padding-top: 0.8rem;
+      padding-bottom: 0.8rem;
+      background: #ffffff70;
+    }
+    .nav-shell.scrolled{
+      padding-top: .45rem;
+      padding-bottom: .45rem;
+      background: rgba(251,248,244,.92); /* beige glass */
+      backdrop-filter: blur(14px);
+      box-shadow: 0 10px 30px rgba(0,0,0,.08);
+      border-bottom: 1px solid rgba(16,24,40,.06);
+    }
+    .nav-shell.scrolled .nav-logo img{ height: 44px; }
+
+    /* ============================================================
+      HERO: Cinematic “moving picture” with brand-correct overlay
+    ============================================================ */
+    .hero-media img{
+      animation: kenburns 34s ease-in-out infinite alternate;
+      transform-origin: center;
+      will-change: transform;
+      filter: brightness(.86) contrast(1.06) saturate(1.02);
+    }
+    @keyframes kenburns{
+      0%   { transform: scale(1); }
+      100% { transform: scale(1.18); }
+    }
+    .hero-h1{
+      font-size: var(--fluid-h1);
+      line-height: 1.02;
+      letter-spacing: -0.03em;F
+    }
+    .section-title-premium{
+      font-size: var(--fluid-h2);
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+      color: var(--maroon-600);
+    }
+
+    /* A more “Konwaba” gradient: maroon + warm beige */
+    .hero-overlay{
+      background:
+        radial-gradient(1200px 600px at 12% 20%, rgba(123,30,58,.35), transparent 60%),
+        linear-gradient(to top, rgba(0,0,0,.82), rgba(0,0,0,.28), transparent 75%);
+    }
+
+    /* ============================================================
+      Reveals + stagger (keeps your classes)
+    ============================================================ */
+    .reveal{
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity .85s var(--ease), transform .85s var(--ease);
+      will-change: transform, opacity;
+    }
+    .reveal.is-visible{ opacity: 1; transform: translateY(0); }
+    .delay-100{ transition-delay: 120ms; }
+    .delay-200{ transition-delay: 240ms; }
+    .delay-300{ transition-delay: 360ms; }
+    .delay-400{ transition-delay: 480ms; }
+
+    /* ============================================================
+      Micro-polish
+    ============================================================ */
+    .aspect-cinema{ aspect-ratio: 16 / 7; }
+    .collage-img{ transition: var(--transition-prestige); will-change: transform, filter; }
+    .collage-img:hover{ transform: scale(1.03); filter: brightness(1.04); }
+    .counter{ font-variant-numeric: tabular-nums; }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar{ width: 6px; }
+    ::-webkit-scrollbar-track{ background: var(--beige-50); }
+    ::-webkit-scrollbar-thumb{ background: var(--maroon-600); border-radius: 20px; }
+
+    /* ============================================================
+      Mobile Drawer (world-class)
+    ============================================================ */
+    .drawer-backdrop{
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .35s cubic-bezier(.2,.8,.2,1);
+    }
+    .drawer-backdrop.open{ opacity: 1; pointer-events: auto; }
+    .drawer-panel{
+      transform: translateX(110%);
+      transition: transform .45s cubic-bezier(.2,.8,.2,1);
+      will-change: transform;
+    }
+    .drawer-panel.open{ transform: translateX(0); }
+    body.lock-scroll{ overflow: hidden; }
+
+    /* ============================================================
+      RIGHT HERO CARD (next level: luxury glass + high-tech)
+    ============================================================ */
+    .premium-glass{
+      background: rgba(255, 255, 255, 0.792);
+      backdrop-filter: blur(18px);
+    }
+    .premium-glass:before{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:
+        linear-gradient(135deg, rgba(123,30,58,.10) 0%, rgba(242,233,226,.22) 50%, rgba(123,30,58,.06) 100%);
+      opacity:.85;
+    }
+
+    /* Media module shimmer */
+    .media-module{ aspect-ratio: 16 / 7; }
+    .media-shimmer{
+      background: linear-gradient(110deg, transparent 0%, rgba(255,255,255,.18) 35%, transparent 70%);
+      transform: translateX(-120%);
+      transition: transform 1.05s var(--ease), opacity .35s var(--ease);
+    }
+    .media-module:hover .media-shimmer{ transform: translateX(120%); }
+
+    /* Premium play button */
+    .play-premium{
+      width: 36px; height: 36px;
+      border-radius: 999px;
+      display:flex; align-items:center; justify-content:center;
+      background: rgba(242,233,226,.92);
+      color: var(--maroon-600);
+      box-shadow: 0 18px 40px rgba(0,0,0,.25);
+      border: 1px solid rgba(123,30,58,.18);
+      position: relative;
+      transition: transform .5s var(--ease), background .5s var(--ease);
+    }
+    .play-premium:after{
+      content:"";
+      position:absolute;
+      inset:-10px;
+      border-radius: 999px;
+      border: 1px solid rgba(242,233,226,.35);
+      opacity:.7;
+    }
+    .media-module:hover .play-premium{
+      transform: scale(1.08);
+      background: rgba(255,255,255,.92);
+    }
+
+    /* Status strip */
+    .status-strip{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(251,248,244,.85);
+      border: 1px solid rgba(16,24,40,.06);
+      box-shadow: 0 10px 22px rgba(16,24,40,.06);
+    }
+    .status-dot{
+      width: 10px; height: 10px;
+      border-radius: 999px;
+      background: var(--maroon-600);
+      box-shadow: 0 0 0 6px rgba(123,30,58,.14);
+    }
+
+    /* Smart tiles */
+    .smart-tile{
+      border-radius: 18px;
+      background: rgba(255,255,255,.92);
+      border: 1px solid rgba(16,24,40,.06);
+      padding: 14px 14px;
+      box-shadow: 0 12px 24px rgba(16,24,40,.06);
+      position: relative;
+      overflow: hidden;
+      transition: transform .55s var(--ease), box-shadow .55s var(--ease);
+    }
+    .smart-tile:before{
+      content:"";
+      position:absolute;
+      left:0; top:0; bottom:0;
+      width: 3px;
+      background: linear-gradient(to bottom, rgba(123,30,58,.75), rgba(242,233,226,.35));
+      opacity:.85;
+    }
+    .smart-tile:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 18px 34px rgba(16,24,40,.10);
+    }
+    .tile-top{ display:flex; align-items:center; gap: 10px; }
+    .tile-icon{
+      width: 36px; height: 36px;
+      border-radius: 12px;
+      display:flex; align-items:center; justify-content:center;
+      background: rgba(123,30,58,.08);
+      color: var(--maroon-600);
+    }
+    .tile-label{
+      font-size: 11px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: var(--ink-600);
+    }
+    .tile-value{
+      margin-top: 10px;
+      font-family: "Playfair Display", serif;
+      font-size: 22px;
+      color: var(--ink-900);
+      letter-spacing: -0.01em;
+    }
+    .tile-suffix{
+      margin-left: 6px;
+      font-family: "Poppins", sans-serif;
+      font-weight: 500;
+      font-size: 11px;
+      color: var(--ink-500);
+    }
+    .tile-micro{
+      margin-top: 6px;
+      font-size: 12px;
+      color: var(--ink-500);
+    }
+  </style>
 </head>
 
-<body class="font-body bg-paper text-[var(--ink-800)]">
+<body class="font-body bg-paper text-[var(--ink-800)] antialiased">
 
-  <!-- NAV -->
-  <header class="nav-shell">
-    <div class="nav-inner">
-      <a class="nav-logo" href="index.html" aria-label="Konwaba High School Home">
-        <img src="assets/img/khs_neutral.jpeg" alt="Konwaba High School (Neutral Logo)">
+  <!-- NAVIGATION -->
+  <header id="main-nav" class="nav-shell fixed w-full top-0 left-0 z-[100]">
+    <div class="container-max flex items-center justify-between px-6 lg:px-12">
+      <a class="nav-logo transition-transform duration-500 hover:scale-105" href="index.html">
+        <img src="assets/img/khs_neutral.png" alt="Konwaba High School" class="h-16 transition-all duration-700">
       </a>
 
-      <nav class="nav-links" aria-label="Primary Navigation">
-        <a class="nav-link" href="index.html">Home</a>
-        <a class="nav-link" href="about.html">About</a>
-        <a class="nav-link" href="high-school.html">High School</a>
-        <a class="nav-link" href="programmes.html">Programmes</a>
-        <a class="nav-link" href="student-life.html">Student Life</a>
-        <a class="nav-link" href="admissions.html">Admissions</a>
-        <a class="nav-link" href="contact.html">Contact</a>
+      <nav class="hidden lg:flex items-center gap-10" aria-label="Main Navigation">
+        <a class="text-[11px] uppercase tracking-[0.25em] font-semibold text-[var(--ink-900)] hover:text-[var(--maroon-600)] transition-colors nav-link" href="index.html">Home</a>
+        <a class="text-[11px] uppercase tracking-[0.25em] font-semibold text-[var(--ink-700)] hover:text-[var(--maroon-600)] transition-colors nav-link" href="about.html">About</a>
+        <a class="text-[11px] uppercase tracking-[0.25em] font-semibold text-[var(--ink-700)] hover:text-[var(--maroon-600)] transition-colors nav-link" href="high-school.html">High School</a>
+        <a class="text-[11px] uppercase tracking-[0.25em] font-semibold text-[var(--ink-700)] hover:text-[var(--maroon-600)] transition-colors nav-link" href="programmes.html">Programmes</a>
+        <a class="text-[11px] uppercase tracking-[0.25em] font-semibold text-[var(--ink-700)] hover:text-[var(--maroon-600)] transition-colors nav-link" href="student-life.html">Student Life</a>
+        <a class="text-[11px] uppercase tracking-[0.25em] font-semibold text-[var(--ink-700)] hover:text-[var(--maroon-600)] transition-colors nav-link" href="admissions.html">Admissions</a>
+        <a class="text-[11px] uppercase tracking-[0.25em] font-semibold text-[var(--ink-700)] hover:text-[var(--maroon-600)] transition-colors nav-link" href="contact.html">Contact</a>
       </nav>
 
-      <div class="hidden lg:flex items-center gap-3">
-        <a class="btn btn-ghost" href="contact.html">Enquire</a>
-        <a class="btn btn-maroon" href="admissions.html">Apply</a>
-      </div>
+      <div class="flex items-center gap-4">
+        <a class="btn btn-ghost hidden sm:inline-flex text-[10px] uppercase tracking-widest font-bold" href="contact.html">Enquire</a>
+        <a class="btn btn-maroon px-8 py-3 text-[10px] uppercase tracking-widest font-bold shadow-xl" href="admissions.html">Apply Now</a>
 
-      <!-- simple mobile action (nav menu can be added later) -->
-      <div class="lg:hidden">
-        <a class="btn btn-maroon" href="admissions.html">Apply</a>
+        <!-- Mobile menu trigger -->
+        <button id="menuBtn" class="lg:hidden btn btn-ghost !px-3" aria-label="Open menu" aria-controls="mobileDrawer" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
       </div>
     </div>
   </header>
 
-  <!-- HERO (Somerset-style: cinematic + strong CTA + watch video placeholder) -->
-  <section class="hero min-h-[92vh]">
-    <div class="hero-media">
-      <img src="assets/img/school_front.jpg" alt="Konwaba campus front view">
+  <!-- Mobile Drawer -->
+  <div id="drawerBackdrop" class="drawer-backdrop fixed inset-0 z-[60] bg-black/45"></div>
+  <aside id="mobileDrawer" class="drawer-panel fixed top-0 right-0 z-[70] h-full w-[86%] max-w-sm bg-white shadow-2xl border-l border-black/5">
+    <div class="p-5 border-b border-black/5 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="assets/img/khs_neutral.jpeg" alt="Konwaba High School" class="h-10 w-auto rounded-lg">
+        <div>
+          <div class="font-heading text-lg text-[var(--maroon-600)] leading-none">Konwaba</div>
+          <div class="text-xs text-[var(--ink-600)]">Nxuba (Cradock)</div>
+        </div>
+      </div>
+      <button id="menuCloseBtn" class="btn btn-ghost !px-3" aria-label="Close menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
     </div>
-    <div class="hero-overlay"></div>
 
-    <div class="container-max px-5 pt-28 pb-14">
-      <div class="grid lg:grid-cols-12 gap-10 items-end">
-        <!-- Left: Story -->
+    <nav class="p-5 flex flex-col gap-2" aria-label="Mobile Navigation">
+      <a class="px-4 py-3 rounded-xl hover:bg-[var(--beige-50)] font-semibold text-[var(--ink-800)]" href="index.html">Home</a>
+      <a class="px-4 py-3 rounded-xl hover:bg-[var(--beige-50)] font-semibold text-[var(--ink-800)]" href="about.html">About</a>
+      <a class="px-4 py-3 rounded-xl hover:bg-[var(--beige-50)] font-semibold text-[var(--ink-800)]" href="high-school.html">High School</a>
+      <a class="px-4 py-3 rounded-xl hover:bg-[var(--beige-50)] font-semibold text-[var(--ink-800)]" href="programmes.html">Programmes</a>
+      <a class="px-4 py-3 rounded-xl hover:bg-[var(--beige-50)] font-semibold text-[var(--ink-800)]" href="student-life.html">Student Life</a>
+      <a class="px-4 py-3 rounded-xl hover:bg-[var(--beige-50)] font-semibold text-[var(--ink-800)]" href="admissions.html">Admissions</a>
+      <a class="px-4 py-3 rounded-xl hover:bg-[var(--beige-50)] font-semibold text-[var(--ink-800)]" href="contact.html">Contact</a>
+
+      <div class="mt-4 grid grid-cols-2 gap-3">
+        <a class="btn btn-ghost justify-center" href="contact.html">Enquire</a>
+        <a class="btn btn-maroon justify-center" href="admissions.html">Apply</a>
+      </div>
+
+      <div class="mt-6 text-xs text-[var(--ink-500)] leading-relaxed">
+        16 Cawood Street, Cradock (Nxuba) • 048 109 9068
+      </div>
+    </nav>
+  </aside>
+
+  <!-- HERO SECTION -->
+  <section class="relative min-h-screen flex items-end overflow-hidden">
+    <div class="hero-media absolute inset-0 z-0">
+      <img src="assets/img/school_front.jpg" alt="Konwaba campus" class="w-full h-full object-cover">
+    </div>
+    <div class="absolute inset-0 hero-overlay z-10"></div>
+
+    <div class="container-max px-6 lg:px-12 relative z-20 w-full pb-20 pt-32">
+      <div class="grid lg:grid-cols-12 gap-16 items-end">
+
+        <!-- Left: Storytelling -->
         <div class="lg:col-span-7 reveal">
-          <div class="hero-card p-7 md:p-10">
-            <div class="flex flex-wrap items-center gap-2 mb-5">
-              <span class="badge badge-beige">Nxuba (Cradock), Eastern Cape</span>
-              
-            </div>
+          <div class="flex items-center gap-4 mb-8">
+            <span class="w-16 h-[1px] bg-[var(--beige-200)] opacity-60"></span>
+            <span class="text-[var(--beige-100)] uppercase tracking-[0.4em] text-[10px] font-bold">Nxuba (Cradock), Eastern Cape</span>
+          </div>
 
-            <h1 class="font-heading text-white text-4xl md:text-6xl leading-[1.06]">
-              A school where tradition meets a modern learning culture.
-            </h1>
+          <h1 class="font-heading text-white hero-h1">
+            Where Tradition <br>Meets <span class="italic font-medium text-[var(--beige-200)]">Modern Culture.</span>
+          </h1>
 
-            <p class="mt-5 text-white/85 text-base md:text-lg max-w-2xl leading-relaxed">
-              Konwaba High School develops confident, capable learners through academic rigour,
-              practical skills, and a supportive environment that inspires leadership and character.
-            </p>
+          <p class="mt-8 text-white/90 text-xl md:text-2xl max-w-2xl leading-relaxed font-light">
+            Empowering tomorrow’s leaders through academic excellence and character development.
+          </p>
 
-            <div class="mt-8 flex flex-col sm:flex-row gap-3">
-              <a class="btn btn-primary" href="admissions.html">Book a Tour <span aria-hidden="true">→</span></a>
-              <a class="btn btn-outline" href="high-school.html">Explore the School</a>
-            </div>
+          <div class="mt-12 flex flex-wrap gap-5">
+            <a class="btn btn-primary px-10 py-5 text-xs uppercase tracking-widest font-bold" href="admissions.html">Book a Campus Tour</a>
+            <a class="btn btn-outline px-10 py-5 text-xs uppercase tracking-widest font-bold" href="high-school.html">Explore the School</a>
+          </div>
 
-            <div class="mt-7 grid sm:grid-cols-3 gap-3">
-              <div class="stat p-4">
-                <div class="stat-label">Academic</div>
-                <div class="stat-value">Excellence</div>
+          <!-- Micro-KPIs -->
+          <div class="mt-12 grid grid-cols-3 gap-4 border-t border-white/10 pt-8">
+            <div class="reveal delay-100">
+              <div class="text-[var(--beige-200)] text-[10px] uppercase tracking-widest font-bold mb-1">Academic</div>
+              <div class="text-white font-heading text-xl">
+                <span class="counter" data-target="12">0</span><span class="text-white/70 font-body text-sm ml-2">subjects</span>
               </div>
-              <div class="stat p-4">
-                <div class="stat-label">Practical Skills</div>
-                <div class="stat-value">Readiness</div>
+            </div>
+            <div class="reveal delay-200">
+              <div class="text-[var(--beige-200)] text-[10px] uppercase tracking-widest font-bold mb-1">Practical</div>
+              <div class="text-white font-heading text-xl">
+                <span class="counter" data-target="4">0</span><span class="text-white/70 font-body text-sm ml-2">skills</span>
               </div>
-              <div class="stat p-4">
-                <div class="stat-label">Student Life</div>
-                <div class="stat-value">Belonging</div>
+            </div>
+            <div class="reveal delay-300">
+              <div class="text-[var(--beige-200)] text-[10px] uppercase tracking-widest font-bold mb-1">Student Life</div>
+              <div class="text-white font-heading text-xl">
+                <span class="counter" data-target="5">0</span><span class="text-white/70 font-body text-sm ml-2">activities</span>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Right: Video placeholder + quick highlights -->
-        <div class="lg:col-span-5 reveal">
-          <div class="card-soft rounded-[var(--radius-lg)] p-6 md:p-7">
-            <div class="flex items-center justify-between gap-3">
-              <div>
-                <div class="kicker">Watch Video</div>
-                <div class="font-heading text-2xl text-[var(--maroon-600)]">A Day at Konwaba</div>
-              </div>
-              <span class="badge badge-maroon">Our Students</span>
+        <!-- Right: Premium Info Card (elevated: luxury glass + high-tech) -->
+        <div class="lg:col-span-5 reveal delay-200">
+          <div class="premium-glass relative overflow-hidden p-8 md:p-10 rounded-[var(--radius-lg)] border border-white/20 shadow-[var(--shadow-hero)]">
+
+            <!-- Subtle edge glow -->
+            <div class="pointer-events-none absolute inset-0 opacity-70">
+              <div class="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-[rgba(123,30,58,.18)] blur-3xl"></div>
+              <div class="absolute -bottom-28 -left-28 h-72 w-72 rounded-full bg-[rgba(242,233,226,.35)] blur-3xl"></div>
             </div>
 
-            <!-- Video placeholder -->
-            <div class="mt-5 rounded-[var(--radius-md)] overflow-hidden border border-black/5 bg-black/10">
-              <div class="relative aspect-[16/6]">
-                <img src="assets/img/video_thumb.png" alt="Campus top view preview" class="w-full h-full object-cover">
+            <div class="relative z-10">
+              <div class="flex justify-between items-start mb-6">
+                <div>
+                  <div class="kicker text-[var(--maroon-600)] mb-1">Experience Konwaba</div>
+                  <h2 class="font-heading text-2xl text-[var(--ink-900)] leading-tight">A Day in the Life</h2>
+                  <p class="mt-2 text-sm text-[var(--ink-600)] leading-relaxed max-w-[28rem]">
+                    A short campus film — culture, learning, and the Konwaba standard.
+                  </p>
+                </div>
+
+                <span class="badge badge-maroon !px-3 !py-1 text-[9px] uppercase tracking-widest">
+                  Our Students
+                </span>
+              </div>
+
+              <!-- High-end Media Module -->
+              <button
+                type="button"
+                id="openFilm"
+                class="media-module group relative w-full text-left rounded-[var(--radius-md)] overflow-hidden shadow-inner mb-7 focus:outline-none focus:ring-2 focus:ring-[rgba(123,30,58,.35)]"
+                aria-label="Watch the Konwaba campus film"
+              >
+                <img
+                  src="assets/img/video_thumb.png"
+                  alt="Campus Film Preview"
+                  class="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-110"
+                />
+
+                <!-- Overlay -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent"></div>
+
+                <!-- Shimmer sweep -->
+                <div class="media-shimmer absolute inset-0 opacity-0 group-hover:opacity-100"></div>
+
+                <!-- Top label -->
+                <!-- <div class="absolute top-4 left-4 flex items-center gap-2">
+                  <span class="inline-flex items-center gap-2 rounded-full bg-white/85 backdrop-blur px-3 py-1 text-[10px] font-black uppercase tracking-[0.22em] text-[var(--maroon-600)]">
+                    <span class="inline-block h-2 w-2 rounded-full bg-[var(--maroon-600)]"></span>
+                    Campus Film
+                  </span>
+                  <span class="inline-flex items-center rounded-full bg-black/35 px-3 py-1 text-[10px] font-bold tracking-[0.18em] text-white/90">
+                    1:18
+                  </span>
+                </div> -->
+
+                <!-- Center play -->
                 <div class="absolute inset-0 flex items-center justify-center">
-                  <div class="w-16 h-16 rounded-full bg-white/85 flex items-center justify-center shadow-md">
+                  <div class="play-premium">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                      <path d="M8 5v14l11-7L8 5z" fill="#7B1E3A"></path>
+                      <path d="M8 5v14l11-7L8 5z" fill="currentColor"></path>
                     </svg>
                   </div>
                 </div>
+
+                <!-- Bottom CTA -->
+                <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+                  <div class="text-white">
+                    <div class="text-[11px] uppercase tracking-[0.3em] font-bold text-white/80">Watch</div>
+                    <div class="font-heading text-lg leading-none">Konwaba in Motion</div>
+                  </div>
+
+                  <div class="inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur px-4 py-2 text-[10px] font-black uppercase tracking-[0.22em] text-white/90 border border-white/15 group-hover:bg-white/20 transition-colors">
+                    View
+                    <span class="inline-block translate-x-0 group-hover:translate-x-1 transition-transform">→</span>
+                  </div>
+                </div>
+              </button>
+
+              <!-- Smart status strip -->
+              <div class="status-strip mb-7">
+                <div class="flex items-center gap-3">
+                  <span class="status-dot"></span>
+                  <div class="status-text text-xs text-[var(--ink-700)]">
+                    <span class="font-bold">Next Campus Tour:</span>
+                    <span class="text-[var(--ink-600)]"> Saturdays • 10:00</span>
+                  </div>
+                </div>
+                <a href="admissions.html" class="text-xs font-black uppercase tracking-[0.22em] text-[var(--maroon-600)] hover:opacity-80 transition-opacity">
+                  Book
+                </a>
+              </div>
+
+              <!-- Smart Tiles -->
+              <div class="grid grid-cols-2 gap-4 mb-8">
+                <div class="smart-tile">
+                  <div class="tile-top">
+                    <div class="tile-icon">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M12 2l8 4v6c0 5-3.5 9.4-8 10-4.5-.6-8-5-8-10V6l8-4z" stroke="currentColor" stroke-width="1.8"/>
+                        <path d="M8 12l2.2 2.2L16 8.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+                    <div class="tile-label">Tuition (Gr 8–10)</div>
+                  </div>
+                  <div class="tile-value">R1,500<span class="tile-suffix">pm</span></div>
+                  <div class="tile-micro">Transparent fee model • school-based support</div>
+                </div>
+
+                <div class="smart-tile">
+                  <div class="tile-top">
+                    <div class="tile-icon">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M7 7h10v10H7z" stroke="currentColor" stroke-width="1.8"/>
+                        <path d="M9 3h6M9 21h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                      </svg>
+                    </div>
+                    <div class="tile-label">Application</div>
+                  </div>
+                  <div class="tile-value">R200<span class="tile-suffix">once</span></div>
+                  <div class="tile-micro">Fast review • clear requirements</div>
+                </div>
+              </div>
+
+              <div class="flex flex-col sm:flex-row gap-3">
+                <a class="btn btn-maroon w-full justify-center py-4 text-xs uppercase tracking-widest" href="admissions.html">
+                  Admissions
+                </a>
+                <a class="btn btn-ghost w-full justify-center py-4 text-xs uppercase tracking-widest" href="contact.html">
+                  Contact Us
+                </a>
               </div>
             </div>
 
-            <div class="mt-6 grid grid-cols-2 gap-3">
-              <div class="stat p-4">
-                <div class="stat-label">Fees (Gr 8–10)</div>
-                <div class="stat-value">R1500 pm</div>
-              </div>
-              <div class="stat p-4">
-                <div class="stat-label">Application</div>
-                <div class="stat-value">R200</div>
-              </div>
-            </div>
-
-            <div class="mt-6 flex flex-col sm:flex-row gap-3">
-              <a class="btn btn-maroon w-full justify-center" href="admissions.html">Admissions</a>
-              <a class="btn btn-ghost w-full justify-center" href="contact.html">Contact</a>
-            </div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
 
-<!-- TRUST / WHY CHOOSE US — EDTECH GRADE -->
-<section class="py-16 md:py-24">
-  <div class="container-max px-5">
-    <div class="grid lg:grid-cols-12 gap-10 items-center">
+  <!-- WHY CHOOSE US -->
+  <section class="py-32 bg-white relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-[var(--beige-50)] -z-10 translate-x-1/4 skew-x-12 opacity-60"></div>
 
-      <!-- Left: Copy + EdTech value props -->
-      <div class="lg:col-span-6 reveal">
+    <div class="container-max px-6 lg:px-12">
+      <div class="grid lg:grid-cols-12 gap-20 items-center">
 
-        <div class="kicker">Why Konwaba</div>
+        <!-- Left Content -->
+        <div class="lg:col-span-6 reveal">
+          <div class="kicker text-[var(--maroon-600)]">The Konwaba Advantage</div>
+          <h2 class="section-title-premium mt-6 mb-8">
+            Traditional excellence with <br><span class="italic font-normal">a modern learning edge.</span>
+          </h2>
 
-        <h2 class="section-title text-3xl md:text-5xl mt-3">
-          Traditional excellence, delivered with a modern learning edge.
-        </h2>
+          <p class="text-xl text-[var(--ink-600)] leading-relaxed font-light mb-10">
+            A high-end school experience built on academic rigour, character, and a tech-enabled culture that supports consistent learner progress.
+          </p>
 
-        <p class="mt-5 lead">
-          A high-end school experience built on academic rigour, character, and a technology-enabled culture
-          that supports strong teaching, consistent progress, and confident learners.
-        </p>
-
-        <!-- Proof / trust chips (tight, premium) -->
-        <div class="mt-6 flex flex-wrap gap-2">
-          <span class="badge badge-maroon">Academic rigour</span>
-          <span class="badge badge-beige">Learner support</span>
-          <span class="badge">Digital-ready learning</span>
-          <span class="badge">Sport & activities</span>
-          <span class="badge">Values & character</span>
-        </div>
-
-        <!-- EdTech Feature Tiles (premium cards) -->
-        <div class="mt-8 grid sm:grid-cols-2 gap-4">
-
-          <div class="card p-5 md:p-6">
-            <div class="flex items-start gap-3">
-              <div class="w-11 h-11 rounded-xl bg-[var(--beige-100)] border border-black/5 flex items-center justify-center">
-                <!-- icon -->
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M4 19V6a2 2 0 0 1 2-2h11a3 3 0 0 1 3 3v12" stroke="#7B1E3A" stroke-width="1.8" stroke-linecap="round"/>
-                  <path d="M6 17h14" stroke="#7B1E3A" stroke-width="1.8" stroke-linecap="round"/>
-                </svg>
-              </div>
-              <div>
-                <div class="font-heading text-lg text-[var(--maroon-600)]">Structured learning</div>
-                <p class="mt-1 text-[var(--ink-600)] text-sm leading-relaxed">
-                  Clear term planning, consistent routines, and learning that builds strong foundations.
-                </p>
-              </div>
-            </div>
+          <div class="flex flex-wrap gap-2 mb-12">
+            <span class="badge badge-maroon">Academic rigour</span>
+            <span class="badge">Learner support</span>
+            <span class="badge">Digital-ready learning</span>
+            <span class="badge">Sport & activities</span>
           </div>
 
-          <div class="card p-5 md:p-6">
-            <div class="flex items-start gap-3">
-              <div class="w-11 h-11 rounded-xl bg-[var(--beige-100)] border border-black/5 flex items-center justify-center">
-                <!-- icon -->
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M12 3v8l6 3" stroke="#7B1E3A" stroke-width="1.8" stroke-linecap="round"/>
-                  <path d="M21 12a9 9 0 1 1-9-9" stroke="#7B1E3A" stroke-width="1.8" stroke-linecap="round"/>
-                </svg>
-              </div>
-              <div>
-                <div class="font-heading text-lg text-[var(--maroon-600)]">Progress & support</div>
-                <p class="mt-1 text-[var(--ink-600)] text-sm leading-relaxed">
-                  Early identification of gaps with targeted support to keep learners on track.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="card p-5 md:p-6">
-            <div class="flex items-start gap-3">
-              <div class="w-11 h-11 rounded-xl bg-[var(--beige-100)] border border-black/5 flex items-center justify-center">
-                <!-- icon -->
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M4 7h16M7 4v6M17 4v6" stroke="#7B1E3A" stroke-width="1.8" stroke-linecap="round"/>
-                  <path d="M6 11h12a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2Z" stroke="#7B1E3A" stroke-width="1.8"/>
-                </svg>
-              </div>
-              <div>
-                <div class="font-heading text-lg text-[var(--maroon-600)]">Modern communication</div>
-                <p class="mt-1 text-[var(--ink-600)] text-sm leading-relaxed">
-                  Clear updates, term events, and school communication designed for busy families.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="card p-5 md:p-6">
-            <div class="flex items-start gap-3">
-              <div class="w-11 h-11 rounded-xl bg-[var(--beige-100)] border border-black/5 flex items-center justify-center">
-                <!-- icon -->
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M12 22s8-4 8-10V6l-8-3-8 3v6c0 6 8 10 8 10Z" stroke="#7B1E3A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M9 12l2 2 4-4" stroke="#7B1E3A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <div>
-                <div class="font-heading text-lg text-[var(--maroon-600)]">Safe school culture</div>
-                <p class="mt-1 text-[var(--ink-600)] text-sm leading-relaxed">
-                  A disciplined, supportive environment that protects learning time and wellbeing.
-                </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- CTA row -->
-        <div class="mt-8 flex flex-col sm:flex-row gap-3">
-          <a class="btn btn-primary" href="admissions.html">Book a Tour <span aria-hidden="true">→</span></a>
-          <a class="btn btn-ghost" href="about.html">Our Story</a>
-          <a class="btn btn-ghost" href="student-life.html">Student Life</a>
-        </div>
-
-        <!-- Small trust line (Somerset-style understated) -->
-        <p class="mt-5 text-sm text-[var(--ink-500)]">
-          Placeholders here can later link to your prospectus, admissions pack, and academic overview.
-        </p>
-      </div>
-
-      <!-- Right: Visual collage (more premium layering) -->
-      <div class="lg:col-span-6 reveal">
-        <div class="grid grid-cols-12 gap-4">
-
-          <!-- Large -->
-          <div class="col-span-12 md:col-span-7 hov-lift">
-            <div class="img-frame">
-              <img class="w-full h-[280px] md:h-[460px] object-cover"
-          
-                  
-                     src="assets/img/learners.png"
-                     alt="Learners and school community">
-                   
-            </div>
-          </div>
-
-          <!-- Stacked -->
-          <div class="col-span-12 md:col-span-5 grid grid-rows-2 gap-4">
-            <div class="hov-lift">
-              <div class="img-frame">
-                <img class="w-[500px] h-[220px] object-cover"
-                     src="assets/img/stuff3.png"
-                     alt="Teacher mentoring learners">
-              </div>
-            </div>
-            <div class="hov-lift">
-              <div class="img-frame">
-                <img class="w-full h-[220px] object-cover"
-                     src="assets/img/stuff2.png"
-                     alt="Learners and school community">
-              </div>
-            </div>
-          </div>
-
-          <!-- Wide strip -->
-          <div class="col-span-12 hov-lift">
-            <div class="rounded-[var(--radius-lg)] overflow-hidden border border-black/5 bg-black/10 relative">
-              <img class="w-full h-[210px] object-cover"
-                   src="assets/img/learners3.png"
-                   alt="Campus top view">
-              <!-- subtle overlay label -->
-              <div class="absolute left-4 bottom-4">
-                <span class="badge badge-beige">Campus • Facilities • Community</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
+          <!-- Feature Grid -->
+          <div class="grid sm:grid-cols-2 gap-6">
+  <div class="card p-6 border-none shadow-xl hover:shadow-sm transition-all">
+    <div class="w-12 h-12 rounded-2xl bg-[var(--maroon-70)] flex items-center justify-center mb-6 text-[var(--maroon-600)]">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+        <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+      </svg>
     </div>
+    <h4 class="font-heading text-xl mb-2 text-[var(--ink-900)]">Our Vision</h4>
+    <p class="text-sm text-[var(--ink-500)] leading-relaxed">Providing world-class education where students learn accountability, fulfill their potential, and reach their dreams.</p>
   </div>
-</section>
 
+  <div class="card p-6 border-none shadow-xl hover:shadow-sm transition-all">
+    <div class="w-12 h-12 rounded-2xl bg-[var(--maroon-70)] flex items-center justify-center mb-6 text-[var(--maroon-600)]">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+        <path d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+      </svg>
+    </div>
+    <h4 class="font-heading text-xl mb-2 text-[var(--ink-900)]">Our Mission</h4>
+    <p class="text-sm text-[var(--ink-500)] leading-relaxed">Offering top-notch education in a conducive environment to prepare students for success in academics and life beyond.</p>
+  </div>
 
-  <!-- SIGNATURE EXPERIENCES (premium cards) -->
-  <section class="py-16 md:py-24 bg-[var(--beige-50)] border-y border-black/5">
-    <div class="container-max px-5">
-      <div class="max-w-3xl reveal">
-        <div class="kicker">Signature Experiences</div>
-        <h2 class="section-title text-3xl md:text-5xl mt-3">A well-rounded school journey.</h2>
-        <p class="section-subtitle mt-4 text-base md:text-lg leading-relaxed">
-          Designed to develop strong thinkers, disciplined performers, and grounded young leaders.
+  <div class="card p-6 border-none shadow-xl hover:shadow-sm transition-all">
+    <div class="w-12 h-12 rounded-2xl bg-[var(--maroon-70)] flex items-center justify-center mb-6 text-[var(--maroon-600)]">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+        <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+      </svg>
+    </div>
+    <h4 class="font-heading text-xl mb-2 text-[var(--ink-900)]">Core Values</h4>
+    <p class="text-sm text-[var(--ink-500)] leading-relaxed">We believe in lifelong learning, creativity, inclusion, equality, and the presence of God.</p>
+  </div>
+
+  <div class="card p-6 border-none shadow-xl hover:shadow-sm transition-all">
+    <div class="w-12 h-12 rounded-2xl bg-[var(--maroon-70)] flex items-center justify-center mb-6 text-[var(--maroon-600)]">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+        <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7" />
+        <path d="M18.5 2.5a2.121 2.121 0 113 3L12 15l-4 1 1-4 9.5-9.5z" />
+      </svg>
+    </div>
+    <h4 class="font-heading text-xl mb-2 text-[var(--ink-900)]">Skills for Life</h4> 
+    <p class="text-sm text-[var(--ink-500)] leading-relaxed">Mastering practical skills including bricklaying, plumbing, carpentry, and professional driving lessons.</p>
+  </div>
+</div>
+
+          <div class="mt-12 flex items-center gap-6">
+            <a class="btn btn-primary px-10" href="admissions.html">Join Us</a>
+            <a class="text-sm font-bold uppercase tracking-widest text-[var(--maroon-600)] hover:translate-x-2 transition-transform inline-flex items-center gap-2" href="about.html">
+              Our Full Story →
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Visual Collage -->
+        <div class="lg:col-span-6 reveal delay-100">
+          <div class="grid grid-cols-12 gap-6 items-stretch">
+            <div class="col-span-7">
+              <div class="rounded-3xl overflow-hidden shadow-2xl collage-img">
+                <img src="assets/img/learners.png" alt="Learners" class="w-full h-[640px] object-cover">
+              </div>
+            </div>
+            <div class="col-span-5 flex flex-col gap-6">
+              <div class="rounded-3xl overflow-hidden shadow-xl collage-img flex-1">
+                <img src="assets/img/stuff3.png" alt="Mentorship" class="w-full h-full object-cover">
+              </div>
+              <div class="rounded-3xl overflow-hidden shadow-xl collage-img flex-1">
+                <img src="assets/img/stuff2.png" alt="Community" class="w-full h-full object-cover">
+              </div>
+            </div>
+            <div class="col-span-12">
+              <div class="relative rounded-3xl overflow-hidden shadow-xl collage-img">
+                <img src="assets/img/learners3.png" alt="Campus Facilities" class="w-full h-[240px] object-cover">
+                <div class="absolute bottom-6 left-6">
+                  <span class="badge badge-beige backdrop-blur-md !bg-white/80">Campus • Facilities • Community</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SIGNATURE EXPERIENCES -->
+  <section class="py-32 bg-[var(--beige-50)] border-y border-[var(--beige-100)]">
+    <div class="container-max px-6 lg:px-12">
+      <div class="max-w-3xl mb-16 reveal">
+        <div class="kicker text-[var(--maroon-600)]">The High School Journey</div>
+        <h2 class="section-title-premium mt-4 mb-6">A well-rounded school journey.</h2>
+        <p class="text-lg text-[var(--ink-600)] font-light leading-relaxed">
+          Designed to develop strong thinkers, disciplined performers, and grounded young leaders prepared for a global stage.
         </p>
       </div>
 
-      <div class="mt-10 md:mt-14 grid md:grid-cols-3 gap-6">
-        <article class="card p-6 md:p-7 reveal">
-          <div class="badge badge-maroon mb-4">Academics</div>
-          <h3 class="font-heading text-xl md:text-2xl text-[var(--maroon-600)]">Academic depth</h3>
-          <p class="mt-3 text-[var(--ink-600)] leading-relaxed">
-            Structured learning, strong foundations, and support that drives consistent improvement.
-          </p>
-          <div class="mt-5">
-            <a class="btn btn-ghost" href="high-school.html">Explore academics →</a>
-          </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <article class="card p-10 reveal shadow-none hover:shadow-2xl bg-white border-none">
+          <div class="badge badge-maroon mb-6">Academics</div>
+          <h3 class="font-heading text-2xl mb-4 text-[var(--maroon-600)]">Academic Depth</h3>
+          <p class="text-[var(--ink-600)] leading-relaxed mb-8">Structured learning and support systems that drive consistent individual improvement.</p>
+          <a class="text-xs font-bold uppercase tracking-widest text-[var(--maroon-600)] hover:gap-4 flex items-center gap-2 transition-all" href="high-school.html">Explore Academics →</a>
         </article>
 
-        <article class="card p-6 md:p-7 reveal">
-          <div class="badge badge-beige mb-4">Sport</div>
-          <h3 class="font-heading text-xl md:text-2xl text-[var(--maroon-600)]">Sport & teamwork</h3>
-          <p class="mt-3 text-[var(--ink-600)] leading-relaxed">
-            Character-building sport and activities that develop discipline and confidence.
-          </p>
-          <div class="mt-5">
-            <a class="btn btn-ghost" href="student-life.html">View activities →</a>
-          </div>
+        <article class="card p-10 reveal shadow-none hover:shadow-2xl bg-white border-none delay-100">
+          <div class="badge badge-beige mb-6">Sport</div>
+          <h3 class="font-heading text-2xl mb-4 text-[var(--maroon-600)]">Sport & Teamwork</h3>
+          <p class="text-[var(--ink-600)] leading-relaxed mb-8">Character-building activities that develop discipline, resilience, and confidence.</p>
+          <a class="text-xs font-bold uppercase tracking-widest text-[var(--maroon-600)] hover:gap-4 flex items-center gap-2 transition-all" href="student-life.html">View Activities →</a>
         </article>
 
-        <article class="card p-6 md:p-7 reveal">
-          <div class="badge mb-4">Outdoor</div>
-          <h3 class="font-heading text-xl md:text-2xl text-[var(--maroon-600)]">Outdoor events</h3>
-          <p class="mt-3 text-[var(--ink-600)] leading-relaxed">
-            Experiences that build resilience, leadership and a sense of belonging.
-          </p>
-          <div class="mt-5">
-            <a class="btn btn-ghost" href="student-life.html">See events →</a>
-          </div>
+        <article class="card p-10 reveal shadow-none hover:shadow-2xl bg-white border-none delay-200">
+          <div class="badge mb-6">Culture</div>
+          <h3 class="font-heading text-2xl mb-4 text-[var(--maroon-600)]">Signature Events</h3>
+          <p class="text-[var(--ink-600)] leading-relaxed mb-8">Outdoor and cultural experiences that build leadership and a sense of true belonging.</p>
+          <a class="text-xs font-bold uppercase tracking-widest text-[var(--maroon-600)] hover:gap-4 flex items-center gap-2 transition-all" href="student-life.html">See Events →</a>
         </article>
       </div>
 
-      <!-- Visual strip -->
-      <div class="mt-10 grid lg:grid-cols-12 gap-6 items-stretch">
+      <!-- Visual Showcase -->
+      <div class="mt-16 grid lg:grid-cols-12 gap-8 items-stretch">
         <div class="lg:col-span-7 reveal">
-          <div class="card-soft p-0 overflow-hidden rounded-[var(--radius-lg)]">
-            <img src="assets/img/rudgy_day.jpg" alt="School sport" class="w-full h-[320px] object-cover">
+          <div class="rounded-3xl overflow-hidden shadow-2xl h-[400px]">
+            <img src="assets/img/rudgy_day.jpg" alt="Rugby and Sport" class="w-full h-full object-cover">
           </div>
         </div>
-        <div class="lg:col-span-5 reveal">
-          <div class="card-soft p-0 overflow-hidden rounded-[var(--radius-lg)] h-full">
-            <img src="assets/img/hiking_event.jpg" alt="Hiking and outdoor event" class="w-full h-[320px] object-cover">
+        <div class="lg:col-span-5 reveal delay-200">
+          <div class="rounded-3xl overflow-hidden shadow-2xl h-[400px]">
+            <img src="assets/img/cutural_event.jpg" alt="Outdoor Events" class="w-full h-full object-cover">
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- NEWS / EVENTS (placeholders like “Live Look / News” patterns) -->
-  <section class="py-16 md:py-24">
-    <div class="container-max px-5">
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-5">
+  <!-- NEWS & MEDIA -->
+  <section class="py-32">
+    <div class="container-max px-6 lg:px-12">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
         <div class="max-w-2xl reveal">
-          <div class="kicker">News & Media</div>
-          <h2 class="section-title text-3xl md:text-5xl mt-3">Latest highlights from campus life.</h2>
-          <p class="mt-4 text-[var(--ink-600)] leading-relaxed">
-            Use this section for announcements, achievements, newsletters, and event updates.
+          <div class="kicker text-[var(--maroon-600)]">Latest from Campus</div>
+          <h2 class="section-title-premium mt-4">Legacy in the making.</h2>
+          <p class="mt-4 text-[var(--ink-600)] font-light text-lg">
+            Stay updated with the achievements, events, and milestones that define our community.
           </p>
         </div>
         <div class="reveal">
-          <a class="btn btn-primary" href="news.html">View All News</a>
+          <a class="btn btn-ghost px-12 py-4" href="news.html">View All News</a>
         </div>
       </div>
 
-      <div class="mt-10 md:mt-14 grid md:grid-cols-3 gap-6">
-        <article class="card p-6 reveal">
+      <div class="grid md:grid-cols-3 gap-8">
+        <article class="reveal group cursor-pointer">
+          <div class="rounded-2xl overflow-hidden mb-6 aspect-video">
+            <img src="assets/img/news1.jpg" alt="News" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+          </div>
           <div class="badge mb-4">Announcement</div>
-          <h3 class="font-heading text-xl text-[var(--maroon-600)]">Admissions Open</h3>
-          <p class="mt-3 text-[var(--ink-600)]">
-            Placeholder for key admissions messaging, dates, and requirements.
-          </p>
-          <div class="mt-5">
-            <a class="btn btn-ghost" href="admissions.html">Learn more →</a>
-          </div>
+          <h3 class="font-heading text-2xl mb-3 text-[var(--ink-900)] group-hover:text-[var(--maroon-600)] transition-colors">Admissions 2026 Open</h3>
+          <p class="text-[var(--ink-600)] mb-6 text-sm leading-relaxed">Now accepting applications for Grade 8 to 11. Explore our high-end learning environment.</p>
+          <a href="admissions.html" class="text-xs font-black uppercase tracking-widest text-[var(--maroon-600)]">Read More</a>
         </article>
 
-        <article class="card p-6 reveal">
+        <article class="reveal group cursor-pointer delay-100">
+          <div class="rounded-2xl overflow-hidden mb-6 aspect-video">
+            <img src="assets/img/news2.jpg" alt="News" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+          </div>
           <div class="badge badge-beige mb-4">Achievement</div>
-          <h3 class="font-heading text-xl text-[var(--maroon-600)]">Academic Excellence</h3>
-          <p class="mt-3 text-[var(--ink-600)]">
-            Placeholder for academic milestones, awards, or learner success stories.
-          </p>
-          <div class="mt-5">
-            <a class="btn btn-ghost" href="high-school.html">Explore →</a>
-          </div>
+          <h3 class="font-heading text-2xl mb-3 text-[var(--ink-900)] group-hover:text-[var(--maroon-600)] transition-colors">Academic Excellence Awards</h3>
+          <p class="text-[var(--ink-600)] mb-6 text-sm leading-relaxed">Honouring the learners who have shown exceptional dedication to their studies this term.</p>
+          <a href="high-school.html" class="text-xs font-black uppercase tracking-widest text-[var(--maroon-600)]">Read More</a>
         </article>
 
-        <article class="card p-6 reveal">
-          <div class="badge badge-maroon mb-4">Event</div>
-          <h3 class="font-heading text-xl text-[var(--maroon-600)]">Sports & Culture Calendar</h3>
-          <p class="mt-3 text-[var(--ink-600)]">
-            Placeholder for upcoming events, fixtures, and highlights.
-          </p>
-          <div class="mt-5">
-            <a class="btn btn-ghost" href="student-life.html">See calendar →</a>
+        <article class="reveal group cursor-pointer delay-200">
+          <div class="rounded-2xl overflow-hidden mb-6 aspect-video">
+            <img src="assets/img/news3.jpg" alt="News" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
           </div>
+          <div class="badge badge-maroon mb-4">Culture</div>
+          <h3 class="font-heading text-2xl mb-3 text-[var(--ink-900)] group-hover:text-[var(--maroon-600)] transition-colors">Spring Sports Festival</h3>
+          <p class="text-[var(--ink-600)] mb-6 text-sm leading-relaxed">A celebration of teamwork and athleticism across our various disciplines.</p>
+          <a href="student-life.html" class="text-xs font-black uppercase tracking-widest text-[var(--maroon-600)]">Read More</a>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- CTA STRIP (Somerset-style action: tour/apply) -->
-  <section class="py-14 md:py-16 bg-[var(--maroon-600)]">
-    <div class="container-max px-5">
-      <div class="card-soft rounded-[var(--radius-lg)] p-7 md:p-10 reveal">
-        <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
-          <div>
-            <div class="kicker">Admissions</div>
-            <h2 class="font-heading text-2xl md:text-3xl text-[var(--maroon-600)] mt-2">
-              Book a tour. Meet the team. Join the school.
-            </h2>
-            <p class="mt-3 text-[var(--ink-600)] max-w-2xl leading-relaxed">
-              Replace these placeholders with tour dates, prospectus download, and online application steps.
+  <!-- ADMISSIONS CTA STRIP (brand-correct: maroon + beige glow) -->
+  <section class="py-24 bg-[var(--maroon-600)] relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_20%_20%,rgba(242,233,226,.55),transparent_55%),radial-gradient(circle_at_80%_60%,rgba(242,233,226,.35),transparent_60%)]"></div>
+
+    <div class="container-max px-6 lg:px-12 relative z-10">
+      <div class="bg-white/10 backdrop-blur-3xl p-10 md:p-16 rounded-[var(--radius-lg)] border border-white/18 reveal shadow-2xl">
+        <div class="flex flex-col lg:flex-row items-center justify-between gap-12 text-center lg:text-left">
+          <div class="max-w-2xl">
+            <div class="kicker text-[var(--beige-200)] opacity-90 mb-4">Begin the Legacy</div>
+            <h2 class="font-heading text-4xl md:text-5xl text-white mb-6">Experience Konwaba for yourself.</h2>
+            <p class="text-white/80 text-lg font-light leading-relaxed">
+              Book a personal campus tour, download our 2026 prospectus, or begin your online application journey today.
             </p>
           </div>
-          <div class="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
-            <a class="btn btn-maroon w-full sm:w-auto justify-center" href="admissions.html">Book a Tour</a>
-            <a class="btn btn-primary w-full sm:w-auto justify-center" href="contact.html">Enquire Now</a>
+          <div class="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
+            <a class="btn btn-primary px-12 py-5 text-sm uppercase tracking-widest" href="admissions.html">Book a Tour</a>
+            <a class="btn btn-outline px-12 py-5 text-sm uppercase tracking-widest bg-white/10" href="contact.html">Enquire Now</a>
           </div>
         </div>
       </div>
@@ -502,46 +798,133 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="footer py-14">
-    <div class="container-max px-5">
-      <div class="flex flex-col items-center text-center gap-5">
-        <img src="assets/img/khs_logo.png" alt="Konwaba High School Logo" class="h-14 w-auto rounded-xl opacity-95">
-
-        <div class="text-white/85">
-          <div class="font-heading text-xl">Konwaba High School</div>
-          <div class="text-white/70 mt-1">16 Cawood Street, Cradock (Nxuba)</div>
-          <div class="text-white/70">048 109 9068 • konwabass@gmail.com</div>
-        </div>
-
-        <div class="flex flex-wrap justify-center gap-4 text-white/70 text-sm">
-          <a href="about.html" class="hover:text-[var(--beige-200)]">About</a>
-          <a href="high-school.html" class="hover:text-[var(--beige-200)]">High School</a>
-          <a href="programmes.html" class="hover:text-[var(--beige-200)]">Programmes</a>
-          <a href="admissions.html" class="hover:text-[var(--beige-200)]">Admissions</a>
-          <a href="contact.html" class="hover:text-[var(--beige-200)]">Contact</a>
-        </div>
-
-        <div class="text-white/55 text-xs">
-          © 2026 Konwaba High School. All Rights Reserved.
+  <footer class="footer pt-28 pb-16">
+    <div class="container-max px-6 lg:px-12">
+      <div class="pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] uppercase tracking-[0.3em] text-white/30">
+        <div>© 2026 Konwaba High School. Built for Excellence.</div>
+        <div><img src="assets/img/khs_logo.png" class="h-[80px]" alt="Logo" ></div>
+        <div class="flex gap-10">
+          <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-white transition-colors">Terms of Enrollment</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- JS (inline as requested): reveal on scroll -->
+  <!-- CORE SCRIPTS -->
   <script>
     (function(){
+      // 1) Nav shrink
+      const mainNav = document.getElementById('main-nav');
+      const setNav = () => {
+        if (!mainNav) return;
+        if (window.scrollY > 80) mainNav.classList.add('scrolled');
+        else mainNav.classList.remove('scrolled');
+      };
+      window.addEventListener('scroll', setNav, { passive: true });
+      window.addEventListener('load', setNav);
+      setNav();
+
+      // 2) Reveal
       const els = document.querySelectorAll('.reveal');
       const reveal = () => {
-        const trigger = window.innerHeight * 0.88;
+        const trigger = window.innerHeight * 0.9;
         els.forEach(el => {
           const r = el.getBoundingClientRect();
           if (r.top < trigger) el.classList.add('is-visible');
         });
       };
-      window.addEventListener('scroll', reveal, { passive:true });
+      window.addEventListener('scroll', reveal, { passive: true });
       window.addEventListener('load', reveal);
       reveal();
+
+      // 3) Counters
+      const counters = document.querySelectorAll('.counter');
+      const animateCounter = (el) => {
+        const target = Number(el.getAttribute('data-target') || "0");
+        const duration = 950;
+        const start = performance.now();
+        const from = 0;
+
+        const tick = (now) => {
+          const p = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = String(Math.round(from + (target - from) * eased));
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      };
+
+      const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            counterObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.6 });
+
+      counters.forEach(c => counterObserver.observe(c));
+
+      // 4) Mobile drawer
+      const btn = document.getElementById('menuBtn');
+      const closeBtn = document.getElementById('menuCloseBtn');
+      const backdrop = document.getElementById('drawerBackdrop');
+      const drawer = document.getElementById('mobileDrawer');
+
+      const openDrawer = () => {
+        if (!drawer || !backdrop) return;
+        drawer.classList.add('open');
+        backdrop.classList.add('open');
+        document.body.classList.add('lock-scroll');
+        if (btn) btn.setAttribute('aria-expanded','true');
+      };
+
+      const closeDrawer = () => {
+        if (!drawer || !backdrop) return;
+        drawer.classList.remove('open');
+        backdrop.classList.remove('open');
+        document.body.classList.remove('lock-scroll');
+        if (btn) btn.setAttribute('aria-expanded','false');
+      };
+
+      if (btn) btn.addEventListener('click', openDrawer);
+      if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+      if (backdrop) backdrop.addEventListener('click', closeDrawer);
+
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeDrawer();
+      });
+
+      if (drawer) {
+        drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+      }
+
+      // 5) Optional: rotate tour message (high-tech feel, still subtle)
+      const statusText = document.querySelector('.status-strip .status-text');
+      if (statusText) {
+        const messages = [
+          'Saturdays • 10:00',
+          'Weekdays • By appointment',
+          'Admissions support • Mon–Fri'
+        ];
+        let i = 0;
+        setInterval(() => {
+          i = (i + 1) % messages.length;
+          statusText.innerHTML =
+            '<span class="font-bold">Next Campus Tour:</span> ' +
+            '<span class="text-[var(--ink-600)]">' + messages[i] + '</span>';
+        }, 3200);
+      }
+
+      // 6) Film click (placeholder)
+      const openFilm = document.getElementById('openFilm');
+      if (openFilm) {
+        openFilm.addEventListener('click', () => {
+          // Replace later with modal/video integration
+          window.location.href = "about.html";
+        });
+      }
     })();
   </script>
 
