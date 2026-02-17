@@ -482,6 +482,121 @@
       reveal();
     })();
   </script>
+    <script>
+    (function(){
+      // 1) Nav shrink
+      const mainNav = document.getElementById('main-nav');
+      const setNav = () => {
+        if (!mainNav) return;
+        if (window.scrollY > 80) mainNav.classList.add('scrolled');
+        else mainNav.classList.remove('scrolled');
+      };
+      window.addEventListener('scroll', setNav, { passive: true });
+      window.addEventListener('load', setNav);
+      setNav();
+
+      // 2) Reveal
+      const els = document.querySelectorAll('.reveal');
+      const reveal = () => {
+        const trigger = window.innerHeight * 0.9;
+        els.forEach(el => {
+          const r = el.getBoundingClientRect();
+          if (r.top < trigger) el.classList.add('is-visible');
+        });
+      };
+      window.addEventListener('scroll', reveal, { passive: true });
+      window.addEventListener('load', reveal);
+      reveal();
+
+      // 3) Counters
+      const counters = document.querySelectorAll('.counter');
+      const animateCounter = (el) => {
+        const target = Number(el.getAttribute('data-target') || "0");
+        const duration = 950;
+        const start = performance.now();
+        const from = 0;
+
+        const tick = (now) => {
+          const p = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = String(Math.round(from + (target - from) * eased));
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      };
+
+      const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            counterObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.6 });
+
+      counters.forEach(c => counterObserver.observe(c));
+
+      // 4) Mobile drawer
+      const btn = document.getElementById('menuBtn');
+      const closeBtn = document.getElementById('menuCloseBtn');
+      const backdrop = document.getElementById('drawerBackdrop');
+      const drawer = document.getElementById('mobileDrawer');
+
+      const openDrawer = () => {
+        if (!drawer || !backdrop) return;
+        drawer.classList.add('open');
+        backdrop.classList.add('open');
+        document.body.classList.add('lock-scroll');
+        if (btn) btn.setAttribute('aria-expanded','true');
+      };
+
+      const closeDrawer = () => {
+        if (!drawer || !backdrop) return;
+        drawer.classList.remove('open');
+        backdrop.classList.remove('open');
+        document.body.classList.remove('lock-scroll');
+        if (btn) btn.setAttribute('aria-expanded','false');
+      };
+
+      if (btn) btn.addEventListener('click', openDrawer);
+      if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+      if (backdrop) backdrop.addEventListener('click', closeDrawer);
+
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeDrawer();
+      });
+
+      if (drawer) {
+        drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+      }
+
+      // 5) Optional: rotate tour message (high-tech feel, still subtle)
+      const statusText = document.querySelector('.status-strip .status-text');
+      if (statusText) {
+        const messages = [
+          'Saturdays • 10:00',
+          'Weekdays • By appointment',
+          'Admissions support • Mon–Fri'
+        ];
+        let i = 0;
+        setInterval(() => {
+          i = (i + 1) % messages.length;
+          statusText.innerHTML =
+            '<span class="font-bold">Next Campus Tour:</span> ' +
+            '<span class="text-[var(--ink-600)]">' + messages[i] + '</span>';
+        }, 3200);
+      }
+
+      // 6) Film click (placeholder)
+      const openFilm = document.getElementById('openFilm');
+      if (openFilm) {
+        openFilm.addEventListener('click', () => {
+          // Replace later with modal/video integration
+          window.location.href = "about.html";
+        });
+      }
+    })();
+  </script>
 
 </body>
 </html>
