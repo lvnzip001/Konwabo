@@ -4,364 +4,538 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title>Programmes | Konwaba High School — Academics & Learning</title>
+  <title>Programmes | Konwaba High School — Academic & Vocational Excellence</title>
 
-  <!-- Primary SEO -->
-  <meta name="description" content="Explore Konwaba High School programmes: academic foundations, learner support, and structured learning designed for confident progress." />
-  <meta name="keywords" content="Konwaba High School programmes, subjects, academics, learner support, Cradock, Nxuba" />
-  <meta name="robots" content="index,follow" />
+  <meta name="description" content="Explore the Konwaba High School curriculum. From CAPS-aligned academics to compulsory vocational skills like Plumbing, Carpentry, and Bricklaying." />
   <meta name="theme-color" content="#7B1E3A" />
 
-  <link rel="canonical" href="https://www.example.co.za/programmes.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Favicons -->
-  <link rel="icon" href="assets/img/favicon.ico" />
-  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
-  <link rel="manifest" href="assets/site.webmanifest" />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Programmes | Konwaba High School" />
-  <meta property="og:description" content="Academic foundations, learner support, and structured learning." />
-  <meta property="og:image" content="assets/img/classroom.jpeg" />
-  <meta property="og:url" content="https://www.example.co.za/programmes.html" />
-  <meta property="og:site_name" content="Konwaba High School" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Programmes | Konwaba High School" />
-  <meta name="twitter:description" content="Academic foundations, learner support, and structured learning." />
-  <meta name="twitter:image" content="assets/img/classroom.jpeg" />
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-  <!-- Tailwind (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Premium companion CSS -->
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    :root {
+      --maroon-900: #3A0C1B;
+      --maroon-700: #5D152B;
+      --maroon-600: #7B1E3A; /* Secondary Brand Color */
+      --maroon-500: #92284A;
+      --beige-50: #FBF8F4;
+      --beige-100: #F2E9E2;
+      --beige-200: #E5D5C8;
+      --ink-900: #101828;
+      --ink-600: #475467;
+      --ink-400: #98A2B3;
+      --radius-lg: 24px;
+      --transition-prestige: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    body { font-family: 'Poppins', sans-serif; background-color: var(--beige-50); color: var(--ink-900); }
+    .font-heading { font-family: 'Playfair Display', serif; }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--beige-100); }
+    ::-webkit-scrollbar-thumb { background: var(--maroon-600); border-radius: 10px; }
+
+    /* Layout Helpers */
+    .container-max { max-width: 1400px; margin: 0 auto; }
+    .glass-nav { background: rgba(251, 248, 244, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.05); }
+
+    /* Animations */
+    .reveal { opacity: 0; transform: translateY(30px); transition: var(--transition-prestige); }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+    .stagger-item { opacity: 0; transform: scale(0.95); transition: var(--transition-prestige); }
+    .stagger-item.is-visible { opacity: 1; transform: scale(1); }
+
+    /* Programme Cards */
+    .subject-card { 
+      background: white; 
+      border-radius: var(--radius-lg); 
+      transition: var(--transition-prestige);
+      border: 1px solid rgba(0,0,0,0.03);
+    }
+    .subject-card:hover { 
+      transform: translateY(-10px); 
+      box-shadow: 0 20px 40px rgba(123, 30, 58, 0.08); 
+      border-color: var(--maroon-600);
+    }
+
+    .kicker { 
+      font-size: 11px; 
+      text-transform: uppercase; 
+      letter-spacing: 0.25em; 
+      font-weight: 700; 
+      color: var(--maroon-600); 
+      margin-bottom: 0.75rem; 
+      display: block; 
+    }
+
+    /* Tab Logic Styling */
+    .tab-btn { transition: all 0.3s ease; border-bottom: 2px solid transparent; }
+    .tab-btn.active { color: var(--maroon-600); border-color: var(--maroon-600); }
+
+    /* Vocational Icon Bg */
+    .skill-icon {
+      width: 54px; height: 54px;
+      background: var(--maroon-50);
+      color: var(--maroon-600);
+      border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.4s ease;
+    }
+    .subject-card:hover .skill-icon { background: var(--maroon-600); color: white; }
+
+    /* Floating Stats */
+    .stat-pill {
+      background: white;
+      padding: 1rem 1.5rem;
+      border-radius: 99px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      display: flex; align-items: center; gap: 12px;
+    }
+
+    /* Button Styling */
+    .btn-elite {
+      position: relative;
+      overflow: hidden;
+      background: var(--maroon-600);
+      color: white;
+      padding: 1.25rem 2.5rem;
+      border-radius: 99px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 12px;
+      transition: all 0.4s ease;
+    }
+    .btn-elite:hover { background: var(--maroon-900); transform: scale(1.05); }
+  </style>
 </head>
+<body>
 
-<body class="font-body bg-paper text-[var(--ink-800)]">
-
-  <!-- NAV -->
-  <header class="nav-shell">
-    <div class="nav-inner">
-      <a class="nav-logo" href="index.html" aria-label="Konwaba High School Home">
-        <img src="assets/img/khs_logo.png" alt="Konwaba High School (Neutral Logo)">
+  <nav class="glass-nav fixed w-full top-0 left-0 z-[100] py-4 md:py-6">
+    <div class="container-max px-6 flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-12 h-12 bg-[var(--maroon-600)] rounded-xl flex items-center justify-center text-white font-heading font-bold text-2xl group-hover:rotate-6 transition-transform">K</div>
+        <div class="flex flex-col">
+          <span class="font-heading font-bold text-lg leading-none">Konwaba</span>
+          <span class="text-[10px] uppercase tracking-widest text-[var(--ink-400)]">High School</span>
+        </div>
       </a>
-
-      <nav class="nav-links" aria-label="Primary Navigation">
-        <a class="nav-link" href="index.html">Home</a>
-        <a class="nav-link" href="about.html">About</a>
-        <a class="nav-link" href="academics.html">Academics</a>
-        <a class="nav-link" href="programmes.html" aria-current="page">Programmes</a>
-        <a class="nav-link" href="student-life.html">Student Life</a>
-        <a class="nav-link" href="admissions.html">Admissions</a>
-        <a class="nav-link" href="contact.html">Contact</a>
-      </nav>
-
-      <div class="hidden lg:flex items-center gap-3">
-        <a class="btn btn-ghost" href="contact.html">Enquire</a>
-        <a class="btn btn-maroon" href="admissions.html">Apply</a>
+      
+      <div class="hidden lg:flex items-center gap-10">
+        <a href="index.html" class="text-[11px] uppercase tracking-widest font-bold hover:text-[var(--maroon-600)] transition-colors">Home</a>
+        <a href="about.html" class="text-[11px] uppercase tracking-widest font-bold hover:text-[var(--maroon-600)] transition-colors">About</a>
+        <a href="programmes.html" class="text-[11px] uppercase tracking-widest font-bold text-[var(--maroon-600)]">Programmes</a>
+        <a href="admissions.html" class="text-[11px] uppercase tracking-widest font-bold hover:text-[var(--maroon-600)] transition-colors">Admissions</a>
+        <a href="contact.html" class="text-[11px] uppercase tracking-widest font-bold hover:text-[var(--maroon-600)] transition-colors">Contact</a>
       </div>
 
-      <div class="lg:hidden">
-        <a class="btn btn-maroon" href="admissions.html">Apply</a>
+      <div class="flex items-center gap-5">
+        <div class="hidden sm:flex flex-col text-right items-end">
+          <span class="text-[10px] font-bold text-[var(--maroon-600)]">EMIS NO: 200601212</span>
+          <span class="text-[9px] text-[var(--ink-400)] uppercase tracking-tighter">Cradock, South Africa</span>
+        </div>
+        <button id="drawerTrigger" class="p-3 bg-white rounded-full shadow-sm lg:hidden">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16m-7 6h7"/></svg>
+        </button>
       </div>
     </div>
-  </header>
+  </nav>
 
-  <!-- HERO -->
-  <section class="relative overflow-hidden border-b border-black/5">
-    <div class="absolute inset-0">
-      <img src="assets/img/classroom.jpeg" class="w-full h-full object-cover" alt="Classroom learning">
-      <div class="absolute inset-0 bg-gradient-to-r from-[rgba(94,20,44,.92)] via-[rgba(123,30,58,.72)] to-[rgba(123,30,58,.35)]"></div>
+  <section class="relative pt-40 pb-24 md:pt-56 md:pb-40 overflow-hidden bg-white">
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-[var(--beige-100)] opacity-40 rounded-l-[200px] hidden lg:block"></div>
+    <div class="container-max px-6 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="reveal">
+          <span class="kicker">Curriculum & Skills</span>
+          <h1 class="font-heading text-5xl md:text-7xl leading-[1.1] text-[var(--ink-900)] mb-8">
+            Shaping the <br/> <span class="italic text-[var(--maroon-600)]">Modern Artisan.</span>
+          </h1>
+          <p class="text-lg md:text-xl text-[var(--ink-600)] leading-relaxed mb-10 max-w-xl">
+            At Konwaba High School, academic theory meets industrial mastery. We equip Grade 8-12 learners with accredited CAPS subjects and compulsory vocational expertise.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#curriculum" class="btn-elite text-center">Explore Subjects</a>
+            <div class="flex items-center gap-3 px-6">
+              <div class="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V6l-8-3-8 3v6c0 6 8 10 8 10z"/></svg>
+              </div>
+              <span class="text-xs font-bold uppercase tracking-widest text-[var(--ink-400)] leading-tight">Accredited <br/>Education</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative reveal delay-200">
+          <div class="rounded-[40px] overflow-hidden shadow-2xl">
+            <img src="assets/img/programmes_hero.jpg" class="w-full h-[500px] object-cover" alt="KHS Workshop Training">
+          </div>
+          <div class="absolute -bottom-8 -left-8 animate-bounce hidden md:flex">
+            <div class="stat-pill">
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+              <span class="text-xs font-bold uppercase tracking-widest">Enrollment Open 2027</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="container-max px-5 pt-28 pb-14 relative">
-      <div class="max-w-3xl reveal">
-        <div class="kicker text-white/80">Programmes</div>
-        <h1 class="font-heading text-white text-4xl md:text-6xl leading-[1.06] mt-3">
-          Structured learning with clear pathways for progress.
-        </h1>
-        <p class="mt-5 text-white/85 text-base md:text-lg leading-relaxed">
-          Explore our academic focus areas, learner support model, and programme structure.
+  <section id="curriculum" class="py-24 bg-white border-t border-black/5">
+    <div class="container-max px-6">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+        <div class="max-w-2xl reveal">
+          <span class="kicker">The Foundation</span>
+          <h2 class="font-heading text-4xl md:text-6xl text-[var(--ink-900)]">Academic Rigour.</h2>
+          <p class="mt-4 text-[var(--ink-600)]">Capacitating learners through the CAPS curriculum for Grades 8, 9, and 10.</p>
+        </div>
+        
+        <div class="flex bg-[var(--beige-100)] p-1 rounded-2xl reveal">
+          <button class="tab-btn active px-6 py-3 text-[10px] font-bold uppercase tracking-widest" data-tab="core">Core Subjects</button>
+          <button class="tab-btn px-6 py-3 text-[10px] font-bold uppercase tracking-widest" data-tab="lang">Languages</button>
+          <button class="tab-btn px-6 py-3 text-[10px] font-bold uppercase tracking-widest" data-tab="social">Social Sciences</button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="subjectGrid">
+        
+        <article class="subject-card p-8 reveal group" data-cat="core">
+          <div class="skill-icon mb-6">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+          </div>
+          <h3 class="font-heading text-xl text-[var(--ink-900)] mb-3">Mathematics</h3>
+          <p class="text-sm text-[var(--ink-600)] leading-relaxed mb-6">Developing logical reasoning and problem-solving through structured numeracy.</p>
+          <span class="text-[10px] font-bold text-[var(--maroon-600)] uppercase tracking-widest">Compulsory</span>
+        </article>
+
+        <article class="subject-card p-8 reveal group" data-cat="lang">
+          <div class="skill-icon mb-6">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 9.97 9.188 14.54 5 18"/></svg>
+          </div>
+          <h3 class="font-heading text-xl text-[var(--ink-900)] mb-3">English HL</h3>
+          <p class="text-sm text-[var(--ink-600)] leading-relaxed mb-6">Mastering communication, literature, and analytical thought in the Home Language.</p>
+          <span class="text-[10px] font-bold text-[var(--maroon-600)] uppercase tracking-widest">Home Language</span>
+        </article>
+
+        <article class="subject-card p-8 reveal group" data-cat="core">
+          <div class="skill-icon mb-6">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.022.547l-2.387 2.387a2 2 0 001.414 3.414h15.828a2 2 0 001.414-3.414l-2.387-2.387zM7 7l5 5 5-5M12 7V3"/></svg>
+          </div>
+          <h3 class="font-heading text-xl text-[var(--ink-900)] mb-3">Natural Science</h3>
+          <p class="text-sm text-[var(--ink-600)] leading-relaxed mb-6">Exploring Biology and Physics to understand the mechanics of the natural world.</p>
+          <span class="text-[10px] font-bold text-[var(--maroon-600)] uppercase tracking-widest">STEM</span>
+        </article>
+
+        <article class="subject-card p-8 reveal group" data-cat="social">
+          <div class="skill-icon mb-6">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 21s8-4 8-10V5l-8-3-8 3v6c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="font-heading text-xl text-[var(--ink-900)] mb-3">Social Sciences</h3>
+          <p class="text-sm text-[var(--ink-600)] leading-relaxed mb-6">Integrating History and Geography to build contextual global awareness.</p>
+          <span class="text-[10px] font-bold text-[var(--maroon-600)] uppercase tracking-widest">History & Geog</span>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="py-32 bg-[var(--maroon-900)] text-white relative overflow-hidden">
+    
+    
+    <div class="container-max px-6">
+      <div class="grid lg:grid-cols-2 gap-20 items-center">
+        <div class="reveal">
+          <span class="text-[var(--maroon-500)] font-bold uppercase tracking-widest text-[11px] mb-4 block">Compulsory Technical Skills</span>
+          <h2 class="font-heading text-4xl md:text-6xl mb-8 leading-tight">Mastering the <br/> <span class="italic text-[var(--beige-100)]">Trades.</span></h2>
+          <p class="text-lg text-white/70 leading-relaxed mb-12">
+            Konwaba is unique in its commitment to artisan development. Every student masters the practical arts, ensuring they leave our campus with both a matric and a trade foundation.
+          </p>
+
+          <div class="space-y-6">
+            <div class="flex items-center gap-6 p-6 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-all cursor-default">
+              <span class="text-3xl font-heading text-[var(--maroon-500)]">01</span>
+              <div>
+                <h4 class="font-bold text-lg mb-1">Bricklaying & Masonry</h4>
+                <p class="text-sm text-white/50">From foundational structures to advanced architectural walling.</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-6 p-6 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-all cursor-default">
+              <span class="text-3xl font-heading text-[var(--maroon-500)]">02</span>
+              <div>
+                <h4 class="font-bold text-lg mb-1">Plumbing Systems</h4>
+                <p class="text-sm text-white/50">Fluid mechanics, pipe installation, and sanitation engineering.</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-6 p-6 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-all cursor-default">
+              <span class="text-3xl font-heading text-[var(--maroon-500)]">03</span>
+              <div>
+                <h4 class="font-bold text-lg mb-1">Carpentry & Joinery</h4>
+                <p class="text-sm text-white/50">Woodwork precision, roofing structures, and interior finishing.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal delay-300">
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-white/5 h-64 rounded-3xl overflow-hidden border border-white/10 hov-lift">
+               <img src="assets/img/brick_laying.jpg" class="w-full h-full object-cover" alt="Bricklaying">
+            </div>
+            <div class="bg-white/5 h-64 rounded-3xl overflow-hidden border border-white/10 mt-12 hov-lift">
+               <img src="assets/img/plumbing.jpg" class="w-full h-full object-cover" alt="Plumbing">
+            </div>
+          </div>
+          <div class="mt-8 p-10 bg-white rounded-3xl text-[var(--ink-900)] shadow-2xl">
+            <h4 class="font-heading text-2xl mb-4 text-[var(--maroon-600)]">Employer Ready.</h4>
+            <p class="text-sm text-[var(--ink-600)] leading-relaxed mb-6">
+              Our students don't just "learn" about trades; they build. Our vocational centre is equipped with industry-standard tools to bridge the gap between school and the workforce.
+            </p>
+            <div class="flex items-center justify-between pt-6 border-t border-black/5">
+              <span class="text-[10px] font-bold uppercase tracking-widest text-[var(--ink-400)]">Trade Accreditation Pending</span>
+              <div class="flex -space-x-3">
+                <div class="w-10 h-10 rounded-full border-2 border-white bg-slate-200"></div>
+                <div class="w-10 h-10 rounded-full border-2 border-white bg-slate-300"></div>
+                <div class="w-10 h-10 rounded-full border-2 border-white bg-slate-400"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-[var(--beige-100)]">
+    <div class="container-max px-6">
+      <div class="max-w-4xl mx-auto text-center reveal">
+        <span class="kicker">Professional Mobility</span>
+        <h2 class="font-heading text-4xl md:text-5xl mb-8">Independence on the Road.</h2>
+        <p class="text-[var(--ink-600)] leading-relaxed mb-16">
+          Mobility is a critical factor for success in South Africa. Konwaba High School provides an integrated professional driving programme to ensure our seniors are road-ready.
         </p>
 
-        <div class="mt-7 flex flex-col sm:flex-row gap-3">
-          <a class="btn btn-primary" href="#catalogue">Browse Catalogue →</a>
-          <a class="btn btn-outline" href="admissions.html">Admissions</a>
+        <div class="grid md:grid-cols-2 gap-10">
+          <div class="bg-white p-12 rounded-[var(--radius-lg)] shadow-sm text-left relative overflow-hidden group">
+            <div class="absolute -right-10 -top-10 opacity-5 group-hover:opacity-10 transition-opacity">
+              <svg width="200" height="200" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+            </div>
+            <span class="text-[var(--maroon-600)] font-bold text-xs uppercase mb-2 block">Grade 10 Foundation</span>
+            <h4 class="font-heading text-2xl mb-4">Learner's Licence</h4>
+            <p class="text-sm text-[var(--ink-600)] mb-8">Integrated classroom sessions covering K53 theory, road signs, and rules of the road.</p>
+            <div class="h-1 bg-[var(--beige-100)] rounded-full overflow-hidden">
+               <div class="h-full bg-[var(--maroon-600)] w-full"></div>
+            </div>
+          </div>
+
+          <div class="bg-white p-12 rounded-[var(--radius-lg)] shadow-sm text-left relative overflow-hidden group">
+             <div class="absolute -right-10 -top-10 opacity-5 group-hover:opacity-10 transition-opacity">
+               <svg width="200" height="200" fill="currentColor" viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42.99L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99z"/></svg>
+            </div>
+            <span class="text-[var(--maroon-600)] font-bold text-xs uppercase mb-2 block">Grade 12 Milestone</span>
+            <h4 class="font-heading text-2xl mb-4">Professional Lessons</h4>
+            <p class="text-sm text-[var(--ink-600)] mb-8">One-on-one professional driving instruction at a special student-subsidised rate.</p>
+            <div class="h-1 bg-[var(--beige-100)] rounded-full overflow-hidden">
+               <div class="h-full bg-[var(--maroon-600)] w-2/3 animate-pulse"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- EDTECH PROGRAMME FILTER (lightweight + premium) -->
-  <section class="py-16 md:py-20">
-    <div class="container-max px-5">
-      <div class="grid lg:grid-cols-12 gap-8 items-start">
-
-        <div class="lg:col-span-4 reveal">
-          <div class="card p-6 md:p-7">
-            <div class="kicker">Quick Filter</div>
-            <h2 class="font-heading text-2xl text-[var(--maroon-600)] mt-2">Find what you need</h2>
-            <p class="mt-3 text-[var(--ink-600)] leading-relaxed">
-              Use these filters to highlight programme groups. 
-            </p>
-
-            <div class="mt-6 space-y-3">
-              <button class="btn btn-ghost w-full justify-center" data-filter="all">All Programmes</button>
-              <button class="btn btn-ghost w-full justify-center" data-filter="academics">Academics</button>
-              <button class="btn btn-ghost w-full justify-center" data-filter="skills">Practical Skills</button>
-              <button class="btn btn-ghost w-full justify-center" data-filter="support">Learner Support</button>
-            </div>
-
-            <p class="mt-5 text-sm text-[var(--ink-500)]">
-              Replace these categories with your real structure (subjects, streams, grade focus areas).
-            </p>
-          </div>
-        </div>
-
-        <div class="lg:col-span-8 reveal">
-          <div class="card-soft rounded-[var(--radius-lg)] overflow-hidden">
-            <img src="assets/img/computer_room.jpg" class="w-full h-[310px] object-cover" alt="Teacher mentoring learners">
-            <div class="p-6 md:p-8">
-              <div class="kicker">Learning model</div>
-              <h3 class="font-heading text-2xl md:text-3xl text-[var(--maroon-600)] mt-2">
-                Foundation → Growth → Achievement
-              </h3>
-              <p class="mt-3 text-[var(--ink-600)] leading-relaxed">
-                A premium school experience requires structure, support, and measurable progress — delivered through consistent teaching routines and targeted interventions.
-              </p>
-
-              <div class="mt-6 grid sm:grid-cols-3 gap-4">
-                <div class="stat p-5">
-                  <div class="stat-label">Foundation</div>
-                  <div class="stat-value mt-1">Strong basics</div>
-                </div>
-                <div class="stat p-5">
-                  <div class="stat-label">Growth</div>
-                  <div class="stat-value mt-1">Support loops</div>
-                </div>
-                <div class="stat p-5">
-                  <div class="stat-label">Achievement</div>
-                  <div class="stat-value mt-1">Outcomes</div>
-                </div>
-              </div>
-
-              <div class="mt-7 flex flex-col sm:flex-row gap-3">
-                <a class="btn btn-primary" href="academics.html">High School Overview →</a>
-                <a class="btn btn-ghost" href="contact.html">Ask a Question</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- PROGRAMME CATALOGUE -->
-  <section id="catalogue" class="py-16 md:py-24 bg-[var(--beige-50)] border-y border-black/5">
-    <div class="container-max px-5">
-
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-5">
-        <div class="max-w-3xl reveal">
-          <div class="kicker">Catalogue</div>
-          <h2 class="section-title text-3xl md:text-5xl mt-3">Programme catalogue</h2>
-          <p class="mt-4 text-[var(--ink-600)] leading-relaxed">
-            These are premium placeholders — swap the content with your official subjects and programme descriptions.
-          </p>
-        </div>
-        <div class="reveal">
-          <a class="btn btn-primary" href="#">Download Prospectus </a>
-        </div>
-      </div>
-
-      <div class="mt-10 md:mt-14 grid md:grid-cols-3 gap-6">
-
-        <!-- Academics -->
-        <article class="card p-7 reveal" data-cat="academics">
-          <div class="badge badge-maroon mb-4">Academics</div>
-          <h3 class="font-heading text-xl text-[var(--maroon-600)]">Core Academic Subjects</h3>
-          <p class="mt-3 text-[var(--ink-600)] leading-relaxed">
-            Mathematics, Natural Sciences, Social Sciences, and Languages — taught with structured routines and learner support.
-          </p>
-          <div class="mt-6 flex flex-wrap gap-2">
-            <span class="badge">Mathematics</span>
-            <span class="badge">Natural Sciences</span>
-            <span class="badge">Social Sciences</span>
-          </div>
-        </article>
-
-        <article class="card p-7 reveal" data-cat="academics">
-          <div class="badge badge-beige mb-4">Languages</div>
-          <h3 class="font-heading text-xl text-[var(--maroon-600)]">Language & Communication</h3>
-          <p class="mt-3 text-[var(--ink-600)] leading-relaxed">
-            English, isiXhosa, and Afrikaans (placeholders) — supporting comprehension, writing, and confidence.
-          </p>
-          <div class="mt-6 flex flex-wrap gap-2">
-            <span class="badge">English</span>
-            <span class="badge">isiXhosa</span>
-            <span class="badge">Afrikaans</span>
-          </div>
-        </article>
-
-        <article class="card p-7 reveal" data-cat="academics">
-          <div class="badge mb-4">Development</div>
-          <h3 class="font-heading text-xl text-[var(--maroon-600)]">Life Orientation</h3>
-          <p class="mt-3 text-[var(--ink-600)] leading-relaxed">
-            Learner wellbeing, study habits, responsible decision-making and personal development.
-          </p>
-          <div class="mt-6 flex flex-wrap gap-2">
-            <span class="badge">Wellbeing</span>
-            <span class="badge">Study Skills</span>
-            <span class="badge">Confidence</span>
-          </div>
-        </article>
-
-        <!-- Skills -->
-        <article class="card p-7 reveal" data-cat="skills">
-          <div class="badge badge-maroon mb-4">Practical Skills</div>
-          <h3 class="font-heading text-xl text-[var(--maroon-600)]">Technical Skills Exposure</h3>
-          <p class="mt-3 text-[var(--ink-600)] leading-relaxed">
-            Introductory skills development designed to build hands-on confidence (placeholders).
-          </p>
-          <div class="mt-6 flex flex-wrap gap-2">
-            <span class="badge">Carpentry</span>
-            <span class="badge">Plumbing</span>
-            <span class="badge">Bricklaying</span>
-          </div>
-        </article>
-
-        <article class="card p-7 reveal" data-cat="skills">
-          <div class="badge badge-beige mb-4">Capability</div>
-          <h3 class="font-heading text-xl text-[var(--maroon-600)]">Problem Solving</h3>
-          <p class="mt-3 text-[var(--ink-600)] leading-relaxed">
-            Projects and tasks that develop reasoning, teamwork, and applied thinking.
-          </p>
-          <div class="mt-6 flex flex-wrap gap-2">
-            <span class="badge">Projects</span>
-            <span class="badge">Teamwork</span>
-            <span class="badge">Applied Thinking</span>
-          </div>
-        </article>
-
-        <!-- Support -->
-        <article class="card p-7 reveal" data-cat="support">
-          <div class="badge mb-4">Support</div>
-          <h3 class="font-heading text-xl text-[var(--maroon-600)]">Learner Support Model</h3>
-          <p class="mt-3 text-[var(--ink-600)] leading-relaxed">
-            Early identification of gaps, targeted support, and parent-friendly communication (placeholders).
-          </p>
-          <div class="mt-6 flex flex-wrap gap-2">
-            <span class="badge">Monitoring</span>
-            <span class="badge">Support</span>
-            <span class="badge">Feedback</span>
-          </div>
-        </article>
-
-      </div>
-
-      <!-- Visual strip -->
-      <div class="mt-10 grid lg:grid-cols-12 gap-6 items-stretch">
-        <div class="lg:col-span-7 reveal">
-          <div class="card-soft p-0 overflow-hidden rounded-[var(--radius-lg)]">
-            <img src="assets/img/classroom.jpeg" alt="Classroom learning" class="w-full h-[320px] object-cover">
-          </div>
-        </div>
+  <section class="py-24 bg-white">
+    <div class="container-max px-6">
+      <div class="grid lg:grid-cols-12 gap-16 items-center">
         <div class="lg:col-span-5 reveal">
-          <div class="card-soft p-0 overflow-hidden rounded-[var(--radius-lg)] h-full">
-            <img src="assets/img/learners.jpeg" alt="Learners and community" class="w-full h-[320px] object-cover">
+          <span class="kicker">Student Life</span>
+          <h2 class="font-heading text-4xl md:text-5xl mb-8 leading-tight">Grit on the <span class="italic text-[var(--maroon-600)]">Field.</span></h2>
+          <p class="text-[var(--ink-600)] leading-relaxed mb-10">
+            Participation builds character. Our extramural programme offers a competitive yet supportive environment where every learner can find their niche.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-6 py-2 bg-[var(--beige-100)] rounded-full text-[10px] font-bold uppercase">Athletics</span>
+            <span class="px-6 py-2 bg-[var(--beige-100)] rounded-full text-[10px] font-bold uppercase">Soccer</span>
+            <span class="px-6 py-2 bg-[var(--beige-100)] rounded-full text-[10px] font-bold uppercase">Netball</span>
+            <span class="px-6 py-2 bg-[var(--beige-100)] rounded-full text-[10px] font-bold uppercase">Rugby</span>
+            <span class="px-6 py-2 bg-[var(--maroon-600)] text-white rounded-full text-[10px] font-bold uppercase">Chess</span>
+          </div>
+        </div>
+        
+        <div class="lg:col-span-7 reveal delay-200">
+          <div class="grid grid-cols-12 gap-4">
+            <div class="col-span-7 h-[400px] rounded-3xl overflow-hidden shadow-xl border-4 border-[var(--beige-50)]">
+              <img src="assets/img/soccer.jpg" class="w-full h-full object-cover" alt="Soccer">
+            </div>
+            <div class="col-span-5 flex flex-col gap-4">
+              <div class="h-[192px] rounded-3xl overflow-hidden shadow-xl border-4 border-[var(--beige-50)]">
+                <img src="assets/img/netball.jpg" class="w-full h-full object-cover" alt="Netball">
+              </div>
+              <div class="h-[192px] rounded-3xl overflow-hidden shadow-xl border-4 border-[var(--beige-50)] bg-[var(--maroon-900)] flex flex-col items-center justify-center text-center p-6">
+                <h4 class="font-heading text-xl text-white mb-2">Team Pride</h4>
+                <p class="text-[10px] uppercase text-white/50 tracking-widest font-bold">100% Participation encouraged</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- CTA STRIP -->
-  <section class="py-14 md:py-16 bg-[var(--maroon-600)]">
-    <div class="container-max px-5">
-      <div class="card-soft rounded-[var(--radius-lg)] p-7 md:p-10 reveal">
-        <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
-          <div>
-            <div class="kicker">Admissions</div>
-            <h2 class="font-heading text-2xl md:text-3xl text-[var(--maroon-600)] mt-2">
-              Ready to apply or book a tour?
-            </h2>
-            <p class="mt-3 text-[var(--ink-600)] max-w-2xl leading-relaxed">
-              We’ll guide you through admissions and answer any questions about programmes, subjects, and learner support.
-            </p>
+  <section class="py-24 bg-[var(--beige-50)]">
+    <div class="container-max px-6">
+      <div class="bg-white rounded-[var(--radius-lg)] p-12 md:p-20 shadow-sm reveal">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div class="order-2 lg:order-1">
+            <img src="assets/img/uniform_showcase.png" class="w-full max-w-md mx-auto" alt="KHS Uniform Pride">
           </div>
-          <div class="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
-            <a class="btn btn-maroon w-full sm:w-auto justify-center" href="admissions.html">Book a Tour</a>
-            <a class="btn btn-primary w-full sm:w-auto justify-center" href="contact.html">Enquire Now</a>
+          <div class="order-1 lg:order-2">
+            <span class="kicker">Appearance</span>
+            <h2 class="font-heading text-4xl md:text-5xl mb-8">The Face of <span class="italic text-[var(--maroon-600)]">Konwaba.</span></h2>
+            <p class="text-[var(--ink-600)] leading-relaxed mb-10">Our uniform is more than clothing; it is a symbol of belonging. Each piece reflects our core values of pride, unity, and discipline.</p>
+            
+            <div class="grid sm:grid-cols-2 gap-6">
+              <div class="flex items-center gap-4">
+                <div class="w-2 h-2 rounded-full bg-[var(--maroon-600)]"></div>
+                <span class="text-sm font-semibold">3-Piece Academic Wear</span>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="w-2 h-2 rounded-full bg-[var(--maroon-600)]"></div>
+                <span class="text-sm font-semibold">School Kilt (Girls)</span>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="w-2 h-2 rounded-full bg-[var(--maroon-600)]"></div>
+                <span class="text-sm font-semibold">V-Neck Jersey</span>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="w-2 h-2 rounded-full bg-[var(--maroon-600)]"></div>
+                <span class="text-sm font-semibold">Formal Blazer & Hat</span>
+              </div>
+            </div>
+            
+            <div class="mt-12 p-6 bg-[var(--beige-50)] rounded-2xl flex items-center justify-between">
+              <span class="text-xs font-bold text-[var(--ink-400)] uppercase tracking-widest">Available at Admin Office</span>
+              <a href="#" class="text-[var(--maroon-600)] font-bold text-xs uppercase tracking-widest hover:underline">Price List →</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="footer py-14">
-    <div class="container-max px-5">
-      <div class="flex flex-col items-center text-center gap-5">
-        <img src="assets/img/khs_logo.png" alt="Konwaba High School Logo" class="h-14 w-auto rounded-xl opacity-95">
+  <section class="py-24 bg-white text-center">
+    <div class="container-max px-6 reveal">
+      <h2 class="font-heading text-4xl md:text-6xl mb-10 leading-tight">Start Your Future <br/> <span class="italic text-[var(--maroon-600)]">Today.</span></h2>
+      <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+        <a href="admissions.html" class="btn-elite px-12">Apply for 2027</a>
+        <a href="contact.html" class="text-[var(--ink-900)] font-bold text-xs uppercase tracking-widest border-b-2 border-black/5 pb-1 hover:border-[var(--maroon-600)] transition-all">Request a Prospectus</a>
+      </div>
+    </div>
+  </section>
 
-        <div class="text-white/85">
-          <div class="font-heading text-xl">Konwaba High School</div>
-          <div class="text-white/70 mt-1">16 Cawood Street, Cradock (Nxuba)</div>
-          <div class="text-white/70">048 109 9068 • konwabass@gmail.com</div>
+  <footer class="bg-[var(--maroon-900)] py-20 text-white/60">
+    <div class="container-max px-6">
+      <div class="grid md:grid-cols-4 gap-12 mb-20">
+        <div class="col-span-1 md:col-span-2">
+          <h3 class="font-heading text-2xl text-white mb-6">Konwaba High School</h3>
+          <p class="text-sm leading-relaxed max-w-sm mb-10">Providing world-class education where students learn accountability, fulfill their potential, and reach their dreams.</p>
+          <div class="flex gap-4">
+            <a href="#" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-[var(--maroon-900)] transition-all">FB</a>
+            <a href="#" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-[var(--maroon-900)] transition-all">IG</a>
+          </div>
         </div>
-
-        <div class="flex flex-wrap justify-center gap-4 text-white/70 text-sm">
-          <a href="about.html" class="hover:text-[var(--beige-200)]">About</a>
-          <a class="nav-link" href="academics.html">Academics</a>
-          <a href="programmes.html" class="hover:text-[var(--beige-200)]">Programmes</a>
-          <a href="admissions.html" class="hover:text-[var(--beige-200)]">Admissions</a>
-          <a href="contact.html" class="hover:text-[var(--beige-200)]">Contact</a>
+        <div>
+          <h4 class="font-bold text-white text-xs uppercase tracking-widest mb-6">Navigation</h4>
+          <ul class="space-y-4 text-sm">
+            <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+            <li><a href="programmes.html" class="hover:text-white transition-colors">Our Programmes</a></li>
+            <li><a href="admissions.html" class="hover:text-white transition-colors">Admissions</a></li>
+            <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+          </ul>
         </div>
-
-        <div class="text-white/55 text-xs">© 2026 Konwaba High School. All Rights Reserved.</div>
+        <div>
+          <h4 class="font-bold text-white text-xs uppercase tracking-widest mb-6">Contact</h4>
+          <ul class="space-y-4 text-sm">
+            <li>16 Cawood Street, Cradock</li>
+            <li>048 109 9068</li>
+            <li>konwabass@gmail.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+        <span class="text-[10px] font-bold uppercase tracking-[0.3em]">EMIS: 200601212</span>
+        <span class="text-[10px] uppercase">© 2026 Konwaba High School. All Rights Reserved.</span>
       </div>
     </div>
   </footer>
 
-  <!-- JS: reveal + catalogue filter (small, optional but “EdTech-grade”) -->
   <script>
     (function(){
-      // Reveal
-      const els = document.querySelectorAll('.reveal');
-      const reveal = () => {
-        const trigger = window.innerHeight * 0.88;
-        els.forEach(el => {
-          const r = el.getBoundingClientRect();
-          if (r.top < trigger) el.classList.add('is-visible');
-        });
+      // 1. DATA: Academics Subject Database
+      const subjects = [
+        { id: 1, name: 'Mathematics', cat: 'core', desc: 'Numbers, algebra, and geometry foundations.', compulsory: true, icon: 'M' },
+        { id: 2, name: 'English Home Language', cat: 'lang', desc: 'Critical literacy and expressive communication.', compulsory: true, icon: 'E' },
+        { id: 3, name: 'Natural Science', cat: 'core', desc: 'Biology, physics, and chemistry introduction.', compulsory: true, icon: 'S' },
+        { id: 4, name: 'IsiXhosa FAL', cat: 'lang', desc: 'First additional language mastery.', compulsory: true, icon: 'X' },
+        { id: 5, name: 'Economic & Management Science', cat: 'core', desc: 'Business, accounting, and entrepreneurship.', compulsory: true, icon: 'B' },
+        { id: 6, name: 'Afrikaans SAL', cat: 'lang', desc: 'Second additional language fluency.', compulsory: true, icon: 'A' },
+        { id: 7, name: 'Technology', cat: 'core', desc: 'Digital literacy and engineering principles.', compulsory: true, icon: 'T' },
+        { id: 8, name: 'Life Orientation', cat: 'core', desc: 'Health, career guidance, and wellness.', compulsory: true, icon: 'L' }
+      ];
+
+      // 2. Tab Filtering Logic
+      const grid = document.getElementById('subjectGrid');
+      const tabBtns = document.querySelectorAll('.tab-btn');
+
+      const renderSubjects = (filter = 'core') => {
+        const filtered = subjects.filter(s => s.cat === filter);
+        
+        // Clear grid but keep initial reveal logic
+        grid.innerHTML = filtered.map(s => `
+          <article class="subject-card p-8 group stagger-item is-visible" data-cat="${s.cat}">
+            <div class="skill-icon mb-6">
+               <span class="font-heading text-xl font-bold">${s.icon}</span>
+            </div>
+            <h3 class="font-heading text-xl text-[var(--ink-900)] mb-3">${s.name}</h3>
+            <p class="text-sm text-[var(--ink-600)] leading-relaxed mb-6">${s.desc}</p>
+            <span class="text-[10px] font-bold text-[var(--maroon-600)] uppercase tracking-widest">${s.compulsory ? 'Compulsory' : 'Optional'}</span>
+          </article>
+        `).join('');
       };
-      window.addEventListener('scroll', reveal, { passive:true });
-      window.addEventListener('load', reveal);
-      reveal();
 
-      // Filter 
-      const btns = document.querySelectorAll('[data-filter]');
-      const cards = document.querySelectorAll('[data-cat]');
-
-      btns.forEach(btn => {
+      tabBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-          const f = btn.getAttribute('data-filter');
-          cards.forEach(c => {
-            const cat = c.getAttribute('data-cat');
-            const show = (f === 'all') || (cat === f);
-            c.style.display = show ? '' : 'none';
-          });
+          tabBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const filter = btn.getAttribute('data-tab');
+          renderSubjects(filter);
         });
       });
+
+      // 3. Reveal Logic (Intersection Observer)
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+      // 4. Parallax Hero Effect
+      window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY;
+        const heroImg = document.querySelector('img[alt="KHS Workshop Training"]');
+        if(heroImg && window.innerWidth > 1024) {
+          heroImg.style.transform = `translateY(${scrolled * 0.1}px)`;
+        }
+      });
+
+      // 5. Initialize
+      renderSubjects('core');
+
     })();
   </script>
-
 </body>
 </html>
