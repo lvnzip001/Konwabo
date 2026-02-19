@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Primary School Admissions | Konwaba — Apply & Book a Tour</title>
+
+  <!-- Primary SEO -->
+  <meta name="description" content="Admissions for Konwaba Primary School in Nxuba (Cradock). Grade 1 intake (growing). View steps, required documents, and enquire or book a tour." />
+  <meta name="keywords" content="Konwaba Primary School admissions, Grade 1, apply, school tour, Cradock, Nxuba, independent school" />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#7B1E3A" />
+
+  <!-- Canonical (update to your real domain) -->
+  <link rel="canonical" href="https://www.example.co.za/primary/admissions.html" />
+
+  <!-- Favicons -->
+  <link rel="icon" href="../assets/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png" />
+  <link rel="manifest" href="../assets/site.webmanifest" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Primary School Admissions | Konwaba" />
+  <meta property="og:description" content="Grade 1 intake (growing). Steps, documents, and tour bookings." />
+  <meta property="og:image" content="../assets/img/school_front.jpeg" />
+  <meta property="og:url" content="https://www.example.co.za/primary/admissions.html" />
+  <meta property="og:site_name" content="Konwaba School" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Primary School Admissions | Konwaba" />
+  <meta name="twitter:description" content="Grade 1 intake (growing). Steps, documents, and tour bookings." />
+  <meta name="twitter:image" content="../assets/img/school_front.jpeg" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Premium companion CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+
+  <style>
+    /* ============================================================
+      BRAND TOKENS (Konwaba): Light Maroon + Beige + Clean Neutrals
+    ============================================================ */
+    :root{
+      /* Primary */
+      --maroon-900:#3A0C1B;
+      --maroon-800:#531327;
+      --maroon-700:#6A1931;
+      --maroon-600:#7B1E3A; /* main */
+      --maroon-500:#92284A; /* lighter accent */
+      --maroon-200: rgba(123, 30, 58, 0.22);
+      --maroon-120: rgba(123, 30, 58, 0.12);
+      --maroon-70:  rgba(123, 30, 58, 0.07);
+
+      /* Secondary */
+      --beige-50:#FBF8F4;
+      --beige-100:#F2E9E2; /* main beige */
+      --beige-200:#E6D5C3;
+      --beige-300:#D8BFA7;
+
+      /* Neutrals */
+      --ink-900:#101828;
+      --ink-800:#1D2939;
+      --ink-700:#344054;
+      --ink-600:#475467;
+      --ink-500:#667085;
+
+      --paper:#FFFFFF;
+      --paper-2: var(--beige-50);
+
+      /* Radius / shadow */
+      --radius-md: 16px;
+      --radius-lg: 22px;
+      --shadow-soft: 0 14px 34px rgba(16,24,40,.10);
+      --shadow-hero: 0 32px 70px -20px rgba(0,0,0,.35);
+
+      /* Motion */
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-prestige: all .75s var(--ease);
+
+      /* Fluid type */
+      --fluid-h1: clamp(2.6rem, 6.5vw, 4.4rem);
+      --fluid-h2: clamp(2.0rem, 4.8vw, 3.2rem);
+    }
+
+    /* NAV */
+    .nav-shell{
+      transition: var(--transition-prestige);
+      padding-top: 0.8rem;
+      padding-bottom: 0.8rem;
+      background: #ffffff70;
+    }
+    .nav-shell.scrolled{
+      padding-top: .45rem;
+      padding-bottom: .45rem;
+      background: rgba(251,248,244,.92);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 10px 30px rgba(0,0,0,.08);
+      border-bottom: 1px solid rgba(16,24,40,.06);
+    }
+    .nav-shell.scrolled .nav-logo img{ height: 44px; }
+
+    /* HERO */
+    .hero-media img{
+      animation: kenburns 34s ease-in-out infinite alternate;
+      transform-origin: center;
+      will-change: transform;
+      filter: brightness(.88) contrast(1.05) saturate(1.02);
+    }
+    @keyframes kenburns{
+      0%   { transform: scale(1); }
+      100% { transform: scale(1.18); }
+    }
+    .hero-h1{
+      font-size: var(--fluid-h1);
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+    }
+    .section-title-premium{
+      font-size: var(--fluid-h2);
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+      color: var(--maroon-600);
+    }
+
+    /* Reveal + stagger */
+    .reveal{
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity .85s var(--ease), transform .85s var(--ease);
+      will-change: transform, opacity;
+    }
+    .reveal.is-visible{ opacity: 1; transform: translateY(0); }
+    .delay-100{ transition-delay: 120ms; }
+    .delay-200{ transition-delay: 240ms; }
+    .delay-300{ transition-delay: 360ms; }
+    .delay-400{ transition-delay: 480ms; }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar{ width: 6px; }
+    ::-webkit-scrollbar-track{ background: var(--beige-50); }
+    ::-webkit-scrollbar-thumb{ background: var(--maroon-600); border-radius: 20px; }
+
+    /* Mobile Drawer */
+    .drawer-backdrop{
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .35s cubic-bezier(.2,.8,.2,1);
+    }
+    .drawer-backdrop.open{ opacity: 1; pointer-events: auto; }
+    .drawer-panel{
+      transform: translateX(110%);
+      transition: transform .45s cubic-bezier(.2,.8,.2,1);
+      will-change: transform;
+    }
+    .drawer-panel.open{ transform: translateX(0); }
+    body.lock-scroll{ overflow: hidden; }
+
+    /* Primary-specific micro UI */
+    .step-pill{
+      border: 1px solid rgba(16,24,40,.08);
+      background: rgba(255,255,255,.82);
+      border-radius: 999px;
+      padding: 8px 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 12px 24px rgba(16,24,40,.06);
+      transition: transform .55s var(--ease), box-shadow .55s var(--ease);
+    }
+    .step-pill:hover{ transform: translateY(-2px); box-shadow: 0 18px 34px rgba(16,24,40,.10); }
+    .step-dot{
+      width: 10px; height: 10px;
+      border-radius: 999px;
+      background: rgba(16,24,40,.22);
+      box-shadow: 0 0 0 6px rgba(123,30,58,.10);
+    }
+    .step-pill.active .step-dot{
+      background: var(--maroon-600);
+      box-shadow: 0 0 0 6px rgba(123,30,58,.16);
+    }
+
+    .faq-item{
+      border: 1px solid rgba(16,24,40,.08);
+      border-radius: 18px;
+      background: rgba(255,255,255,.90);
+      overflow: hidden;
+      box-shadow: 0 10px 22px rgba(16,24,40,.06);
+    }
+    .faq-btn{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 16px 16px;
+      text-align: left;
+    }
+    .faq-panel{
+      max-height: 0px;
+      overflow: hidden;
+      transition: max-height .55s var(--ease);
+    }
+    .faq-panel-inner{ padding: 0 16px 16px; color: var(--ink-600); line-height: 1.7; font-size: 14px; }
+    .rotate-180{ transform: rotate(180deg); }
+
+    .soft-input{
+      width: 100%;
+      border: 1px solid rgba(16,24,40,.10);
+      border-radius: 14px;
+      padding: 12px 12px;
+      background: rgba(255,255,255,.92);
+      outline: none;
+      transition: box-shadow .4s var(--ease), border-color .4s var(--ease);
+    }
+    .soft-input:focus{
+      border-color: rgba(123,30,58,.35);
+      box-shadow: 0 0 0 6px rgba(123,30,58,.10);
+    }
+
+    .notice-chip{
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.08);
+      padding: 8px 10px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .notice-chip .pulse{
+      width: 8px; height: 8px; border-radius: 999px;
+      background: var(--beige-100);
+      box-shadow: 0 0 0 0 rgba(242,233,226,.55);
+      animation: pulse 1.8s ease-out infinite;
+      opacity: .92;
+    }
+    @keyframes pulse{
+      0% { box-shadow: 0 0 0 0 rgba(242,233,226,.55); }
+      70% { box-shadow: 0 0 0 10px rgba(242,233,226,0); }
+      100% { box-shadow: 0 0 0 0 rgba(242,233,226,0); }
+    }
+  </style>
+</head>
+
+<body class="font-body bg-paper text-[var(--ink-800)]">
+
+  <!-- NAV -->
+  <header id="main-nav" class="nav-shell fixed w-full top-0 left-0 z-[100]">
+    <div class="container-max flex items-center justify-between px-6 lg:px-12">
+      <a class="nav-logo transition-transform duration-500 hover:scale-105" href="../index.html">
+        <img src="../assets/img/khs_logo.png" alt="Konwaba School" class="h-16 transition-all duration-700">
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-10" aria-label="Main Navigation">
+                <a class="text-[11px] uppercase tracking-[0.25em] font-semibold text-[var(--ink-900)] hover:text-[var(--maroon-600)] transition-colors nav-link" href="home.html">Primary</a>
+        <a class="text-[11px] uppercase tracking-[0.25em] font-semibold text-[var(--ink-700)] hover:text-[var(--maroon-600)] transition-colors nav-link" href="../about.html">About</a>
+        <a class="text-[11px] uppercase tracking-[0.25em] font-semibold text-[var(--ink-700)] hover:text-[var(--maroon-600)] transition-colors nav-link" href="academics.html">High School</a>
+
+        <a class="text-[11px] uppercase tracking-[0.25em] font-semibold text-[var(--ink-700)] hover:text-[var(--maroon-600)] transition-colors nav-link" href="../notices.html">Notices</a>
+        <a class="text-[11px] uppercase tracking-[0.25em] font-semibold text-[var(--ink-700)] hover:text-[var(--maroon-600)] transition-colors nav-link" href="admissions.html">Admissions</a>
+        <a class="text-[11px] uppercase tracking-[0.25em] font-semibold text-[var(--ink-700)] hover:text-[var(--maroon-600)] transition-colors nav-link" href="contact.html">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <a class="btn btn-ghost hidden sm:inline-flex text-[10px] uppercase tracking-widest font-bold" href="../contact.html">Enquire</a>
+        <a class="btn btn-maroon px-8 py-3 text-[10px] uppercase tracking-widest font-bold shadow-xl" href="#primary-apply">Apply</a>
+
+        <!-- Mobile menu trigger -->
+        <button id="menuBtn" class="lg:hidden btn btn-ghost !px-3" aria-label="Open menu" aria-controls="mobileDrawer" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative overflow-hidden border-b border-black/5">
+    <div class="hero-media absolute inset-0">
+      <!-- swap image later to a primary-friendly photo -->
+      <img src="../assets/img/learners2.png" class="w-full h-full object-cover" alt="Konwaba Primary learners">
+      <div class="absolute inset-0 bg-gradient-to-r from-[rgba(0,0,0,.90)] via-[rgba(13,3,6,.72)] to-[rgba(123,30,58,.35)]"></div>
+    </div>
+
+    <div class="container-max px-5 pt-28 pb-16 relative">
+      <div class="grid lg:grid-cols-12 gap-10 items-end">
+        <div class="lg:col-span-7 reveal">
+          <div class="kicker text-white/80">Primary School</div>
+          <h1 class="font-heading text-white hero-h1 mt-3">
+            A confident start — <span class="italic font-medium text-[var(--beige-200)]">Grade 1</span> and growing.
+          </h1>
+          <p class="mt-6 text-white/85 text-base md:text-lg leading-relaxed max-w-2xl">
+            A calm, structured foundation where learners build literacy, numeracy, and strong learning habits — supported by a disciplined culture and parent-friendly communication.
+          </p>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-3">
+            <a class="btn btn-primary" href="#steps">See Steps →</a>
+            <a class="btn btn-outline" href="#primary-apply">Enquire</a>
+          </div>
+
+          <div class="mt-10 flex flex-wrap gap-3">
+            <span class="notice-chip text-white text-xs uppercase tracking-widest font-bold">
+              <span class="pulse"></span> Grade 1 Intake Open
+            </span>
+            <span class="notice-chip text-white text-xs uppercase tracking-widest font-bold">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 8v4l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2"/>
+              </svg>
+              Tours by Appointment
+            </span>
+          </div>
+        </div>
+
+        <!-- Right: Premium Primary Card -->
+        <div class="lg:col-span-5 reveal delay-200">
+          <div class="bg-white/95 backdrop-blur-2xl p-7 md:p-8 rounded-[var(--radius-lg)] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.28)] border border-white/20 relative overflow-hidden">
+            <div class="absolute inset-0 pointer-events-none" style="background: linear-gradient(135deg, rgba(123,30,58,.10) 0%, rgba(242,233,226,.22) 50%, rgba(123,30,58,.06) 100%); opacity:.9;"></div>
+
+            <div class="relative">
+              <div class="flex items-start justify-between gap-4 mb-5">
+                <div>
+                  <div class="kicker text-[var(--maroon-600)] mb-1">Primary Admissions</div>
+                  <h2 class="font-heading text-2xl text-[var(--ink-900)] leading-tight">Quick Overview</h2>
+                </div>
+                <span class="badge badge-beige !px-3 !py-1 text-[9px] uppercase tracking-widest">Grade 1</span>
+              </div>
+
+              <div class="grid sm:grid-cols-2 gap-4 mb-6">
+                <div class="stat p-5 bg-white/85 border border-black/5 rounded-2xl">
+                  <div class="stat-label">Opening Year</div>
+                  <div class="stat-value mt-1 text-xl text-[var(--maroon-600)] font-heading">
+                    <span id="primaryYear">2026</span>
+                  </div>
+                </div>
+                <div class="stat p-5 bg-white/85 border border-black/5 rounded-2xl">
+                  <div class="stat-label">Starting Grade</div>
+                  <div class="stat-value mt-1 text-xl text-[var(--maroon-600)] font-heading">Grade 1</div>
+                </div>
+              </div>
+
+              <div class="rounded-2xl border border-black/5 bg-[var(--beige-50)] p-5 mb-6">
+                <div class="text-[10px] uppercase tracking-[0.25em] font-extrabold text-[var(--ink-600)]">Typical Entry Age Guidance</div>
+                <div class="mt-2 flex items-center justify-between gap-4">
+                  <div class="text-sm text-[var(--ink-600)] leading-relaxed">
+                    Use the learner’s birth year to get a quick indicator.
+                  </div>
+                  <span class="badge badge-maroon">Fast Check</span>
+                </div>
+
+                <div class="mt-4 grid grid-cols-12 gap-3 items-end">
+                  <div class="col-span-7">
+                    <label class="text-[10px] uppercase tracking-widest font-bold text-[var(--ink-600)]">Birth Year</label>
+                    <input id="birthYear" inputmode="numeric" pattern="[0-9]*" placeholder="e.g. 2019" class="soft-input mt-2" />
+                  </div>
+                  <div class="col-span-5">
+                    <button id="ageCheckBtn" class="btn btn-maroon w-full justify-center py-3 text-[10px] uppercase tracking-widest font-bold">Check</button>
+                  </div>
+                  <div class="col-span-12">
+                    <div id="ageCheckResult" class="text-sm text-[var(--ink-600)] mt-1"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex flex-col sm:flex-row gap-3">
+                <a class="btn btn-maroon w-full justify-center py-4 text-xs uppercase tracking-widest" href="#primary-apply">Start Enquiry</a>
+                <a class="btn btn-ghost w-full justify-center py-4 text-xs uppercase tracking-widest" href="../contact.html">Call / Email</a>
+              </div>
+
+              <div class="mt-5 text-[11px] text-[var(--ink-500)] leading-relaxed">
+                <span class="font-bold text-[var(--ink-700)]">Note:</span> Age guidance is indicative only. Final placement is confirmed during admissions review.
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIMARY VALUE STRIP -->
+  <section class="py-14 md:py-18 bg-white">
+    <div class="container-max px-5">
+      <div class="grid lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-7 reveal">
+          <div class="kicker text-[var(--maroon-600)]">Primary Promise</div>
+          <h2 class="section-title-premium mt-3">Structure, warmth, and measurable progress.</h2>
+          <p class="mt-4 text-[var(--ink-600)] text-lg leading-relaxed">
+            Our primary extension is designed to scale. We start with Grade 1 and grow deliberately — maintaining quality, consistency, and a premium learner experience.
+          </p>
+
+          <div class="mt-7 flex flex-wrap gap-2">
+            <span class="badge badge-maroon">Literacy focus</span>
+            <span class="badge badge-beige">Numeracy confidence</span>
+            <span class="badge">Routine & discipline</span>
+            <span class="badge">Parent-friendly updates</span>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 reveal delay-200">
+          <div class="card-soft rounded-[var(--radius-lg)] p-6 md:p-7 bg-[var(--beige-50)] border border-black/5 shadow-[0_16px_34px_rgba(16,24,40,.08)]">
+            <div class="flex items-start gap-3">
+              <div class="w-11 h-11 rounded-2xl bg-white border border-black/5 flex items-center justify-center text-[var(--maroon-600)]">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M4 19V6a2 2 0 012-2h11a3 3 0 013 3v12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M6 17h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div>
+                <div class="text-[10px] uppercase tracking-[0.25em] font-extrabold text-[var(--ink-600)]">Growth Plan</div>
+                <div class="font-heading text-xl text-[var(--ink-900)] mt-1">Grade-by-grade expansion</div>
+              </div>
+            </div>
+
+            <div class="mt-5 space-y-3 text-sm text-[var(--ink-600)] leading-relaxed">
+              <div class="flex items-start gap-2">
+                <span class="text-[var(--maroon-600)] mt-0.5">•</span>
+                <span>Start with an exceptional Grade 1 foundation.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-[var(--maroon-600)] mt-0.5">•</span>
+                <span>Scale staffing and resources responsibly each year.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-[var(--maroon-600)] mt-0.5">•</span>
+                <span>Maintain disciplined culture and premium learning standards.</span>
+              </div>
+            </div>
+
+            <div class="mt-6 flex gap-3">
+              <a class="btn btn-primary" href="home.html">Primary Home →</a>
+              <a class="btn btn-ghost" href="#faq">FAQ</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- STEPS (Interactive Stepper UX) -->
+  <section id="steps" class="py-16 md:py-24 bg-[var(--beige-50)] border-y border-black/5">
+    <div class="container-max px-5">
+      <div class="max-w-3xl reveal">
+        <div class="kicker text-[var(--maroon-600)] font-bold tracking-widest uppercase">The Journey</div>
+        <h2 class="section-title text-3xl md:text-5xl mt-3 font-heading text-[var(--ink-900)]">Primary Admission Steps</h2>
+        <p class="mt-4 text-[var(--ink-600)] leading-relaxed text-lg">
+          A simple, parent-friendly process. Tap each step to view the detail.
+        </p>
+      </div>
+
+      <!-- Step pills -->
+      <div class="mt-10 flex flex-wrap gap-3 reveal" role="tablist" aria-label="Primary steps">
+        <button class="step-pill active" data-step="0" role="tab" aria-selected="true">
+          <span class="step-dot"></span>
+          <span class="text-[11px] uppercase tracking-widest font-extrabold text-[var(--ink-800)]">1. Enquire & Tour</span>
+        </button>
+        <button class="step-pill" data-step="1" role="tab" aria-selected="false">
+          <span class="step-dot"></span>
+          <span class="text-[11px] uppercase tracking-widest font-extrabold text-[var(--ink-800)]">2. Documents</span>
+        </button>
+        <button class="step-pill" data-step="2" role="tab" aria-selected="false">
+          <span class="step-dot"></span>
+          <span class="text-[11px] uppercase tracking-widest font-extrabold text-[var(--ink-800)]">3. Review</span>
+        </button>
+        <button class="step-pill" data-step="3" role="tab" aria-selected="false">
+          <span class="step-dot"></span>
+          <span class="text-[11px] uppercase tracking-widest font-extrabold text-[var(--ink-800)]">4. Placement</span>
+        </button>
+      </div>
+
+      <!-- Step detail cards -->
+      <div class="mt-8 grid lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-7 reveal">
+          <div class="card p-8 bg-white border-none shadow-[0_18px_44px_rgba(16,24,40,.10)] rounded-[var(--radius-lg)]">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <div id="stepKicker" class="kicker text-[var(--maroon-600)]">Step 1</div>
+                <h3 id="stepTitle" class="font-heading text-2xl md:text-3xl text-[var(--ink-900)] mt-2">Enquire & Tour</h3>
+              </div>
+              <span id="stepBadge" class="badge badge-beige !px-3 !py-1 text-[9px] uppercase tracking-widest">Start here</span>
+            </div>
+
+            <p id="stepDesc" class="mt-5 text-[var(--ink-600)] leading-relaxed text-lg">
+              Visit the campus, meet our team, and understand the primary learning approach. Tours are arranged by appointment.
+            </p>
+
+            <div id="stepBullets" class="mt-6 space-y-3 text-[var(--ink-600)]">
+              <div class="flex items-start gap-3">
+                <span class="text-[var(--maroon-600)] mt-1">✓</span>
+                <span>See the classrooms and daily routine.</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="text-[var(--maroon-600)] mt-1">✓</span>
+                <span>Ask about Grade 1 readiness and support.</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="text-[var(--maroon-600)] mt-1">✓</span>
+                <span>Receive your document checklist and next steps.</span>
+              </div>
+            </div>
+
+            <div class="mt-8 flex flex-col sm:flex-row gap-3">
+              <a class="btn btn-maroon" href="#primary-apply">Start Enquiry →</a>
+              <a class="btn btn-ghost" href="../contact.html">Book a Tour</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 reveal delay-200">
+          <div class="card-soft rounded-[var(--radius-lg)] overflow-hidden bg-white shadow-[0_18px_44px_rgba(16,24,40,.10)]">
+            <img src="../assets/img/books.avif" class="w-full h-[260px] object-cover" alt="Primary learning environment">
+            <div class="p-7">
+              <div class="kicker">What to bring</div>
+              <h4 class="font-heading text-xl text-[var(--maroon-600)] mt-2">Document checklist</h4>
+              <ul class="mt-4 space-y-2 text-sm text-[var(--ink-600)] leading-relaxed">
+                <li>• Learner birth certificate (certified copy)</li>
+                <li>• Parent/guardian ID (certified copy)</li>
+                <li>• Clinic card / immunisation record</li>
+                <li>• Latest school report (if applicable)</li>
+              </ul>
+              <div class="mt-6 flex gap-3">
+                <a class="btn btn-primary" href="#faq">View FAQ →</a>
+                <a class="btn btn-outline" href="#primary-apply">Apply</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ENQUIRY / APPLY -->
+  <section id="primary-apply" class="py-16 md:py-24 bg-white">
+    <div class="container-max px-5">
+      <div class="grid lg:grid-cols-12 gap-10 items-start">
+        <div class="lg:col-span-6 reveal">
+          <div class="kicker text-[var(--maroon-600)]">Primary Enquiry</div>
+          <h2 class="section-title-premium mt-3">Enquire in under a minute.</h2>
+          <p class="mt-4 text-[var(--ink-600)] text-lg leading-relaxed">
+            This form saves your draft automatically. Submit when ready — we’ll respond with next steps and availability.
+          </p>
+
+          <div class="mt-6 p-5 rounded-2xl bg-[var(--beige-50)] border border-black/5">
+            <div class="text-[10px] uppercase tracking-widest font-extrabold text-[var(--ink-600)]">Response Promise</div>
+            <div class="mt-2 text-sm text-[var(--ink-600)] leading-relaxed">
+              We aim to respond within <span class="font-bold text-[var(--maroon-600)]">1–2 working days</span>.
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 reveal delay-200">
+          <form id="primaryEnquiryForm" class="card p-8 bg-[var(--beige-50)] border-none shadow-[0_18px_44px_rgba(16,24,40,.10)] rounded-[var(--radius-lg)]" novalidate>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="text-[10px] uppercase tracking-widest font-bold text-[var(--ink-600)]">Parent / Guardian Name</label>
+                <input name="parent_name" class="soft-input mt-2" placeholder="Full name" required />
+              </div>
+              <div>
+                <label class="text-[10px] uppercase tracking-widest font-bold text-[var(--ink-600)]">Mobile Number</label>
+                <input name="phone" class="soft-input mt-2" placeholder="e.g. 08X XXX XXXX" inputmode="tel" required />
+              </div>
+
+              <div>
+                <label class="text-[10px] uppercase tracking-widest font-bold text-[var(--ink-600)]">Email</label>
+                <input name="email" class="soft-input mt-2" placeholder="name@email.com" type="email" required />
+              </div>
+              <div>
+                <label class="text-[10px] uppercase tracking-widest font-bold text-[var(--ink-600)]">Grade</label>
+                <select name="grade" class="soft-input mt-2" required>
+                  <option value="">Select grade…</option>
+                  <option>Grade 1</option>
+                  <option disabled>Grade 2 (coming soon)</option>
+                  <option disabled>Grade 3 (coming soon)</option>
+                </select>
+              </div>
+
+              <div class="sm:col-span-2">
+                <label class="text-[10px] uppercase tracking-widest font-bold text-[var(--ink-600)]">Message</label>
+                <textarea name="message" class="soft-input mt-2 min-h-[120px]" placeholder="Tell us about your learner and what you’d like to know…" required></textarea>
+              </div>
+            </div>
+
+            <div class="mt-6 flex flex-col sm:flex-row gap-3">
+              <!-- Replace with real submission later (email backend / form endpoint) -->
+              <button type="submit" class="btn btn-maroon w-full sm:w-auto justify-center py-4 text-xs uppercase tracking-widest font-bold">
+                Submit Enquiry
+              </button>
+              <button type="button" id="clearDraftBtn" class="btn btn-ghost w-full sm:w-auto justify-center py-4 text-xs uppercase tracking-widest font-bold">
+                Clear Draft
+              </button>
+            </div>
+
+            <div id="formNote" class="mt-4 text-sm text-[var(--ink-600)] leading-relaxed"></div>
+            <div class="mt-3 text-[11px] text-[var(--ink-500)] leading-relaxed">
+              Submitting this form will open your email client for now (simple static-site mode). We can later connect it to a JSON feed / CMS / database.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-16 md:py-24 bg-[var(--beige-50)] border-y border-black/5">
+    <div class="container-max px-5">
+      <div class="max-w-3xl reveal">
+        <div class="kicker text-[var(--maroon-600)]">FAQ</div>
+        <h2 class="section-title-premium mt-3">Common questions</h2>
+        <p class="mt-4 text-[var(--ink-600)] text-lg leading-relaxed">
+          Clean, direct answers — designed for busy parents.
+        </p>
+      </div>
+
+      <div class="mt-10 grid lg:grid-cols-2 gap-6">
+        <div class="faq-item reveal">
+          <button class="faq-btn" type="button" aria-expanded="false">
+            <div>
+              <div class="text-[11px] uppercase tracking-widest font-extrabold text-[var(--ink-800)]">Is Konwaba Primary only Grade 1?</div>
+              <div class="text-sm text-[var(--ink-500)] mt-1">Yes, currently — and expanding year by year.</div>
+            </div>
+            <svg class="faq-ico" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <div class="faq-panel">
+            <div class="faq-panel-inner">
+              We are starting with a high-quality Grade 1 offering and expanding responsibly each year — scaling staff, resources, and facilities while maintaining a premium learning standard.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal delay-100">
+          <button class="faq-btn" type="button" aria-expanded="false">
+            <div>
+              <div class="text-[11px] uppercase tracking-widest font-extrabold text-[var(--ink-800)]">How do I book a tour?</div>
+              <div class="text-sm text-[var(--ink-500)] mt-1">Tours are arranged by appointment.</div>
+            </div>
+            <svg class="faq-ico" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <div class="faq-panel">
+            <div class="faq-panel-inner">
+              Use the enquiry form above or contact the school directly. We’ll confirm a date/time and share what to expect during the visit.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-btn" type="button" aria-expanded="false">
+            <div>
+              <div class="text-[11px] uppercase tracking-widest font-extrabold text-[var(--ink-800)]">What documents are required?</div>
+              <div class="text-sm text-[var(--ink-500)] mt-1">Certified IDs, birth certificate, and clinic card.</div>
+            </div>
+            <svg class="faq-ico" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <div class="faq-panel">
+            <div class="faq-panel-inner">
+              Bring certified copies of parent/guardian IDs, learner birth certificate, immunisation record/clinic card, and the latest school report (if applicable).
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal delay-100">
+          <button class="faq-btn" type="button" aria-expanded="false">
+            <div>
+              <div class="text-[11px] uppercase tracking-widest font-extrabold text-[var(--ink-800)]">Do you offer learner support?</div>
+              <div class="text-sm text-[var(--ink-500)] mt-1">Yes — foundation support is built-in.</div>
+            </div>
+            <svg class="faq-ico" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <div class="faq-panel">
+            <div class="faq-panel-inner">
+              Primary is all about foundations. We focus on routine, early gap identification, and parent-friendly feedback to keep learners progressing with confidence.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-10 reveal">
+        <a class="btn btn-primary" href="#primary-apply">Enquire Now →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <section class="py-14 md:py-16 bg-[var(--maroon-600)]">
+    <div class="container-max px-5">
+      <div class="card-soft rounded-[var(--radius-lg)] p-7 md:p-10 reveal bg-white">
+        <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+          <div>
+            <div class="kicker">Primary</div>
+            <h2 class="font-heading text-2xl md:text-3xl text-[var(--maroon-600)] mt-2">
+              Ready to begin the foundation years?
+            </h2>
+            <p class="mt-3 text-[var(--ink-600)] max-w-2xl leading-relaxed">
+              Enquire, book a tour, and get the checklist — a clear path from interest to placement.
+            </p>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
+            <a class="btn btn-maroon w-full sm:w-auto justify-center" href="#primary-apply">Start Enquiry</a>
+            <a class="btn btn-primary w-full sm:w-auto justify-center" href="../contact.html">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer py-14">
+    <div class="container-max px-5">
+      <div class="flex flex-col items-center text-center gap-5">
+        <img src="../assets/img/khs_logo.png" alt="Konwaba School Logo" class="h-14 w-auto rounded-xl opacity-95">
+        <div class="text-white/85">
+          <div class="font-heading text-xl">Konwaba School</div>
+          <div class="text-white/70 mt-1">16 Cawood Street, Cradock (Nxuba)</div>
+          <div class="text-white/70">048 109 9068 • konwabass@gmail.com</div>
+        </div>
+        <div class="flex flex-wrap justify-center gap-4 text-white/70 text-sm">
+          <a href="../about.html" class="nav-link">About</a>
+          <a href="../academics.html" class="nav-link">High School</a>
+          <a href="home.html" class="nav-link">Primary</a>
+          <a href="../admissions.html" class="nav-link">Admissions</a>
+          <a href="../contact.html" class="nav-link">Contact</a>
+        </div>
+        <div class="text-white/55 text-xs">© 2026 Konwaba School. All Rights Reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE DRAWER -->
+  <div id="drawerBackdrop" class="drawer-backdrop fixed inset-0 bg-black/40 backdrop-blur-sm z-[150]"></div>
+  <div id="mobileDrawer" class="drawer-panel fixed top-0 right-0 w-[300px] h-full bg-white z-[160] shadow-2xl p-8 flex flex-col" aria-label="Mobile menu">
+    <div class="flex items-center justify-between mb-10">
+      <img src="../assets/img/khs_logo.png" alt="Konwaba School" class="h-10">
+      <button id="menuCloseBtn" class="text-[var(--ink-500)] hover:text-[var(--maroon-600)] transition-colors" aria-label="Close menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <nav class="flex flex-col gap-6">
+      <a class="text-sm uppercase tracking-widest font-bold text-[var(--ink-900)]" href="../index.html">Home</a>
+      <a class="text-sm uppercase tracking-widest font-bold text-[var(--ink-700)]" href="../about.html">About</a>
+      <a class="text-sm uppercase tracking-widest font-bold text-[var(--ink-700)]" href="../academics.html">High School</a>
+      <a class="text-sm uppercase tracking-widest font-bold text-[var(--ink-700)]" href="home.html">Primary Home</a>
+      <a class="text-sm uppercase tracking-widest font-bold text-[var(--ink-700)]" href="../notices.html">Notices</a>
+      <a class="text-sm uppercase tracking-widest font-bold text-[var(--ink-700)]" href="../admissions.html">Admissions</a>
+      <a class="text-sm uppercase tracking-widest font-bold text-[var(--ink-700)]" href="../contact.html">Contact</a>
+    </nav>
+
+    <div class="mt-auto pt-8 border-t border-black/5">
+      <a class="btn btn-maroon w-full py-4 text-xs font-bold uppercase tracking-widest justify-center" href="#primary-apply">Apply</a>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script>
+    (function(){
+      // ---------------------------
+      // 1) Nav shrink
+      // ---------------------------
+      const mainNav = document.getElementById('main-nav');
+      const setNav = () => {
+        if (!mainNav) return;
+        if (window.scrollY > 80) mainNav.classList.add('scrolled');
+        else mainNav.classList.remove('scrolled');
+      };
+      window.addEventListener('scroll', setNav, { passive: true });
+      window.addEventListener('load', setNav);
+      setNav();
+
+      // ---------------------------
+      // 2) Reveal
+      // ---------------------------
+      const els = document.querySelectorAll('.reveal');
+      const reveal = () => {
+        const trigger = window.innerHeight * 0.9;
+        els.forEach(el => {
+          const r = el.getBoundingClientRect();
+          if (r.top < trigger) el.classList.add('is-visible');
+        });
+      };
+      window.addEventListener('scroll', reveal, { passive: true });
+      window.addEventListener('load', reveal);
+      reveal();
+
+      // ---------------------------
+      // 3) Mobile drawer
+      // ---------------------------
+      const btn = document.getElementById('menuBtn');
+      const closeBtn = document.getElementById('menuCloseBtn');
+      const backdrop = document.getElementById('drawerBackdrop');
+      const drawer = document.getElementById('mobileDrawer');
+
+      const openDrawer = () => {
+        if (!drawer || !backdrop) return;
+        drawer.classList.add('open');
+        backdrop.classList.add('open');
+        document.body.classList.add('lock-scroll');
+        if (btn) btn.setAttribute('aria-expanded','true');
+      };
+
+      const closeDrawer = () => {
+        if (!drawer || !backdrop) return;
+        drawer.classList.remove('open');
+        backdrop.classList.remove('open');
+        document.body.classList.remove('lock-scroll');
+        if (btn) btn.setAttribute('aria-expanded','false');
+      };
+
+      if (btn) btn.addEventListener('click', openDrawer);
+      if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+      if (backdrop) backdrop.addEventListener('click', closeDrawer);
+
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeDrawer();
+      });
+
+      if (drawer) {
+        drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+      }
+
+      // ---------------------------
+      // 4) Stepper UX
+      // ---------------------------
+      const stepData = [
+        {
+          kicker: "Step 1",
+          title: "Enquire & Tour",
+          badge: "Start here",
+          desc: "Visit the campus, meet our team, and understand the primary learning approach. Tours are arranged by appointment.",
+          bullets: [
+            "See the classrooms and daily routine.",
+            "Ask about Grade 1 readiness and support.",
+            "Receive your document checklist and next steps."
+          ]
+        },
+        {
+          kicker: "Step 2",
+          title: "Documents",
+          badge: "Checklist",
+          desc: "Submit your completed application with certified documents so we can verify and review the learner profile.",
+          bullets: [
+            "Certified parent/guardian ID copies.",
+            "Learner birth certificate + clinic card.",
+            "Latest report (if applicable)."
+          ]
+        },
+        {
+          kicker: "Step 3",
+          title: "Review",
+          badge: "Assessment",
+          desc: "We review each application to ensure readiness and fit, and confirm available placement for the intake.",
+          bullets: [
+            "Readiness and placement alignment.",
+            "Clarifications if any documents are missing.",
+            "Confirmation of next steps."
+          ]
+        },
+        {
+          kicker: "Step 4",
+          title: "Placement",
+          badge: "Confirmed",
+          desc: "Once accepted, we confirm onboarding information and share the start pack and school readiness guidance.",
+          bullets: [
+            "Placement confirmation and admin pack.",
+            "Uniform guidance and start checklist.",
+            "Class routine and first-week plan."
+          ]
+        }
+      ];
+
+      const pills = Array.from(document.querySelectorAll('.step-pill'));
+      const stepKicker = document.getElementById('stepKicker');
+      const stepTitle = document.getElementById('stepTitle');
+      const stepBadge = document.getElementById('stepBadge');
+      const stepDesc = document.getElementById('stepDesc');
+      const stepBullets = document.getElementById('stepBullets');
+
+      const renderStep = (idx) => {
+        const s = stepData[idx];
+        if (!s) return;
+
+        pills.forEach((p, i) => {
+          const active = i === idx;
+          p.classList.toggle('active', active);
+          p.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+
+        if (stepKicker) stepKicker.textContent = s.kicker;
+        if (stepTitle) stepTitle.textContent = s.title;
+        if (stepBadge) stepBadge.textContent = s.badge;
+        if (stepDesc) stepDesc.textContent = s.desc;
+
+        if (stepBullets) {
+          stepBullets.innerHTML = s.bullets.map(b => `
+            <div class="flex items-start gap-3">
+              <span class="text-[var(--maroon-600)] mt-1">✓</span>
+              <span>${b}</span>
+            </div>
+          `).join('');
+        }
+      };
+
+      pills.forEach(p => {
+        p.addEventListener('click', () => {
+          const idx = Number(p.getAttribute('data-step') || "0");
+          renderStep(idx);
+        });
+      });
+
+      // initial
+      renderStep(0);
+
+      // ---------------------------
+      // 5) FAQ accordion
+      // ---------------------------
+      const faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(item => {
+        const btn = item.querySelector('.faq-btn');
+        const panel = item.querySelector('.faq-panel');
+        const ico = item.querySelector('.faq-ico');
+        if (!btn || !panel) return;
+
+        btn.addEventListener('click', () => {
+          const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+          // close others for premium feel
+          faqItems.forEach(other => {
+            const ob = other.querySelector('.faq-btn');
+            const op = other.querySelector('.faq-panel');
+            const oi = other.querySelector('.faq-ico');
+            if (!ob || !op) return;
+            ob.setAttribute('aria-expanded', 'false');
+            op.style.maxHeight = '0px';
+            if (oi) oi.classList.remove('rotate-180');
+          });
+
+          // toggle current
+          btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+          if (!isOpen) {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+            if (ico) ico.classList.add('rotate-180');
+          } else {
+            panel.style.maxHeight = '0px';
+            if (ico) ico.classList.remove('rotate-180');
+          }
+        });
+      });
+
+      // ---------------------------
+      // 6) Age guidance (simple, safe indicator)
+      // ---------------------------
+      const yearEl = document.getElementById('primaryYear');
+      if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+      const birthYear = document.getElementById('birthYear');
+      const ageBtn = document.getElementById('ageCheckBtn');
+      const ageOut = document.getElementById('ageCheckResult');
+
+      const ageGuidance = () => {
+        const y = Number((birthYear?.value || "").trim());
+        const currentYear = new Date().getFullYear();
+        if (!ageOut) return;
+
+        if (!y || y < 1900 || y > currentYear) {
+          ageOut.innerHTML = `<span class="text-[var(--maroon-600)] font-bold">Tip:</span> Enter a valid birth year.`;
+          return;
+        }
+
+        const approxAge = currentYear - y;
+        // Typical Grade 1 age ~6 turning 7 depending on cutoff; keep it indicative
+        let msg = "";
+        if (approxAge < 5) msg = "Likely too early for Grade 1. Consider readiness discussion with admissions.";
+        else if (approxAge === 5) msg = "Possible Grade 1 candidate depending on cutoff date and readiness.";
+        else if (approxAge === 6 || approxAge === 7) msg = "Typical Grade 1 range. Enquire to confirm placement and requirements.";
+        else msg = "Learner may be older than typical Grade 1 range. Enquire for placement guidance.";
+
+        ageOut.innerHTML = `<span class="font-bold text-[var(--ink-700)]">Approx age:</span> ${approxAge} • <span class="text-[var(--ink-600)]">${msg}</span>`;
+      };
+
+      if (ageBtn) ageBtn.addEventListener('click', ageGuidance);
+
+      // ---------------------------
+      // 7) Enquiry form: draft autosave + mailto submission (static-site mode)
+      // ---------------------------
+      const form = document.getElementById('primaryEnquiryForm');
+      const note = document.getElementById('formNote');
+      const clearBtn = document.getElementById('clearDraftBtn');
+      const DRAFT_KEY = "konwaba_primary_enquiry_draft_v1";
+
+      const loadDraft = () => {
+        try{
+          const raw = localStorage.getItem(DRAFT_KEY);
+          if (!raw || !form) return;
+          const data = JSON.parse(raw);
+          [...form.elements].forEach(el => {
+            if (!el.name) return;
+            if (data[el.name] != null) el.value = data[el.name];
+          });
+          if (note) note.innerHTML = `<span class="text-[var(--ink-600)]">Draft restored.</span>`;
+        } catch(e){}
+      };
+
+      const saveDraft = () => {
+        if (!form) return;
+        const data = {};
+        [...form.elements].forEach(el => {
+          if (!el.name) return;
+          data[el.name] = el.value;
+        });
+        try{
+          localStorage.setItem(DRAFT_KEY, JSON.stringify(data));
+          if (note) note.innerHTML = `<span class="text-[var(--ink-600)]">Draft saved.</span>`;
+        } catch(e){}
+      };
+
+      const clearDraft = () => {
+        try{ localStorage.removeItem(DRAFT_KEY); } catch(e){}
+        if (form) form.reset();
+        if (note) note.innerHTML = `<span class="text-[var(--maroon-600)] font-bold">Draft cleared.</span>`;
+      };
+
+      if (form) {
+        loadDraft();
+        form.addEventListener('input', () => {
+          // debounce
+          window.clearTimeout(window.__kPrimaryDraftT);
+          window.__kPrimaryDraftT = window.setTimeout(saveDraft, 220);
+        });
+
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+
+          // basic validation
+          const required = ["parent_name","phone","email","grade","message"];
+          const missing = required.filter(n => {
+            const el = form.querySelector(`[name="${n}"]`);
+            return !el || !String(el.value || "").trim();
+          });
+
+          if (missing.length) {
+            if (note) note.innerHTML = `<span class="text-[var(--maroon-600)] font-bold">Please complete all fields.</span>`;
+            return;
+          }
+
+          const parent = form.querySelector('[name="parent_name"]').value.trim();
+          const phone = form.querySelector('[name="phone"]').value.trim();
+          const email = form.querySelector('[name="email"]').value.trim();
+          const grade = form.querySelector('[name="grade"]').value.trim();
+          const message = form.querySelector('[name="message"]').value.trim();
+
+          const subject = encodeURIComponent(`Primary Admission Enquiry — ${grade}`);
+          const body = encodeURIComponent(
+            `Parent/Guardian: ${parent}\n` +
+            `Phone: ${phone}\n` +
+            `Email: ${email}\n` +
+            `Grade: ${grade}\n\n` +
+            `Message:\n${message}\n`
+          );
+
+          // TODO: replace email address with official admissions inbox
+          window.location.href = `mailto:konwabass@gmail.com?subject=${subject}&body=${body}`;
+
+          if (note) note.innerHTML = `<span class="text-[var(--ink-600)]">Opening email client…</span>`;
+          saveDraft();
+        });
+      }
+
+      if (clearBtn) clearBtn.addEventListener('click', clearDraft);
+    })();
+  </script>
+
+</body>
+</html>
