@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Konwaba Primary | Grade 1 — A Calm, Strong Start</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Konwaba Primary is the growing primary extension of Konwaba High School in Nxuba (Cradock). Grade 1 now open, expanding year by year." />
+  <meta name="keywords" content="Konwaba Primary, Grade 1, primary school, Nxuba, Cradock, private school South Africa" />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#7B1E3A" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Shared theme -->
+  <link rel="stylesheet" href="../style.css" />
+  <!-- If your site is not using folders, replace with: <link rel="stylesheet" href="style.css" /> -->
+
+  <style>
+    :root{
+      --transition-prestige: all .7s cubic-bezier(.16,1,.3,1);
+      --fluid-h1: clamp(2.6rem, 6.7vw, 4.6rem);
+      --fluid-h2: clamp(1.9rem, 4.2vw, 3.2rem);
+
+      /* fallbacks if style.css vars not present */
+      --maroon-900: #3A0C1B;
+      --maroon-700: #5F1730;
+      --maroon-600: #7B1E3A;
+      --beige-50: #FBF8F4;
+      --beige-100: #F2E9E2;
+      --beige-200: #E8D8CB;
+      --ink-900: #101828;
+      --ink-700: #344054;
+      --ink-600: #475467;
+      --ink-500: #667085;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+    }
+
+    body{ font-family:"Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+    .font-heading{ font-family:"Playfair Display", serif; }
+
+    /* Nav shrink (aligned) */
+    .nav-shell{ transition: var(--transition-prestige); padding-top: 1rem; padding-bottom: 1rem; }
+    .nav-shell.scrolled{
+      padding-top: .45rem; padding-bottom: .45rem;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 12px 34px rgba(0,0,0,.06);
+      border-bottom: 1px solid rgba(0,0,0,.06);
+    }
+
+    /* Hero cinematic */
+    .hero-media img{
+      animation: kenburns 30s ease infinite alternate;
+      filter: brightness(.78) contrast(1.05);
+      transform: translateZ(0);
+      will-change: transform;
+    }
+    @keyframes kenburns{ 0%{transform:scale(1)} 100%{transform:scale(1.14)} }
+
+    /* Reveal */
+    .reveal{ opacity:0; transform: translateY(28px); transition: var(--transition-prestige); will-change: transform, opacity; }
+    .reveal.is-visible{ opacity:1; transform: translateY(0); }
+    .delay-100{ transition-delay:120ms; } .delay-200{ transition-delay:240ms; } .delay-300{ transition-delay:360ms; }
+
+    /* Drawer */
+    .drawer-backdrop{ opacity:0; pointer-events:none; transition: opacity .35s ease; }
+    .drawer-backdrop.open{ opacity:1; pointer-events:auto; }
+    .drawer-panel{ transform: translateX(104%); transition: transform .55s cubic-bezier(.16,1,.3,1); }
+    .drawer-panel.open{ transform: translateX(0); }
+
+    /* Premium cards */
+    .cardx{
+      border-radius: 22px;
+      border: 1px solid rgba(16,24,40,0.08);
+      background:#fff;
+      box-shadow: 0 14px 30px rgba(16,24,40,0.06);
+      transition: var(--transition-prestige);
+      position:relative;
+      overflow:hidden;
+    }
+    .cardx:before{
+      content:""; position:absolute; inset:0; pointer-events:none;
+      background: linear-gradient(135deg, rgba(123,30,58,0.10), rgba(242,233,226,0.18));
+      opacity:0; transition: var(--transition-prestige);
+    }
+    .cardx:hover{ transform: translateY(-6px); box-shadow: 0 22px 44px rgba(123,30,58,0.10); border-color: rgba(123,30,58,0.30); }
+    .cardx:hover:before{ opacity:1; }
+
+    .kicker{
+      font-size: 11px; text-transform: uppercase; letter-spacing: .28em;
+      font-weight: 800; color: var(--maroon-600);
+    }
+
+    /* Primary badges: calmer tone */
+    .pill{
+      display:inline-flex; align-items:center; gap:.5rem;
+      padding:.45rem .75rem; border-radius:999px;
+      font-size: 11px; font-weight: 800;
+      text-transform: uppercase; letter-spacing: .22em;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.18);
+      color: rgba(255,255,255,.92);
+      backdrop-filter: blur(10px);
+    }
+
+    /* Counter polish */
+    .counter{ font-variant-numeric: tabular-nums; }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--beige-50); }
+    ::-webkit-scrollbar-thumb { background: var(--maroon-600); border-radius: 20px; }
+  </style>
+</head>
+
+<body class="bg-[var(--beige-50)] text-[var(--ink-700)] antialiased">
+
+  <!-- NAV -->
+  <header id="main-nav" class="nav-shell fixed w-full top-0 left-0 z-[100]">
+    <div class="container-max px-5">
+      <div class="flex items-center justify-between">
+
+        <a class="nav-logo flex items-center gap-3 transition-transform duration-500 hover:scale-[1.03]" href="../index.html">
+          <img src="../assets/img/KPS.jpg-removebg-preview.png" alt="Konwaba" class="h-14 sm:h-16 transition-all duration-700" />
+          <div class="hidden sm:block leading-tight">
+            <div class="font-heading text-[var(--ink-900)] text-lg">Konwaba Primary</div>
+            <div class="text-[10px] uppercase tracking-[0.32em] text-[var(--ink-500)]">Grade 1 • Growing Year by Year</div>
+          </div>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-10" aria-label="Primary Navigation">
+          <a class="text-[11px] uppercase tracking-[0.25em] font-semibold text-[var(--maroon-600)]" href="home.html">Primary Home</a>
+          <a class="text-[11px] uppercase tracking-[0.25em] font-semibold text-[var(--ink-700)] hover:text-[var(--maroon-600)] transition-colors" href="../academics.html">Academics</a>
+          <a class="text-[11px] uppercase tracking-[0.25em] font-semibold text-[var(--ink-700)] hover:text-[var(--maroon-600)] transition-colors" href="../admissions.html">Admissions</a>
+          <a class="text-[11px] uppercase tracking-[0.25em] font-semibold text-[var(--ink-700)] hover:text-[var(--maroon-600)] transition-colors" href="../notices.html">Notices</a>
+          <a class="text-[11px] uppercase tracking-[0.25em] font-semibold text-[var(--ink-700)] hover:text-[var(--maroon-600)] transition-colors" href="../contact.html">Contact</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <a class="btn btn-ghost hidden sm:inline-flex text-[10px] uppercase tracking-widest font-bold" href="../index.html">High School</a>
+          <a class="btn btn-maroon px-7 py-3 text-[10px] uppercase tracking-widest font-bold shadow-xl hidden sm:inline-flex" href="../admissions.html">Apply</a>
+
+          <button id="menuBtn" class="lg:hidden p-2 rounded-xl border border-black/10 bg-white/70 backdrop-blur-md text-[var(--maroon-600)]" aria-label="Open menu">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16m-7 6h7"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative min-h-[92vh] flex items-end overflow-hidden">
+    <div class="hero-media absolute inset-0 z-0">
+      <!-- Replace this with a primary-themed image later -->
+      <img src="../assets/img/primary_school_hero.webp" alt="Konwaba Primary" class="w-full h-full object-cover" />
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent z-10"></div>
+
+    <div class="container-max px-5 relative z-20 w-full pb-16 pt-32">
+      <div class="grid lg:grid-cols-12 gap-10 items-end">
+
+        <!-- Left -->
+        <div class="lg:col-span-7 reveal">
+          <div class="flex items-center gap-4 mb-7">
+            <span class="w-14 h-[1px] bg-[var(--beige-200)] opacity-70"></span>
+            <span class="text-[var(--beige-100)] uppercase tracking-[0.40em] text-[10px] font-extrabold">Konwaba Primary • Nxuba (Cradock)</span>
+          </div>
+
+          <h1 class="font-heading text-white leading-[1.02] tracking-[-0.03em]" style="font-size: var(--fluid-h1);">
+            A calm, strong start<br>
+            for <span class="italic text-[var(--beige-200)] font-medium">young learners.</span>
+          </h1>
+
+          <p class="mt-6 text-white/88 text-lg md:text-xl max-w-2xl leading-relaxed font-light">
+            Grade 1 now open — a nurturing foundation built on discipline, literacy, numeracy, and confidence.
+          </p>
+
+          <div class="mt-10 flex flex-wrap gap-3">
+            <span class="pill"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Grade 1 Open</span>
+            <span class="pill"><span class="w-2 h-2 rounded-full bg-[var(--beige-200)]"></span> Small Classes</span>
+            <span class="pill"><span class="w-2 h-2 rounded-full bg-[var(--maroon-600)]"></span> Strong Literacy</span>
+          </div>
+
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a class="btn btn-primary px-10 py-5 text-xs uppercase tracking-widest font-bold" href="../admissions.html">Apply for Grade 1</a>
+            <a class="btn btn-outline px-10 py-5 text-xs uppercase tracking-widest font-bold bg-white/10" href="../contact.html">Book a Visit</a>
+          </div>
+
+          <!-- Micro KPIs -->
+          <div class="mt-12 grid grid-cols-3 gap-4 border-t border-white/10 pt-8">
+            <div class="reveal delay-100">
+              <div class="text-[var(--beige-200)] text-[10px] uppercase tracking-widest font-extrabold mb-1">Grade</div>
+              <div class="text-white font-heading text-xl">
+                <span class="counter" data-target="1">0</span><span class="text-white/70 font-body text-sm ml-2">currently</span>
+              </div>
+            </div>
+            <div class="reveal delay-200">
+              <div class="text-[var(--beige-200)] text-[10px] uppercase tracking-widest font-extrabold mb-1">Focus</div>
+              <div class="text-white font-heading text-xl">
+                <span class="counter" data-target="2">0</span><span class="text-white/70 font-body text-sm ml-2">pillars</span>
+              </div>
+            </div>
+            <div class="reveal delay-300">
+              <div class="text-[var(--beige-200)] text-[10px] uppercase tracking-widest font-extrabold mb-1">Care</div>
+              <div class="text-white font-heading text-xl">
+                <span class="counter" data-target="100">0</span><span class="text-white/70 font-body text-sm ml-2">% support</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Premium Primary Card -->
+        <div class="lg:col-span-5 reveal delay-200">
+          <div class="bg-white/92 backdrop-blur-2xl rounded-[22px] border border-white/25 shadow-[0_28px_60px_-18px_rgba(0,0,0,0.35)] p-8 md:p-9">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <div class="kicker mb-1">Primary Overview</div>
+                <div class="font-heading text-2xl text-[var(--ink-900)] leading-tight">Grade 1 Foundation</div>
+              </div>
+              <span class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.28em] bg-[rgba(123,30,58,0.10)] text-[var(--maroon-600)]">
+                <span class="w-1.5 h-1.5 rounded-full bg-[var(--maroon-600)]"></span>
+                Primary
+              </span>
+            </div>
+
+            <p class="mt-4 text-sm text-[var(--ink-600)] leading-relaxed">
+              A structured day with warm routines, strong reading practice, and foundations that prepare learners for future grades.
+            </p>
+
+            <div class="mt-6 grid grid-cols-2 gap-3">
+              <div class="cardx !shadow-none !border-black/5 p-4">
+                <div class="text-[10px] uppercase tracking-[0.28em] font-extrabold text-[var(--ink-500)]">Focus</div>
+                <div class="mt-1 font-semibold text-[var(--ink-900)]">Literacy</div>
+                <div class="text-xs text-[var(--ink-600)] mt-1">Reading, phonics, vocabulary.</div>
+              </div>
+              <div class="cardx !shadow-none !border-black/5 p-4">
+                <div class="text-[10px] uppercase tracking-[0.28em] font-extrabold text-[var(--ink-500)]">Focus</div>
+                <div class="mt-1 font-semibold text-[var(--ink-900)]">Numeracy</div>
+                <div class="text-xs text-[var(--ink-600)] mt-1">Number sense and problem solving.</div>
+              </div>
+            </div>
+
+            <div class="mt-6 rounded-[18px] border border-black/5 bg-[rgba(242,233,226,0.55)] p-5">
+              <div class="flex items-center justify-between gap-4">
+                <div>
+                  <div class="text-[10px] uppercase tracking-[0.28em] font-extrabold text-[var(--ink-500)]">Next step</div>
+                  <div class="font-semibold text-[var(--ink-900)]">Book a visit to meet the team</div>
+                </div>
+                <button id="openVisit" class="btn btn-maroon px-5 py-3 text-[10px] uppercase tracking-widest font-extrabold">View times</button>
+              </div>
+              <div id="visitTimes" class="hidden mt-4 text-sm text-[var(--ink-600)] leading-relaxed">
+                <div class="flex items-center justify-between py-2 border-t border-black/5">
+                  <span>Tuesday</span><span class="font-semibold text-[var(--ink-900)]">14:30 – 15:30</span>
+                </div>
+                <div class="flex items-center justify-between py-2 border-t border-black/5">
+                  <span>Thursday</span><span class="font-semibold text-[var(--ink-900)]">14:30 – 15:30</span>
+                </div>
+                <div class="pt-3 text-xs text-[var(--ink-500)]">
+                  Times can be adjusted — contact admin for an alternative slot.
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 flex flex-col sm:flex-row gap-3">
+              <a class="btn btn-maroon w-full justify-center py-4 text-xs uppercase tracking-widest font-extrabold" href="../admissions.html">Admissions</a>
+              <a class="btn btn-ghost w-full justify-center py-4 text-xs uppercase tracking-widest font-extrabold" href="../contact.html">Contact</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: What makes Primary special -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container-max px-5">
+      <div class="grid lg:grid-cols-12 gap-10 items-start">
+        <div class="lg:col-span-5 reveal">
+          <div class="kicker">The Primary Advantage</div>
+          <h2 class="font-heading text-[var(--ink-900)] mt-3 leading-tight" style="font-size: var(--fluid-h2);">
+            Safe routines, strong foundations, confident learners.
+          </h2>
+          <p class="mt-5 text-[var(--ink-600)] leading-relaxed">
+            Our primary extension is built to scale: a strong Grade 1 experience today, expanding each year with a consistent culture of excellence.
+          </p>
+
+          <div class="mt-7 flex flex-wrap gap-2">
+            <span class="badge badge-maroon">Structured day</span>
+            <span class="badge badge-beige">Warm discipline</span>
+            <span class="badge">Reading culture</span>
+            <span class="badge">Parent partnership</span>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 grid sm:grid-cols-2 gap-6 reveal delay-100">
+          <div class="cardx p-7">
+            <div class="relative z-[1]">
+              <div class="kicker !text-[var(--ink-500)]">Learning</div>
+              <div class="font-heading text-xl text-[var(--ink-900)] mt-2">Daily Reading & Phonics</div>
+              <p class="text-sm text-[var(--ink-600)] mt-3 leading-relaxed">
+                Consistent routines that build early reading fluency and comprehension.
+              </p>
+            </div>
+          </div>
+
+          <div class="cardx p-7">
+            <div class="relative z-[1]">
+              <div class="kicker !text-[var(--ink-500)]">Learning</div>
+              <div class="font-heading text-xl text-[var(--ink-900)] mt-2">Numeracy Foundations</div>
+              <p class="text-sm text-[var(--ink-600)] mt-3 leading-relaxed">
+                Number sense, patterns, and problem-solving taught with clarity and care.
+              </p>
+            </div>
+          </div>
+
+          <div class="cardx p-7">
+            <div class="relative z-[1]">
+              <div class="kicker !text-[var(--ink-500)]">Care</div>
+              <div class="font-heading text-xl text-[var(--ink-900)] mt-2">Safe & Nurturing Culture</div>
+              <p class="text-sm text-[var(--ink-600)] mt-3 leading-relaxed">
+                A calm environment that protects learning time and supports each child.
+              </p>
+            </div>
+          </div>
+
+          <div class="cardx p-7">
+            <div class="relative z-[1]">
+              <div class="kicker !text-[var(--ink-500)]">Growth</div>
+              <div class="font-heading text-xl text-[var(--ink-900)] mt-2">Built to Expand</div>
+              <p class="text-sm text-[var(--ink-600)] mt-3 leading-relaxed">
+                Adding grades year-by-year with consistent standards and resources.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: Growth timeline (dynamic) -->
+  <section class="py-16 md:py-24 bg-[var(--beige-50)] border-y border-[var(--beige-100)]">
+    <div class="container-max px-5">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-10">
+        <div class="max-w-2xl reveal">
+          <div class="kicker">Primary Growth</div>
+          <h2 class="font-heading text-[var(--ink-900)] mt-3 leading-tight" style="font-size: var(--fluid-h2);">
+            A primary school that grows with your child.
+          </h2>
+          <p class="mt-4 text-[var(--ink-600)] leading-relaxed">
+            Today: Grade 1. We expand year-by-year with a roadmap that stays consistent in culture and quality.
+          </p>
+        </div>
+
+        <div class="reveal">
+          <button id="toggleRoadmap" class="btn btn-ghost px-10 py-4 text-[10px] uppercase tracking-widest font-extrabold">
+            Toggle roadmap
+          </button>
+        </div>
+      </div>
+
+      <div id="roadmapWrap" class="grid lg:grid-cols-12 gap-8 items-stretch">
+        <div class="lg:col-span-7 reveal">
+          <div class="cardx p-8 md:p-10">
+            <div class="relative z-[1]">
+              <div class="flex items-center justify-between gap-4">
+                <div>
+                  <div class="kicker !text-[var(--ink-500)]">Roadmap</div>
+                  <div class="font-heading text-2xl text-[var(--ink-900)] mt-2">Primary expansion plan</div>
+                </div>
+                <span class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.28em] bg-[rgba(123,30,58,0.10)] text-[var(--maroon-600)]">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  Active
+                </span>
+              </div>
+
+              <div id="timeline" class="mt-8 space-y-4"></div>
+
+              <div class="mt-8 pt-6 border-t border-black/5 text-xs text-[var(--ink-500)]">
+                This roadmap is indicative and may adjust based on enrolments and staffing.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 reveal delay-100">
+          <div class="cardx p-8 md:p-10 h-full">
+            <div class="relative z-[1]">
+              <div class="kicker !text-[var(--ink-500)]">Now Enrolling</div>
+              <div class="font-heading text-2xl text-[var(--ink-900)] mt-2">Grade 1</div>
+              <p class="mt-4 text-sm text-[var(--ink-600)] leading-relaxed">
+                Limited places. We recommend early applications to secure a space.
+              </p>
+
+              <div class="mt-6 grid grid-cols-2 gap-3">
+                <div class="rounded-[18px] border border-black/5 bg-white p-5">
+                  <div class="text-[10px] uppercase tracking-[0.28em] font-extrabold text-[var(--ink-500)]">Start</div>
+                  <div class="mt-1 font-semibold text-[var(--ink-900)]">Term 1</div>
+                </div>
+                <div class="rounded-[18px] border border-black/5 bg-white p-5">
+                  <div class="text-[10px] uppercase tracking-[0.28em] font-extrabold text-[var(--ink-500)]">Age</div>
+                  <div class="mt-1 font-semibold text-[var(--ink-900)]">Grade 1</div>
+                </div>
+              </div>
+
+              <div class="mt-7 flex flex-col sm:flex-row gap-3">
+                <a href="../admissions.html" class="btn btn-maroon w-full justify-center py-4 text-xs uppercase tracking-widest font-extrabold">Apply</a>
+                <a href="../contact.html" class="btn btn-ghost w-full justify-center py-4 text-xs uppercase tracking-widest font-extrabold">Enquire</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER (simple consistent) -->
+  <footer class="bg-[var(--maroon-900)] pt-16 pb-10 text-white/70">
+    <div class="container-max px-5">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
+        <div>
+          <div class="font-heading text-2xl text-white">Konwaba Primary</div>
+          <div class="text-[11px] uppercase tracking-[0.30em] mt-2 text-white/50">Nxuba (Cradock) • Eastern Cape</div>
+          <div class="mt-4 text-sm text-white/65">
+            16 Cawood Street, Cradock (Nxuba), 5880<br>
+            048 109 9068 • konwabass@gmail.com
+          </div>
+        </div>
+
+        <div class="flex gap-8 text-[10px] uppercase tracking-[0.30em] font-extrabold">
+          <a href="../admissions.html" class="hover:text-[var(--beige-200)] transition-colors">Admissions</a>
+          <a href="../notices.html" class="hover:text-[var(--beige-200)] transition-colors">Notices</a>
+          <a href="../contact.html" class="hover:text-[var(--beige-200)] transition-colors">Contact</a>
+        </div>
+      </div>
+
+      <div class="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 text-[10px] uppercase tracking-[0.32em] text-white/35">
+        <div>© 2026 Konwaba Primary</div>
+        <div class="flex gap-8">
+          <a href="#" class="hover:text-white transition-colors">Privacy</a>
+          <a href="#" class="hover:text-white transition-colors">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE DRAWER -->
+  <div id="drawerBackdrop" class="drawer-backdrop fixed inset-0 bg-black/45 backdrop-blur-sm z-[150]"></div>
+  <aside id="mobileDrawer" class="drawer-panel fixed top-0 right-0 w-[320px] max-w-[86vw] h-full bg-white z-[160] shadow-2xl p-7 flex flex-col">
+    <div class="flex items-center justify-between mb-10">
+      <div>
+        <div class="font-heading font-bold text-2xl text-[var(--maroon-600)]">Menu</div>
+        <div class="text-[10px] uppercase tracking-[0.32em] text-[var(--ink-500)] mt-1">Primary</div>
+      </div>
+      <button id="closeMenu" class="p-2 rounded-xl border border-black/10 text-[var(--ink-600)]" aria-label="Close menu">
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <nav class="flex flex-col gap-6">
+      <a href="home.html" class="text-xs uppercase tracking-[0.28em] font-extrabold text-[var(--maroon-600)]">Primary Home</a>
+      <a href="../academics.html" class="text-xs uppercase tracking-[0.28em] font-extrabold text-[var(--ink-700)]">Academics</a>
+      <a href="../admissions.html" class="text-xs uppercase tracking-[0.28em] font-extrabold text-[var(--ink-700)]">Admissions</a>
+      <a href="../notices.html" class="text-xs uppercase tracking-[0.28em] font-extrabold text-[var(--ink-700)]">Notices</a>
+      <a href="../contact.html" class="text-xs uppercase tracking-[0.28em] font-extrabold text-[var(--ink-700)]">Contact</a>
+    </nav>
+
+    <div class="mt-auto pt-8 border-t border-black/5">
+      <a href="../admissions.html" class="btn btn-maroon w-full justify-center py-4 text-[10px] uppercase tracking-widest font-extrabold">Apply</a>
+      <a href="../contact.html" class="btn btn-ghost w-full justify-center py-4 mt-3 text-[10px] uppercase tracking-widest font-extrabold">Enquire</a>
+    </div>
+  </aside>
+
+  <!-- JS (robust + aligned) -->
+  <script>
+    (function(){
+      // Nav shrink
+      const mainNav = document.getElementById('main-nav');
+      const setNav = () => {
+        if (!mainNav) return;
+        if (window.scrollY > 80) mainNav.classList.add('scrolled');
+        else mainNav.classList.remove('scrolled');
+      };
+
+      // Reveal
+      const revealCheck = () => {
+        const trigger = window.innerHeight * 0.92;
+        document.querySelectorAll('.reveal').forEach(el => {
+          const r = el.getBoundingClientRect();
+          if (r.top < trigger) el.classList.add('is-visible');
+        });
+      };
+
+      // Counter
+      const animateCounter = (el) => {
+        const target = Number(el.getAttribute('data-target') || "0");
+        const duration = 850;
+        const start = performance.now();
+        const from = 0;
+
+        const tick = (now) => {
+          const p = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.round(from + (target - from) * eased);
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      };
+
+      const counters = document.querySelectorAll('.counter');
+      let countersDone = false;
+      const counterCheck = () => {
+        if (countersDone) return;
+        const hero = document.querySelector('section');
+        if (!hero) return;
+        const r = hero.getBoundingClientRect();
+        if (r.bottom > 0 && r.top < window.innerHeight) {
+          counters.forEach(animateCounter);
+          countersDone = true;
+        }
+      };
+
+      // Drawer
+      const menuBtn = document.getElementById('menuBtn');
+      const closeMenu = document.getElementById('closeMenu');
+      const drawer = document.getElementById('mobileDrawer');
+      const backdrop = document.getElementById('drawerBackdrop');
+
+      const openDrawer = () => {
+        if (!drawer || !backdrop) return;
+        drawer.classList.add('open');
+        backdrop.classList.add('open');
+        document.documentElement.style.overflow = 'hidden';
+      };
+      const closeDrawer = () => {
+        if (!drawer || !backdrop) return;
+        drawer.classList.remove('open');
+        backdrop.classList.remove('open');
+        document.documentElement.style.overflow = '';
+      };
+
+      menuBtn && menuBtn.addEventListener('click', openDrawer);
+      closeMenu && closeMenu.addEventListener('click', closeDrawer);
+      backdrop && backdrop.addEventListener('click', closeDrawer);
+      window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDrawer(); });
+
+      // Visit times toggle
+      const openVisit = document.getElementById('openVisit');
+      const visitTimes = document.getElementById('visitTimes');
+      openVisit && openVisit.addEventListener('click', () => {
+        if (!visitTimes) return;
+        visitTimes.classList.toggle('hidden');
+      });
+
+      // Dynamic roadmap
+      const ROADMAP = [
+        { year: 2026, grade: "Grade 1", status: "Live", note: "Foundation phase launch and stabilisation." },
+        { year: 2027, grade: "Grade 2", status: "Planned", note: "Add Grade 2 with consistent literacy focus." },
+        { year: 2028, grade: "Grade 3", status: "Planned", note: "Expand resources and learning spaces." },
+        { year: 2029, grade: "Grade 4", status: "Planned", note: "Intermediate phase begins; stronger enrichment." }
+      ];
+
+      const timeline = document.getElementById('timeline');
+      const toggleRoadmap = document.getElementById('toggleRoadmap');
+      const roadmapWrap = document.getElementById('roadmapWrap');
+
+      const renderRoadmap = () => {
+        if (!timeline) return;
+        const nowYear = new Date().getFullYear();
+        timeline.innerHTML = ROADMAP.map((r, idx) => {
+          const isLive = (r.status || '').toLowerCase() === 'live';
+          const dot = isLive ? 'bg-emerald-500' : 'bg-[rgba(123,30,58,0.35)]';
+          const tag = isLive ? 'bg-emerald-500/10 text-emerald-700 border-emerald-500/20' : 'bg-black/5 text-[var(--ink-700)] border-black/10';
+          const delay = idx === 0 ? '' : (idx === 1 ? ' delay-100' : ' delay-200');
+          return `
+            <div class="flex items-start gap-4 reveal${delay}">
+              <div class="mt-1 w-3 h-3 rounded-full ${dot}"></div>
+              <div class="flex-1">
+                <div class="flex items-center justify-between gap-4">
+                  <div class="font-semibold text-[var(--ink-900)]">${r.year} • ${r.grade}</div>
+                  <span class="inline-flex items-center rounded-full px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.22em] border ${tag}">
+                    ${r.status}
+                  </span>
+                </div>
+                <div class="text-sm text-[var(--ink-600)] mt-1 leading-relaxed">${r.note}</div>
+              </div>
+            </div>
+          `;
+        }).join('');
+        revealCheck();
+      };
+
+      toggleRoadmap && toggleRoadmap.addEventListener('click', () => {
+        if (!roadmapWrap) return;
+        roadmapWrap.classList.toggle('hidden');
+      });
+
+      // Listeners
+      window.addEventListener('scroll', () => { setNav(); revealCheck(); counterCheck(); }, { passive: true });
+      window.addEventListener('load', () => { setNav(); renderRoadmap(); revealCheck(); counterCheck(); });
+
+      // init
+      setNav();
+      renderRoadmap();
+      revealCheck();
+      counterCheck();
+    })();
+  </script>
+</body>
+</html>
