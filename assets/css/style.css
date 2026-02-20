@@ -267,6 +267,12 @@ img{ display:block; max-width:100%; }
   box-shadow: 0 20px 80px rgba(0,0,0,.18);
 }
 
+
+   /* Nav */
+    .drawer-backdrop{ opacity:0; pointer-events:none; transition: opacity .35s ease; }
+    .drawer-backdrop.open{ opacity:1; pointer-events:auto; }
+    .drawer-panel{ transform: translateX(104%); transition: transform .55s cubic-bezier(.16,1,.3,1); }
+    .drawer-panel.open{ transform: translateX(0); }
 /* -----------------------------
    7) Cards (Premium System)
 ------------------------------ */

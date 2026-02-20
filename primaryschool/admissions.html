@@ -265,17 +265,14 @@
         <a class="text-[11px] uppercase tracking-[0.25em] font-semibold text-[var(--ink-700)] hover:text-[var(--maroon-600)] transition-colors nav-link" href="contact.html">Contact</a>
       </nav>
 
-      <div class="flex items-center gap-4">
-        <a class="btn btn-ghost hidden sm:inline-flex text-[10px] uppercase tracking-widest font-bold" href="../index.html">High School</a>
-        <a class="btn btn-maroon px-8 py-3 text-[10px] uppercase tracking-widest font-bold shadow-xl" href="#primary-apply">Apply</a>
+        <div class="flex items-center gap-3">
+          <a class="btn btn-ghost hidden sm:inline-flex text-[10px] uppercase tracking-widest font-bold" href="admissions.html" >Apply</a>
+          <a class="btn btn-maroon px-7 py-3 text-[10px] uppercase tracking-widest font-bold shadow-xl" href="../index.html">High School</a>
 
-        <!-- Mobile menu trigger -->
-        <button id="menuBtn" class="lg:hidden btn btn-ghost !px-3" aria-label="Open menu" aria-controls="mobileDrawer" aria-expanded="false">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </button>
-      </div>
+          <button id="menuBtn" class="lg:hidden p-2 rounded-xl border border-black/10 bg-white/70 backdrop-blur-md text-[var(--maroon-600)]" aria-label="Open menu">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16m-7 6h7"/></svg>
+          </button>
+        </div>
     </div>
   </header>
 
@@ -740,33 +737,32 @@
   </footer>
 
   <!-- MOBILE DRAWER -->
-  <div id="drawerBackdrop" class="drawer-backdrop fixed inset-0 bg-black/40 backdrop-blur-sm z-[150]"></div>
-  <div id="mobileDrawer" class="drawer-panel fixed top-0 right-0 w-[300px] h-full bg-white z-[160] shadow-2xl p-8 flex flex-col" aria-label="Mobile menu">
+  <div id="drawerBackdrop" class="drawer-backdrop fixed inset-0 bg-black/45 backdrop-blur-sm z-[150]"></div>
+  <aside id="mobileDrawer" class="drawer-panel fixed top-0 right-0 w-[320px] max-w-[86vw] h-full bg-white z-[160] shadow-2xl p-7 flex flex-col">
     <div class="flex items-center justify-between mb-10">
-      <img src="../assets/img/khs_logo.png" alt="Konwaba School" class="h-10">
-      <button id="menuCloseBtn" class="text-[var(--ink-500)] hover:text-[var(--maroon-600)] transition-colors" aria-label="Close menu">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
+      <div>
+        <div class="font-heading font-bold text-2xl text-[var(--maroon-600)]">Menu</div>
+        <div class="text-[10px] uppercase tracking-[0.32em] text-[var(--ink-500)] mt-1">Konwabo Primary School</div>
+      </div>
+      <button id="closeMenu" class="p-2 rounded-xl border border-black/10 text-[var(--ink-600)]" aria-label="Close menu">
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
       </button>
     </div>
 
     <nav class="flex flex-col gap-6">
-      <a class="text-sm uppercase tracking-widest font-bold text-[var(--ink-900)]" href="../index.html">Home</a>
-      <a class="text-sm uppercase tracking-widest font-bold text-[var(--ink-700)]" href="../about.html">About</a>
-      <a class="text-sm uppercase tracking-widest font-bold text-[var(--ink-700)]" href="../academics.html">High School</a>
-      <a class="text-sm uppercase tracking-widest font-bold text-[var(--ink-700)]" href="home.html">Primary Home</a>
-      <a class="text-sm uppercase tracking-widest font-bold text-[var(--ink-700)]" href="../notices.html">Notices</a>
-      <a class="text-sm uppercase tracking-widest font-bold text-[var(--ink-700)]" href="../admissions.html">Admissions</a>
-      <a class="text-sm uppercase tracking-widest font-bold text-[var(--ink-700)]" href="../contact.html">Contact</a>
+      <a href="home.html" class="text-xs uppercase tracking-[0.28em] font-extrabold text-[var(--ink-700)]">Primary Home</a>
+      <a href="academics.html" class="text-xs uppercase tracking-[0.28em] font-extrabold text-[var(--ink-700)]">Academics</a>
+      <a href="admissions.html" class="text-xs uppercase tracking-[0.28em] font-extrabold text-[var(--maroon-600)]">Admissions</a>
+      <a href="../notices.html" class="text-xs uppercase tracking-[0.28em] font-extrabold text-[var(--ink-700)]">Notices</a>
+      <a href="student-life.html" class="text-xs uppercase tracking-[0.28em] font-extrabold text-[var(--ink-700)]">Student Life</a>
+      <a href="contact.html" class="text-xs uppercase tracking-[0.28em] font-extrabold text-[var(--ink-700)]">Contact</a>
     </nav>
 
     <div class="mt-auto pt-8 border-t border-black/5">
-      <a class="btn btn-maroon w-full py-4 text-xs font-bold uppercase tracking-widest justify-center" href="#primary-apply">Apply</a>
+      <a href="../admissions.html" class="btn btn-maroon w-full justify-center py-4 text-[10px] uppercase tracking-widest font-extrabold">Apply</a>
+      <a href="../contact.html" class="btn btn-ghost w-full justify-center py-4 mt-3 text-[10px] uppercase tracking-widest font-extrabold">Enquire</a>
     </div>
-  </div>
-
+  </aside>
   <!-- JS -->
   <script>
     (function(){

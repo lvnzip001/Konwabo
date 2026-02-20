@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -7,7 +8,8 @@
   <title>About | Konwaba High School — Our Story & Ethos</title>
 
   <!-- Primary SEO -->
-  <meta name="description" content="Learn about Konwaba High School: our story, values, leadership ethos, and the learning culture that shapes confident and capable learners." />
+  <meta name="description"
+    content="Learn about Konwaba High School: our story, values, leadership ethos, and the learning culture that shapes confident and capable learners." />
   <meta name="keywords" content="Konwaba High School, About, Values, Mission, Vision, Cradock, Nxuba, Eastern Cape" />
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#7B1E3A" />
@@ -22,7 +24,8 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="About | Konwaba High School" />
-  <meta property="og:description" content="Our story, values, and the learning culture that shapes confident learners." />
+  <meta property="og:description"
+    content="Our story, values, and the learning culture that shapes confident learners." />
   <meta property="og:image" content="assets/img/school_topview.jpeg" />
   <meta property="og:url" content="https://www.example.co.za/about.html" />
   <meta property="og:site_name" content="Konwaba High School" />
@@ -34,7 +37,9 @@
   <meta name="twitter:image" content="assets/img/school_topview.jpeg" />
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
 
   <!-- Tailwind (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -43,43 +48,46 @@
   <link rel="stylesheet" href="assets/css/style.css" />
 
 
-    <style>
+  <style>
     /* ============================================================
       BRAND TOKENS (Konwaba): Light Maroon + Beige + Clean Neutrals
       (Defines everything your HTML references so nothing breaks)
     ============================================================ */
-    :root{
+    :root {
       /* Primary */
-      --maroon-900:#3A0C1B;
-      --maroon-800:#531327;
-      --maroon-700:#6A1931;
-      --maroon-600:#7B1E3A; /* main */
-      --maroon-500:#92284A; /* “light maroon” accent */
+      --maroon-900: #3A0C1B;
+      --maroon-800: #531327;
+      --maroon-700: #6A1931;
+      --maroon-600: #7B1E3A;
+      /* main */
+      --maroon-500: #92284A;
+      /* “light maroon” accent */
       --maroon-200: rgba(123, 30, 58, 0.22);
       --maroon-120: rgba(123, 30, 58, 0.12);
-      --maroon-70:  rgba(123, 30, 58, 0.07);
+      --maroon-70: rgba(123, 30, 58, 0.07);
 
       /* Secondary */
-      --beige-50:#FBF8F4;
-      --beige-100:#F2E9E2; /* main beige */
-      --beige-200:#E6D5C3;
-      --beige-300:#D8BFA7;
+      --beige-50: #FBF8F4;
+      --beige-100: #F2E9E2;
+      /* main beige */
+      --beige-200: #E6D5C3;
+      --beige-300: #D8BFA7;
 
       /* Neutrals */
-      --ink-900:#101828;
-      --ink-800:#1D2939;
-      --ink-700:#344054;
-      --ink-600:#475467;
-      --ink-500:#667085;
+      --ink-900: #101828;
+      --ink-800: #1D2939;
+      --ink-700: #344054;
+      --ink-600: #475467;
+      --ink-500: #667085;
 
-      --paper:#FFFFFF;
+      --paper: #FFFFFF;
       --paper-2: var(--beige-50);
 
       /* Radius / shadow */
       --radius-md: 16px;
       --radius-lg: 22px;
-      --shadow-soft: 0 14px 34px rgba(16,24,40,.10);
-      --shadow-hero: 0 32px 70px -20px rgba(0,0,0,.35);
+      --shadow-soft: 0 14px 34px rgba(16, 24, 40, .10);
+      --shadow-hero: 0 32px 70px -20px rgba(0, 0, 0, .35);
 
       /* Motion */
       --ease: cubic-bezier(0.16, 1, 0.3, 1);
@@ -93,41 +101,55 @@
     /* ============================================================
       NAV: Premium shrink + blur (keeps your layout)
     ============================================================ */
-    .nav-shell{
+    .nav-shell {
       transition: var(--transition-prestige);
       padding-top: 0.8rem;
       padding-bottom: 0.8rem;
       background: #ffffff70;
     }
-    .nav-shell.scrolled{
+
+    .nav-shell.scrolled {
       padding-top: .45rem;
       padding-bottom: .45rem;
-      background: rgba(251,248,244,.92); /* beige glass */
+      background: rgba(251, 248, 244, .92);
+      /* beige glass */
       backdrop-filter: blur(14px);
-      box-shadow: 0 10px 30px rgba(0,0,0,.08);
-      border-bottom: 1px solid rgba(16,24,40,.06);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+      border-bottom: 1px solid rgba(16, 24, 40, .06);
     }
-    .nav-shell.scrolled .nav-logo img{ height: 44px; }
+
+    .nav-shell.scrolled .nav-logo img {
+      height: 44px;
+    }
 
     /* ============================================================
       HERO: Cinematic “moving picture” with brand-correct overlay
     ============================================================ */
-    .hero-media img{
+    .hero-media img {
       animation: kenburns 34s ease-in-out infinite alternate;
       transform-origin: center;
       will-change: transform;
       filter: brightness(.86) contrast(1.06) saturate(1.02);
     }
-    @keyframes kenburns{
-      0%   { transform: scale(1); }
-      100% { transform: scale(1.18); }
+
+    @keyframes kenburns {
+      0% {
+        transform: scale(1);
+      }
+
+      100% {
+        transform: scale(1.18);
+      }
     }
-    .hero-h1{
+
+    .hero-h1 {
       font-size: var(--fluid-h1);
       line-height: 1.02;
-      letter-spacing: -0.03em;F
+      letter-spacing: -0.03em;
+      F
     }
-    .section-title-premium{
+
+    .section-title-premium {
       font-size: var(--fluid-h2);
       line-height: 1.08;
       letter-spacing: -0.01em;
@@ -135,180 +157,260 @@
     }
 
     /* A more “Konwaba” gradient: maroon + warm beige */
-    .hero-overlay{
+    .hero-overlay {
       background:
-        radial-gradient(1200px 600px at 12% 20%, rgba(123,30,58,.35), transparent 60%),
-        linear-gradient(to top, rgba(0,0,0,.82), rgba(0,0,0,.28), transparent 75%);
+        radial-gradient(1200px 600px at 12% 20%, rgba(123, 30, 58, .35), transparent 60%),
+        linear-gradient(to top, rgba(0, 0, 0, .82), rgba(0, 0, 0, .28), transparent 75%);
     }
 
     /* ============================================================
       Reveals + stagger (keeps your classes)
     ============================================================ */
-    .reveal{
+    .reveal {
       opacity: 0;
       transform: translateY(36px);
       transition: opacity .85s var(--ease), transform .85s var(--ease);
       will-change: transform, opacity;
     }
-    .reveal.is-visible{ opacity: 1; transform: translateY(0); }
-    .delay-100{ transition-delay: 120ms; }
-    .delay-200{ transition-delay: 240ms; }
-    .delay-300{ transition-delay: 360ms; }
-    .delay-400{ transition-delay: 480ms; }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .delay-100 {
+      transition-delay: 120ms;
+    }
+
+    .delay-200 {
+      transition-delay: 240ms;
+    }
+
+    .delay-300 {
+      transition-delay: 360ms;
+    }
+
+    .delay-400 {
+      transition-delay: 480ms;
+    }
 
     /* ============================================================
       Micro-polish
     ============================================================ */
-    .aspect-cinema{ aspect-ratio: 16 / 7; }
-    .collage-img{ transition: var(--transition-prestige); will-change: transform, filter; }
-    .collage-img:hover{ transform: scale(1.03); filter: brightness(1.04); }
-    .counter{ font-variant-numeric: tabular-nums; }
+    .aspect-cinema {
+      aspect-ratio: 16 / 7;
+    }
+
+    .collage-img {
+      transition: var(--transition-prestige);
+      will-change: transform, filter;
+    }
+
+    .collage-img:hover {
+      transform: scale(1.03);
+      filter: brightness(1.04);
+    }
+
+    .counter {
+      font-variant-numeric: tabular-nums;
+    }
 
     /* Scrollbar */
-    ::-webkit-scrollbar{ width: 6px; }
-    ::-webkit-scrollbar-track{ background: var(--beige-50); }
-    ::-webkit-scrollbar-thumb{ background: var(--maroon-600); border-radius: 20px; }
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--beige-50);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--maroon-600);
+      border-radius: 20px;
+    }
 
     /* ============================================================
       Mobile Drawer (world-class)
     ============================================================ */
-    .drawer-backdrop{
+    .drawer-backdrop {
       opacity: 0;
       pointer-events: none;
-      transition: opacity .35s cubic-bezier(.2,.8,.2,1);
+      transition: opacity .35s cubic-bezier(.2, .8, .2, 1);
     }
-    .drawer-backdrop.open{ opacity: 1; pointer-events: auto; }
-    .drawer-panel{
+
+    .drawer-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .drawer-panel {
       transform: translateX(110%);
-      transition: transform .45s cubic-bezier(.2,.8,.2,1);
+      transition: transform .45s cubic-bezier(.2, .8, .2, 1);
       will-change: transform;
     }
-    .drawer-panel.open{ transform: translateX(0); }
-    body.lock-scroll{ overflow: hidden; }
+
+    .drawer-panel.open {
+      transform: translateX(0);
+    }
+
+    body.lock-scroll {
+      overflow: hidden;
+    }
 
     /* ============================================================
       RIGHT HERO CARD (next level: luxury glass + high-tech)
     ============================================================ */
-    .premium-glass{
+    .premium-glass {
       background: rgba(255, 255, 255, 0.792);
       backdrop-filter: blur(18px);
     }
-    .premium-glass:before{
-      content:"";
-      position:absolute;
-      inset:0;
-      pointer-events:none;
+
+    .premium-glass:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
       background:
-        linear-gradient(135deg, rgba(123,30,58,.10) 0%, rgba(242,233,226,.22) 50%, rgba(123,30,58,.06) 100%);
-      opacity:.85;
+        linear-gradient(135deg, rgba(123, 30, 58, .10) 0%, rgba(242, 233, 226, .22) 50%, rgba(123, 30, 58, .06) 100%);
+      opacity: .85;
     }
 
     /* Media module shimmer */
-    .media-module{ aspect-ratio: 16 / 7; }
-    .media-shimmer{
-      background: linear-gradient(110deg, transparent 0%, rgba(255,255,255,.18) 35%, transparent 70%);
+    .media-module {
+      aspect-ratio: 16 / 7;
+    }
+
+    .media-shimmer {
+      background: linear-gradient(110deg, transparent 0%, rgba(255, 255, 255, .18) 35%, transparent 70%);
       transform: translateX(-120%);
       transition: transform 1.05s var(--ease), opacity .35s var(--ease);
     }
-    .media-module:hover .media-shimmer{ transform: translateX(120%); }
+
+    .media-module:hover .media-shimmer {
+      transform: translateX(120%);
+    }
 
     /* Premium play button */
-    .play-premium{
-      width: 36px; height: 36px;
+    .play-premium {
+      width: 36px;
+      height: 36px;
       border-radius: 999px;
-      display:flex; align-items:center; justify-content:center;
-      background: rgba(242,233,226,.92);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(242, 233, 226, .92);
       color: var(--maroon-600);
-      box-shadow: 0 18px 40px rgba(0,0,0,.25);
-      border: 1px solid rgba(123,30,58,.18);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, .25);
+      border: 1px solid rgba(123, 30, 58, .18);
       position: relative;
       transition: transform .5s var(--ease), background .5s var(--ease);
     }
-    .play-premium:after{
-      content:"";
-      position:absolute;
-      inset:-10px;
+
+    .play-premium:after {
+      content: "";
+      position: absolute;
+      inset: -10px;
       border-radius: 999px;
-      border: 1px solid rgba(242,233,226,.35);
-      opacity:.7;
+      border: 1px solid rgba(242, 233, 226, .35);
+      opacity: .7;
     }
-    .media-module:hover .play-premium{
+
+    .media-module:hover .play-premium {
       transform: scale(1.08);
-      background: rgba(255,255,255,.92);
+      background: rgba(255, 255, 255, .92);
     }
 
     /* Status strip */
-    .status-strip{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
+    .status-strip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       gap: 12px;
       padding: 12px 14px;
       border-radius: 16px;
-      background: rgba(251,248,244,.85);
-      border: 1px solid rgba(16,24,40,.06);
-      box-shadow: 0 10px 22px rgba(16,24,40,.06);
+      background: rgba(251, 248, 244, .85);
+      border: 1px solid rgba(16, 24, 40, .06);
+      box-shadow: 0 10px 22px rgba(16, 24, 40, .06);
     }
-    .status-dot{
-      width: 10px; height: 10px;
+
+    .status-dot {
+      width: 10px;
+      height: 10px;
       border-radius: 999px;
       background: var(--maroon-600);
-      box-shadow: 0 0 0 6px rgba(123,30,58,.14);
+      box-shadow: 0 0 0 6px rgba(123, 30, 58, .14);
     }
 
     /* Smart tiles */
-    .smart-tile{
+    .smart-tile {
       border-radius: 18px;
-      background: rgba(255,255,255,.92);
-      border: 1px solid rgba(16,24,40,.06);
+      background: rgba(255, 255, 255, .92);
+      border: 1px solid rgba(16, 24, 40, .06);
       padding: 14px 14px;
-      box-shadow: 0 12px 24px rgba(16,24,40,.06);
+      box-shadow: 0 12px 24px rgba(16, 24, 40, .06);
       position: relative;
       overflow: hidden;
       transition: transform .55s var(--ease), box-shadow .55s var(--ease);
     }
-    .smart-tile:before{
-      content:"";
-      position:absolute;
-      left:0; top:0; bottom:0;
+
+    .smart-tile:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
       width: 3px;
-      background: linear-gradient(to bottom, rgba(123,30,58,.75), rgba(242,233,226,.35));
-      opacity:.85;
+      background: linear-gradient(to bottom, rgba(123, 30, 58, .75), rgba(242, 233, 226, .35));
+      opacity: .85;
     }
-    .smart-tile:hover{
+
+    .smart-tile:hover {
       transform: translateY(-2px);
-      box-shadow: 0 18px 34px rgba(16,24,40,.10);
+      box-shadow: 0 18px 34px rgba(16, 24, 40, .10);
     }
-    .tile-top{ display:flex; align-items:center; gap: 10px; }
-    .tile-icon{
-      width: 36px; height: 36px;
+
+    .tile-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .tile-icon {
+      width: 36px;
+      height: 36px;
       border-radius: 12px;
-      display:flex; align-items:center; justify-content:center;
-      background: rgba(123,30,58,.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(123, 30, 58, .08);
       color: var(--maroon-600);
     }
-    .tile-label{
+
+    .tile-label {
       font-size: 11px;
       letter-spacing: .18em;
       text-transform: uppercase;
       font-weight: 800;
       color: var(--ink-600);
     }
-    .tile-value{
+
+    .tile-value {
       margin-top: 10px;
       font-family: "Playfair Display", serif;
       font-size: 22px;
       color: var(--ink-900);
       letter-spacing: -0.01em;
     }
-    .tile-suffix{
+
+    .tile-suffix {
       margin-left: 6px;
       font-family: "Poppins", sans-serif;
       font-weight: 500;
       font-size: 11px;
       color: var(--ink-500);
     }
-    .tile-micro{
+
+    .tile-micro {
       margin-top: 6px;
       font-size: 12px;
       color: var(--ink-500);
@@ -319,30 +421,40 @@
 <body class="font-body bg-paper text-[var(--ink-800)]">
 
   <!-- NAV -->
-<header id="main-nav" class="nav-shell fixed w-full top-0 left-0 z-[100]">
+  <header id="main-nav" class="nav-shell fixed w-full top-0 left-0 z-[100]">
     <div class="container-max flex items-center justify-between px-6 lg:px-12">
       <a class="nav-logo transition-transform duration-500 hover:scale-105" href="index.html">
         <img src="assets/img/khs_logo.png" alt="Konwaba High School" class="h-16 transition-all duration-700">
       </a>
 
       <nav class="hidden lg:flex items-center gap-10" aria-label="Main Navigation">
-        <a class="text-[11px] uppercase tracking-[0.25em] font-semibold text-[var(--ink-900)] hover:text-[var(--maroon-600)] transition-colors nav-link" href="index.html">Home</a>
-        <a class="text-[11px] uppercase tracking-[0.25em] font-semibold text-[var(--ink-700)] hover:text-[var(--maroon-600)] transition-colors nav-link" href="about.html">About</a>
-        <a class="text-[11px] uppercase tracking-[0.25em] font-semibold text-[var(--ink-700)] hover:text-[var(--maroon-600)] transition-colors nav-link" href="academics.html">Academics</a>
-                <a class="text-[11px] uppercase tracking-[0.25em] font-semibold text-[var(--ink-700)] hover:text-[var(--maroon-600)] transition-colors nav-link" href="notices.html">notices</a>
-        <a class="text-[11px] uppercase tracking-[0.25em] font-semibold text-[var(--ink-700)] hover:text-[var(--maroon-600)] transition-colors nav-link" href="student-life.html">Student Life</a>
-        <a class="text-[11px] uppercase tracking-[0.25em] font-semibold text-[var(--ink-700)] hover:text-[var(--maroon-600)] transition-colors nav-link" href="admissions.html">Admissions</a>
-        <a class="text-[11px] uppercase tracking-[0.25em] font-semibold text-[var(--ink-700)] hover:text-[var(--maroon-600)] transition-colors nav-link" href="contact.html">Contact</a>
+        <a class="text-[11px] uppercase tracking-[0.25em] font-semibold text-[var(--ink-900)] hover:text-[var(--maroon-600)] transition-colors nav-link"
+          href="index.html">Home</a>
+        <a class="text-[11px] uppercase tracking-[0.25em] font-semibold text-[var(--ink-700)] hover:text-[var(--maroon-600)] transition-colors nav-link"
+          href="about.html">About</a>
+        <a class="text-[11px] uppercase tracking-[0.25em] font-semibold text-[var(--ink-700)] hover:text-[var(--maroon-600)] transition-colors nav-link"
+          href="academics.html">Academics</a>
+        <a class="text-[11px] uppercase tracking-[0.25em] font-semibold text-[var(--ink-700)] hover:text-[var(--maroon-600)] transition-colors nav-link"
+          href="notices.html">notices</a>
+        <a class="text-[11px] uppercase tracking-[0.25em] font-semibold text-[var(--ink-700)] hover:text-[var(--maroon-600)] transition-colors nav-link"
+          href="student-life.html">Student Life</a>
+        <a class="text-[11px] uppercase tracking-[0.25em] font-semibold text-[var(--ink-700)] hover:text-[var(--maroon-600)] transition-colors nav-link"
+          href="admissions.html">Admissions</a>
+        <a class="text-[11px] uppercase tracking-[0.25em] font-semibold text-[var(--ink-700)] hover:text-[var(--maroon-600)] transition-colors nav-link"
+          href="contact.html">Contact</a>
       </nav>
 
       <div class="flex items-center gap-4">
-        <a class="btn btn-ghost hidden sm:inline-flex text-[10px] uppercase tracking-widest font-bold" href="primaryschool/home.html">Primary School</a>
-        <a class="btn btn-maroon px-8 py-3 text-[10px] uppercase tracking-widest font-bold shadow-xl" href="admissions.html">Apply Now</a>
-
+        <a class="btn btn-ghost hidden sm:inline-flex text-[10px] uppercase tracking-widest font-bold"
+          href="admissions.html">Apply Now</a>
+        <a class="btn btn-maroon px-8 py-3 text-[10px] uppercase tracking-widest font-bold shadow-xl"
+          href="primaryschool/home.html">Primary School</a>
         <!-- Mobile menu trigger -->
-        <button id="menuBtn" class="lg:hidden btn btn-ghost !px-3" aria-label="Open menu" aria-controls="mobileDrawer" aria-expanded="false">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+       <button id="menuBtn"
+          class="lg:hidden p-2 rounded-xl border border-black/10 bg-white/70 backdrop-blur-md text-[var(--maroon-600)]"
+          aria-label="Open menu">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M4 6h16M4 12h16m-7 6h7" />
           </svg>
         </button>
       </div>
@@ -353,7 +465,9 @@
   <section class="relative overflow-hidden border-b border-black/5">
     <div class="absolute inset-0">
       <img src="assets/img/register_class4.jpg" class="w-full h-full object-cover" alt="Campus top view">
-      <div class="absolute inset-0 bg-gradient-to-r from-[rgba(0,0,0,.90)] via-[rgba(13,3,6,.72)] to-[rgba(123,30,58,.35)]"></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-[rgba(0,0,0,.90)] via-[rgba(13,3,6,.72)] to-[rgba(123,30,58,.35)]">
+      </div>
     </div>
 
     <div class="container-max px-5 pt-28 pb-14 relative">
@@ -376,33 +490,39 @@
   </section>
 
   <!-- STORY + VALUES -->
-<section class="py-16 md:py-24 bg-[var(--beige-50)]">
-  <div class="container-max px-5">
-    <div class="grid lg:grid-cols-12 gap-10 items-center">
-      
-      <div class="lg:col-span-6 reveal">
-        <div class="kicker text-[var(--maroon-600)] font-bold tracking-widest uppercase">The Konwaba Standard</div>
-        <h2 class="section-title text-3xl md:text-5xl mt-3 font-heading text-[var(--ink-900)]">Who We Are</h2>
-        <p class="mt-5 lead text-[var(--ink-600)]">
-          Located in Nxuba (Cradock), Konwaba High School is a premier learning community where heritage meets modern industry. We bridge the gap between academic theory and master-level practical skills, ensuring every learner is equipped for the real world.
-        </p>
+  <section class="py-16 md:py-24 bg-[var(--beige-50)]">
+    <div class="container-max px-5">
+      <div class="grid lg:grid-cols-12 gap-10 items-center">
 
-        <div class="mt-8 grid sm:grid-cols-2 gap-4">
-          <div class="card p-6 bg-white border-none shadow-sm hover:shadow-md transition-all">
-            <div class="font-heading text-lg font-bold text-[var(--maroon-600)] uppercase tracking-tight mb-2">The Vision</div>
-            <p class="text-sm text-[var(--ink-600)] leading-relaxed">
-              To provide world-class education where students learn accountability, fulfill their potential, and reach their dreams.
-            </p>
-          </div>
-          <div class="card p-6 bg-white border-none shadow-sm hover:shadow-md transition-all">
-            <div class="font-heading text-lg font-bold text-[var(--maroon-600)] uppercase tracking-tight mb-2">The Mission</div>
-            <p class="text-sm text-[var(--ink-600)] leading-relaxed">
-              To offer top-notch education in a conducive environment, preparing students for success in academics and life beyond.
-            </p>
-          </div>
-        </div>
+        <div class="lg:col-span-6 reveal">
+          <div class="kicker text-[var(--maroon-600)] font-bold tracking-widest uppercase">The Konwaba Standard</div>
+          <h2 class="section-title text-3xl md:text-5xl mt-3 font-heading text-[var(--ink-900)]">Who We Are</h2>
+          <p class="mt-5 lead text-[var(--ink-600)]">
+            Located in Nxuba (Cradock), Konwaba High School is a premier learning community where heritage meets modern
+            industry. We bridge the gap between academic theory and master-level practical skills, ensuring every
+            learner is equipped for the real world.
+          </p>
 
-        <div class="mt-8">
+          <div class="mt-8 grid sm:grid-cols-2 gap-4">
+            <div class="card p-6 bg-white border-none shadow-sm hover:shadow-md transition-all">
+              <div class="font-heading text-lg font-bold text-[var(--maroon-600)] uppercase tracking-tight mb-2">The
+                Vision</div>
+              <p class="text-sm text-[var(--ink-600)] leading-relaxed">
+                To provide world-class education where students learn accountability, fulfill their potential, and reach
+                their dreams.
+              </p>
+            </div>
+            <div class="card p-6 bg-white border-none shadow-sm hover:shadow-md transition-all">
+              <div class="font-heading text-lg font-bold text-[var(--maroon-600)] uppercase tracking-tight mb-2">The
+                Mission</div>
+              <p class="text-sm text-[var(--ink-600)] leading-relaxed">
+                To offer top-notch education in a conducive environment, preparing students for success in academics and
+                life beyond.
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-8">
             <p class="text-[10px] uppercase tracking-[0.2em] font-bold text-[var(--ink-400)] mb-3">Our Core Values</p>
             <div class="flex flex-wrap gap-2">
               <span class="badge badge-maroon">Accountability</span>
@@ -411,51 +531,55 @@
               <span class="badge">Charity Outreach</span>
               <span class="badge">Presence of God</span>
             </div>
+          </div>
         </div>
-      </div>
-<div class="lg:col-span-6 reveal">
-  <div class="grid grid-cols-12 gap-4">
-    
-    <div class="col-span-12 md:col-span-7 hov-lift h-[460px]">
-      <div class="img-frame rounded-2xl overflow-hidden shadow-lg border border-black/5 h-full">
-        <img src="assets/img/video_thumb.png" class="w-full h-[340px] md:h-[460px] object-cover" alt="Academic Rigour at Konwaba">
-      </div>
-    </div>
-    
-    <div class="col-span-12 md:col-span-5 grid grid-rows-[1.5fr_1fr] gap-4 h-full">
-      
-      <div class="hov-lift h-[270px] ">
-        <div class="img-frame rounded-2xl overflow-hidden shadow-md h-full">
-          <img src="assets/img/science_classroom2.png" class="w-full h-full object-cover" alt="Mentorship">
+        <div class="lg:col-span-6 reveal">
+          <div class="grid grid-cols-12 gap-4">
+
+            <div class="col-span-12 md:col-span-7 hov-lift h-[460px]">
+              <div class="img-frame rounded-2xl overflow-hidden shadow-lg border border-black/5 h-full">
+                <img src="assets/img/video_thumb.png" class="w-full h-[340px] md:h-[460px] object-cover"
+                  alt="Academic Rigour at Konwaba">
+              </div>
+            </div>
+
+            <div class="col-span-12 md:col-span-5 grid grid-rows-[1.5fr_1fr] gap-4 h-full">
+
+              <div class="hov-lift h-[270px] ">
+                <div class="img-frame rounded-2xl overflow-hidden shadow-md h-full">
+                  <img src="assets/img/science_classroom2.png" class="w-full h-full object-cover" alt="Mentorship">
+                </div>
+              </div>
+
+              <div class="hov-lift h-[170px] ">
+                <div class="img-frame rounded-2xl overflow-hidden shadow-md h-full">
+                  <img src="assets/img/brick_laying3.jpg" class="w-full h-full object-cover"
+                    alt="Practical Skills Development">
+                </div>
+              </div>
+
+            </div>
+
+            <div class="col-span-12 hov-lift mt-2">
+              <div
+                class="rounded-xl overflow-hidden border border-black/5 bg-[var(--maroon-600)] relative p-6 flex flex-col md:flex-row justify-between items-center text-white">
+                <div class="flex flex-col">
+                  <span class="text-[10px] uppercase tracking-[0.2em] opacity-80">Official Registration</span>
+                  <span class="font-heading text-lg">EMIS NO: 200601212</span>
+                </div>
+                <div class="mt-4 md:mt-0">
+                  <span class="badge badge-beige !text-[var(--maroon-700)] px-4 py-1">Carpentry • Plumbing •
+                    Bricklaying</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
-      </div>
 
-      <div class="hov-lift h-[170px] ">
-        <div class="img-frame rounded-2xl overflow-hidden shadow-md h-full">
-          <img src="assets/img/brick_laying3.jpg" class="w-full h-full object-cover" alt="Practical Skills Development">
-        </div>
-      </div>
-
-    </div>
-
-    <div class="col-span-12 hov-lift mt-2">
-      <div class="rounded-xl overflow-hidden border border-black/5 bg-[var(--maroon-600)] relative p-6 flex flex-col md:flex-row justify-between items-center text-white">
-         <div class="flex flex-col">
-            <span class="text-[10px] uppercase tracking-[0.2em] opacity-80">Official Registration</span>
-            <span class="font-heading text-lg">EMIS NO: 200601212</span>
-         </div>
-         <div class="mt-4 md:mt-0">
-            <span class="badge badge-beige !text-[var(--maroon-700)] px-4 py-1">Carpentry • Plumbing • Bricklaying</span>
-         </div>
       </div>
     </div>
-
-  </div>
-</div>
-
-    </div>
-  </div>
-</section>
+  </section>
 
   <!-- EDTECH LEARNING MODEL STRIP -->
   <section class="py-16 md:py-24 bg-[var(--beige-50)] border-y border-black/5">
@@ -500,36 +624,49 @@
     </div>
   </section>
 
-    <section id="fees" class="py-24 bg-[var(--beige-50)]">
+  <section id="fees" class="py-24 bg-[var(--beige-50)]">
     <div class="px-6">
       <div class="grid lg:grid-cols-12 gap-16 items-start">
         <div class="lg:col-span-6 reveal">
           <span class="kicker">Investment</span>
           <h2 class="font-heading text-4xl md:text-5xl mb-8">Transparent, Elite Education.</h2>
-          <p class="text-lg text-[var(--ink-600)] mb-10 leading-relaxed">We aim to deliver a high-end learning experience while remaining accessible to families who value excellence.</p>
-          
+          <p class="text-lg text-[var(--ink-600)] mb-10 leading-relaxed">We aim to deliver a high-end learning
+            experience while remaining accessible to families who value excellence.</p>
+
           <div class="grid sm:grid-cols-2 gap-6">
             <div class="bg-white p-8 rounded-2xl shadow-sm border-b-4 border-[var(--maroon-600)]">
-              <span class="text-[10px] uppercase font-bold text-[var(--ink-500)] tracking-widest block mb-1">Monthly Tuition</span>
+              <span class="text-[10px] uppercase font-bold text-[var(--ink-500)] tracking-widest block mb-1">Monthly
+                Tuition</span>
               <span class="text-3xl font-heading text-[var(--maroon-600)]">R1 500</span>
               <p class="text-xs text-[var(--ink-500)] mt-2 italic">Grades 8, 9 & 10</p>
             </div>
             <div class="bg-white p-8 rounded-2xl shadow-sm border-b-4 border-[var(--maroon-600)]">
-              <span class="text-[10px] uppercase font-bold text-[var(--ink-500)] tracking-widest block mb-1">Placement Deposit</span>
+              <span class="text-[10px] uppercase font-bold text-[var(--ink-500)] tracking-widest block mb-1">Placement
+                Deposit</span>
               <span class="text-3xl font-heading text-[var(--maroon-600)]">R1 500</span>
               <p class="text-xs text-[var(--ink-500)] mt-2 italic">November 2025</p>
             </div>
           </div>
 
-          <div class="mt-12 bg-[var(--maroon-600)] p-10 rounded-[var(--radius-lg)] text-white shadow-xl relative overflow-hidden group">
-            <div class="absolute top-0 right-0 p-4 opacity-10 transform translate-x-4 -translate-y-4 transition-transform group-hover:translate-x-2 group-hover:-translate-y-2">
-              <svg width="120" height="120" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+          <div
+            class="mt-12 bg-[var(--maroon-600)] p-10 rounded-[var(--radius-lg)] text-white shadow-xl relative overflow-hidden group">
+            <div
+              class="absolute top-0 right-0 p-4 opacity-10 transform translate-x-4 -translate-y-4 transition-transform group-hover:translate-x-2 group-hover:-translate-y-2">
+              <svg width="120" height="120" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
+              </svg>
             </div>
             <h4 class="font-heading text-2xl mb-4">Ready to Begin?</h4>
-            <p class="opacity-80 text-sm mb-8 leading-relaxed">Download our 2027 Prospectus for a full breakdown of vocational subjects including Carpentry and Plumbing.</p>
+            <p class="opacity-80 text-sm mb-8 leading-relaxed">Download our 2027 Prospectus for a full breakdown of
+              vocational subjects including Carpentry and Plumbing.</p>
             <div class="flex flex-col sm:flex-row gap-4">
-              <a href="assets/documents/APPLICATION-FORM-2027-1.pdf" target="_blank" class="bg-white text-[var(--maroon-600)] px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-[10px] text-center">Prospectus PDF</a>
-              <a href="contact.html" class="border border-white/30 text-white px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-[10px] text-center hover:bg-white/10">Speak to Admissions</a>
+              <a href="assets/documents/APPLICATION-FORM-2027-1.pdf" target="_blank"
+                class="bg-white text-[var(--maroon-600)] px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-[10px] text-center">Prospectus
+                PDF</a>
+              <a href="contact.html"
+                class="border border-white/30 text-white px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-[10px] text-center hover:bg-white/10">Speak
+                to Admissions</a>
             </div>
           </div>
         </div>
@@ -541,22 +678,37 @@
               <h3 class="font-heading text-2xl mb-6">The Konwaba Value</h3>
               <ul class="space-y-6">
                 <li class="flex items-start gap-4">
-                  <div class="w-6 h-6 rounded-full bg-[var(--maroon-70)] flex items-center justify-center shrink-0 mt-1">
-                    <svg class="w-3 h-3 text-[var(--maroon-600)]" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                  <div
+                    class="w-6 h-6 rounded-full bg-[var(--maroon-70)] flex items-center justify-center shrink-0 mt-1">
+                    <svg class="w-3 h-3 text-[var(--maroon-600)]" fill="none" stroke="currentColor" stroke-width="3"
+                      viewBox="0 0 24 24">
+                      <path d="M5 13l4 4L19 7" />
+                    </svg>
                   </div>
-                  <p class="text-sm text-[var(--ink-600)] leading-relaxed"><strong>Vocational Integration:</strong> Compulsory additional skills in Bricklaying, Plumbing, and Carpentry.</p>
+                  <p class="text-sm text-[var(--ink-600)] leading-relaxed"><strong>Vocational Integration:</strong>
+                    Compulsory additional skills in Bricklaying, Plumbing, and Carpentry.</p>
                 </li>
                 <li class="flex items-start gap-4">
-                  <div class="w-6 h-6 rounded-full bg-[var(--maroon-70)] flex items-center justify-center shrink-0 mt-1">
-                    <svg class="w-3 h-3 text-[var(--maroon-600)]" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                  <div
+                    class="w-6 h-6 rounded-full bg-[var(--maroon-70)] flex items-center justify-center shrink-0 mt-1">
+                    <svg class="w-3 h-3 text-[var(--maroon-600)]" fill="none" stroke="currentColor" stroke-width="3"
+                      viewBox="0 0 24 24">
+                      <path d="M5 13l4 4L19 7" />
+                    </svg>
                   </div>
-                  <p class="text-sm text-[var(--ink-600)] leading-relaxed"><strong>Professional Readiness:</strong> Learner Driver's license support from Grade 10.</p>
+                  <p class="text-sm text-[var(--ink-600)] leading-relaxed"><strong>Professional Readiness:</strong>
+                    Learner Driver's license support from Grade 10.</p>
                 </li>
                 <li class="flex items-start gap-4">
-                  <div class="w-6 h-6 rounded-full bg-[var(--maroon-70)] flex items-center justify-center shrink-0 mt-1">
-                    <svg class="w-3 h-3 text-[var(--maroon-600)]" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                  <div
+                    class="w-6 h-6 rounded-full bg-[var(--maroon-70)] flex items-center justify-center shrink-0 mt-1">
+                    <svg class="w-3 h-3 text-[var(--maroon-600)]" fill="none" stroke="currentColor" stroke-width="3"
+                      viewBox="0 0 24 24">
+                      <path d="M5 13l4 4L19 7" />
+                    </svg>
                   </div>
-                  <p class="text-sm text-[var(--ink-600)] leading-relaxed"><strong>3-Piece Academic Wear:</strong> Distinct school blazer, tracksuit, and kilt skirts reflecting pride and unity.</p>
+                  <p class="text-sm text-[var(--ink-600)] leading-relaxed"><strong>3-Piece Academic Wear:</strong>
+                    Distinct school blazer, tracksuit, and kilt skirts reflecting pride and unity.</p>
                 </li>
               </ul>
             </div>
@@ -588,33 +740,48 @@
     </div>
   </footer>
 
-  <div id="drawerBackdrop" class="drawer-backdrop fixed inset-0 bg-black/40 backdrop-blur-sm z-[150]"></div>
-<div id="mobileDrawer" class="drawer-panel fixed top-0 right-0 w-[280px] h-full bg-white z-[160] shadow-2xl p-8 flex flex-col">
-  <div class="flex items-center justify-between mb-10">
-    <img src="assets/img/khs_logo.png" alt="Konwaba High School" class="h-10">
-    <button id="menuCloseBtn" class="text-[var(--ink-500)] hover:text-[var(--maroon-600)] transition-colors">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-    </button>
-  </div>
-  
-  <nav class="flex flex-col gap-6">
-    <a class="text-sm uppercase tracking-widest font-bold text-[var(--ink-900)]" href="index.html">Home</a>
-    <a class="text-sm uppercase tracking-widest font-bold text-[var(--ink-700)]" href="about.html">About</a>
-    <a class="text-sm uppercase tracking-widest font-bold text-[var(--ink-700)]" href="academics.html">Academics</a>
-     <a class="text-sm uppercase tracking-widest font-bold text-[var(--ink-700)]" href="notices.html">Notices</a>
-    <a class="text-sm uppercase tracking-widest font-bold text-[var(--ink-700)]" href="student-life.html">Student Life</a>
-    <a class="text-sm uppercase tracking-widest font-bold text-[var(--ink-700)]" href="admissions.html">Admissions</a>
-    <a class="text-sm uppercase tracking-widest font-bold text-[var(--ink-700)]" href="contact.html">Contact</a>
-  </nav>
+  <div id="drawerBackdrop" class="drawer-backdrop fixed inset-0 bg-black/45 backdrop-blur-sm z-[150]"></div>
+    <aside id="mobileDrawer"
+      class="drawer-panel fixed top-0 right-0 w-[320px] max-w-[86vw] h-full bg-white z-[160] shadow-2xl p-7 flex flex-col">
+      <div class="flex items-center justify-between mb-10">
+        <div>
+          <div class="font-heading font-bold text-2xl text-[var(--maroon-600)]">Menu</div>
+          <div class="text-[10px] uppercase tracking-[0.32em] text-[var(--ink-500)] mt-1">Konwabo High School</div>
+        </div>
+        <button id="closeMenu" class="p-2 rounded-xl border border-black/10 text-[var(--ink-600)]"
+          aria-label="Close menu">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
 
-  <div class="mt-auto pt-8 border-t border-black/5">
-    <a class="btn btn-maroon w-full py-4 text-xs font-bold uppercase tracking-widest" href="admissions.html">Apply Now</a>
-  </div>
-</div>
+      <nav class="flex flex-col gap-6">
 
+        <a href="index.html" class="text-xs uppercase tracking-[0.28em] font-extrabold text-[var(--ink-700)]">Home</a>
+        <a href="about.html" class="text-xs uppercase tracking-[0.28em] font-extrabold text-[var(--maroon-600)]">About</a>
+        <a href="academics.html"
+          class="text-xs uppercase tracking-[0.28em] font-extrabold text-[var(--ink-700)]">Academics</a>
+        <a href="notices.html"
+          class="text-xs uppercase tracking-[0.28em] font-extrabold text-[var(--ink-700)]">Notices</a>
+        <a href="student-life.html"
+          class="text-xs uppercase tracking-[0.28em] font-extrabold text-[var(--ink-700)]">Student Life</a>
+        <a href="admissions.html"
+          class="text-xs uppercase tracking-[0.28em] font-extrabold text-[var(--ink-700)]">Admissions</a>
+        <a href="contact.html"
+          class="text-xs uppercase tracking-[0.28em] font-extrabold text-[var(--ink-700)]">Contact</a>
+      </nav>
+
+      <div class="mt-auto pt-8 border-t border-black/5">
+        <a href="admissions.html"
+          class="btn btn-maroon w-full justify-center py-4 text-[10px] uppercase tracking-widest font-extrabold">Apply</a>
+        <a href="contact.html"
+          class="btn btn-ghost w-full justify-center py-4 mt-3 text-[10px] uppercase tracking-widest font-extrabold">Enquire</a>
+      </div>
+    </aside>
   <!-- JS: reveal -->
   <script>
-    (function(){
+    (function () {
       const els = document.querySelectorAll('.reveal');
       const reveal = () => {
         const trigger = window.innerHeight * 0.88;
@@ -623,13 +790,13 @@
           if (r.top < trigger) el.classList.add('is-visible');
         });
       };
-      window.addEventListener('scroll', reveal, { passive:true });
+      window.addEventListener('scroll', reveal, { passive: true });
       window.addEventListener('load', reveal);
       reveal();
     })();
   </script>
-    <script>
-    (function(){
+  <script>
+    (function () {
       // 1) Nav shrink
       const mainNav = document.getElementById('main-nav');
       const setNav = () => {
@@ -684,7 +851,7 @@
 
       // 4) Mobile drawer
       const btn = document.getElementById('menuBtn');
-      const closeBtn = document.getElementById('menuCloseBtn');
+      const closeMenu = document.getElementById('closeMenu');
       const backdrop = document.getElementById('drawerBackdrop');
       const drawer = document.getElementById('mobileDrawer');
 
@@ -693,7 +860,7 @@
         drawer.classList.add('open');
         backdrop.classList.add('open');
         document.body.classList.add('lock-scroll');
-        if (btn) btn.setAttribute('aria-expanded','true');
+        if (btn) btn.setAttribute('aria-expanded', 'true');
       };
 
       const closeDrawer = () => {
@@ -701,12 +868,14 @@
         drawer.classList.remove('open');
         backdrop.classList.remove('open');
         document.body.classList.remove('lock-scroll');
-        if (btn) btn.setAttribute('aria-expanded','false');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
       };
 
-      if (btn) btn.addEventListener('click', openDrawer);
-      if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
-      if (backdrop) backdrop.addEventListener('click', closeDrawer);
+      menuBtn && menuBtn.addEventListener('click', openDrawer);
+      closeMenu && closeMenu.addEventListener('click', closeDrawer);
+      backdrop && backdrop.addEventListener('click', closeDrawer);
+      window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDrawer(); });
+
 
       window.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') closeDrawer();
@@ -744,4 +913,5 @@
     })();
   </script>
 </body>
+
 </html>
